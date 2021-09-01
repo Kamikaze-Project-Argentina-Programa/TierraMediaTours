@@ -1,7 +1,8 @@
 package tierramedia;
 
 public class Usuarios {
-  //int presupuesto
-  //int tiempo disponible
-  //atraccion preferida
+  //String nombre
+  //int monedas
+  //int tiempo 
+  //string tipo  // atraccion preferida
 }
