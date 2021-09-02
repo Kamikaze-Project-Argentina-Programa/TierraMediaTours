@@ -5,11 +5,11 @@ public class Usuarios {
   protected int monedas;
   protected double tiempo; 
   protected String atraccion;  // tipo preferida
-public Usuarios(String nombre, String tipo, String monedas, String tiempo ) {
+public Usuarios(String nombre, String tipo, int monedas, double tiempo ) {
 	super();
 	this.nombre = nombre;
-	this.monedas = Integer.parseInt(monedas);
-	this.tiempo = Double.parseDouble(tiempo);
+	this.monedas = monedas;
+	this.tiempo = tiempo;
 	this.atraccion = tipo;
 }
 @Override

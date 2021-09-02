@@ -15,12 +15,7 @@ public class LeePromos {
 			br = new BufferedReader(fr);
 			String linea = br.readLine();
 			while ((linea != null)) {
-				List<String> promoX = new ArrayList<String>();
-				String[] promo = linea.split(",");
-
-				for (int i = 0; i < promo.length; i++) {
-					promoX.add(promo[i]);
-				}
+				List<String> promoX = armarListaPromo(linea);
 					
 				//System.out.println(promoX.get(promo.length-1));//el ultimo lugar
 				System.out.println(promoX);
@@ -37,5 +32,15 @@ public class LeePromos {
 				e2.printStackTrace();
 			}
 		}
+	}
+
+	protected static List<String> armarListaPromo(String linea) {
+		List<String> promoX = new ArrayList<String>();
+		String[] promo = linea.split(",");
+
+		for (int i = 0; i < promo.length; i++) {
+			promoX.add(promo[i]);
+		}
+		return promoX;
 	}
 }

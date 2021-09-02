@@ -18,11 +18,7 @@ public class LeeUsuarios {
 
 			while ((linea != null)) {
 
-				String[] perfil = linea.split(",");
-				Usuarios user = new Usuarios(perfil[0], perfil[1], perfil[2], perfil[3]);
-				System.out.println("Bienvenidx " + user.nombre +"!!" ); //lo use para ver que ande bien el constructor
-				System.out.println("¿Te gustan las atracciones de tipo " + user.atraccion + "?");
-				System.out.println("¡Entonces tenemos estas promos para vos!");
+				darBienvenida(linea);
 				//ofrecer promos
 				//imprimir itinerario
 				linea = br.readLine();
@@ -41,6 +37,14 @@ public class LeeUsuarios {
 				e2.printStackTrace();
 			}
 		}
+	}
+
+	protected static void darBienvenida(String linea) {
+		String[] perfil = linea.split(",");
+		Usuarios usuario = new Usuarios(perfil[0], perfil[1],Integer.parseInt(perfil[2]), Double.parseDouble(perfil[3]));
+		System.out.println("Bienvenidx " + usuario.nombre +"!!" ); //lo use para ver que ande bien el constructor
+		System.out.println("¿Te gustan las atracciones de tipo " + usuario.atraccion + "?");
+		System.out.println("¡Entonces tenemos estas promos para vos!");
 	}
 
 }

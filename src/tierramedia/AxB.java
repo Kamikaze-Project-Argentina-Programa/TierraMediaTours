@@ -6,9 +6,10 @@ public class AxB extends Promos {
 	protected String tipoAtraccion;
 	protected int descuento;
 	protected int monto;
-	private Atraccion atraccion1;
-	private Atraccion atraccion2;
-	private Atraccion atraccion3;
+	
+	protected Atraccion atraccion1;
+	protected Atraccion atraccion2;
+	protected Atraccion atraccion3;
 
 	protected AxB(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, Atraccion atraccion3) {
 		super();
@@ -19,12 +20,12 @@ public class AxB extends Promos {
 	}
 
 	protected String getPromo() {
-		return " Llevá " + atraccion1 + " + " + atraccion2 + " por " + this.monto + " y " + atraccion3 + " es gratis!";
+		return "Llevá " + this.atraccion1 + " + " + this.atraccion2 + " por " + this.monto + " y " + this.atraccion3 + " es gratis!";
 	}
 
 	@Override
 	protected int calcularMonto() {
-		this.monto = atraccion1.monto + atraccion2.monto;
+		this.monto = this.atraccion1.monto + this.atraccion2.monto;
 		return this.monto;
 	}
 

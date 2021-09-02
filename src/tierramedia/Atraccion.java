@@ -7,12 +7,12 @@ public class Atraccion {
 	protected int cupo;
 	protected String tipo;
 
-	public Atraccion(String nombre, String monedas, String tiempo, String cupo, String atraccion) {
+	public Atraccion(String nombre, int monto, double tiempo, int cupo, String atraccion) {
 		super();
 		this.nombre = nombre;
-		this.monto = Integer.parseInt(monedas);
-		this.tiempo = Double.parseDouble(tiempo);
-		this.cupo = Integer.parseInt(cupo);
+		this.monto = monto;
+		this.tiempo = tiempo;
+		this.cupo = cupo;
 		this.tipo = atraccion;
 	}
 
