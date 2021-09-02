@@ -1,6 +1,8 @@
 package tierramedia;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LeePromos {
 
@@ -9,22 +11,24 @@ public class LeePromos {
 		BufferedReader br = null;
 
 		try {
-			// Apertura del fichero y creacion de BufferedReader para poder
-			// hacer una lectura comoda (disponer del metodo readLine()).
 			fr = new FileReader("TMFiles/Promos.txt");
 			br = new BufferedReader(fr);
-			// Lectura del fichero
 			String linea = br.readLine();
 			while ((linea != null)) {
-				//System.out.println(linea);
+				List<String> promoX = new ArrayList<String>();
+				String[] promo = linea.split(",");
+
+				for (int i = 0; i < promo.length; i++) {
+					promoX.add(promo[i]);
+				}
+					
+				//System.out.println(promoX.get(promo.length-1));//el ultimo lugar
+				System.out.println(promoX);
 				linea = br.readLine();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// En el finally cerramos el fichero, para asegurarnos
-			// que se cierra tanto si todo va bien como si salta
-			// una excepcion.
 			try {
 				if (fr != null) {
 					fr.close();

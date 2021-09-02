@@ -18,7 +18,7 @@ public class LeeAtracciones {
 				
 				String[] actividad = linea.split(",");
 				Atraccion detalle = new Atraccion (actividad[0], actividad[1], actividad[2], actividad[3], actividad[4]);
-				//System.out.println(detalle.toString());//lo use para ver que ande bien el constructor
+				System.out.println(detalle.toString());//lo use para ver que ande bien el constructor
 				
 				linea = br.readLine();
 			}

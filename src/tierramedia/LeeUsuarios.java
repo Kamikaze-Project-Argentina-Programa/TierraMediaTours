@@ -24,7 +24,6 @@ public class LeeUsuarios {
 				System.out.println("¿Te gustan las atracciones de tipo " + user.atraccion + "?");
 				System.out.println("¡Entonces tenemos estas promos para vos!");
 				//ofrecer promos
-				
 				//imprimir itinerario
 				linea = br.readLine();
 				
