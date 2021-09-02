@@ -3,8 +3,12 @@ package tierramedia;
 public class TMApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		LeeAtracciones.main(args);
+		//LeePromos.main(args);
+		LeeUsuarios.main(args);
+
+		
 	}
 
 }

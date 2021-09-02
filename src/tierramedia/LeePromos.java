@@ -16,7 +16,7 @@ public class LeePromos {
 			// Lectura del fichero
 			String linea = br.readLine();
 			while ((linea != null)) {
-				System.out.println(linea);
+				//System.out.println(linea);
 				linea = br.readLine();
 			}
 		} catch (IOException e) {

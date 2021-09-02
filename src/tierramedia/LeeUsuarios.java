@@ -9,22 +9,31 @@ public class LeeUsuarios {
 		BufferedReader br = null;
 
 		try {
-			// Apertura del fichero y creacion de BufferedReader para poder
-			// hacer una lectura comoda (disponer del metodo readLine()).
+
 			fr = new FileReader("TMFiles/Usuarios.txt");
 			br = new BufferedReader(fr);
+
 			// Lectura del fichero
 			String linea = br.readLine();
+
 			while ((linea != null)) {
-				System.out.println(linea);
+
+				String[] perfil = linea.split(",");
+				Usuarios user = new Usuarios(perfil[0], perfil[1], perfil[2], perfil[3]);
+				System.out.println("Bienvenidx " + user.nombre +"!!" ); //lo use para ver que ande bien el constructor
+				System.out.println("¿Te gustan las atracciones de tipo " + user.atraccion + "?");
+				System.out.println("¡Entonces tenemos estas promos para vos!");
+				//ofrecer promos
+				
+				//imprimir itinerario
 				linea = br.readLine();
+				
+				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// En el finally cerramos el fichero, para asegurarnos
-			// que se cierra tanto si todo va bien como si salta
-			// una excepcion.
+
 			try {
 				if (fr != null) {
 					fr.close();
@@ -34,4 +43,5 @@ public class LeeUsuarios {
 			}
 		}
 	}
+
 }
