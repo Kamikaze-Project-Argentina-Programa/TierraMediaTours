@@ -3,7 +3,7 @@ package tierramedia;
 public class Porcentual extends Promos{
 	protected String tipoAtraccion;
 	protected int descuento;
-	protected int monto;
+	protected double monto;
 	private Atraccion atraccion1;
 	private Atraccion atraccion2;
 	
@@ -16,10 +16,10 @@ public class Porcentual extends Promos{
 	}
 	
 	protected String getPromo() {
-		return " Llev· " + atraccion1 + " + " + atraccion2 +" por "+ this.monto + "!";
+		return " Llev√° " + atraccion1 + " + " + atraccion2 +" por "+ this.monto + "!";
 	}
 	@Override
-	protected int calcularMonto() {
+	protected double calcularMonto() {
 		this.monto = (atraccion1.monto + atraccion2.monto)*descuento/100;
 		return this.monto;
 	}
