@@ -8,6 +8,7 @@ public class PromosTest {
 
 	@Test
 	public void crearAtraccionesTest() {
+		@SuppressWarnings("unused")
 		Atraccion atraccion1 = new Atraccion("atraccion1", 20, 2.5, 10, "tipoUno");
 	}
 
