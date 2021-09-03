@@ -21,6 +21,6 @@ public class Porcentual extends Promos{
 	@Override
 	protected double calcularMonto() {
 		this.monto = (atraccion1.monto + atraccion2.monto)*descuento/100;
-		return this.monto;
+		return Math.round(this.monto);
 	}
 }
