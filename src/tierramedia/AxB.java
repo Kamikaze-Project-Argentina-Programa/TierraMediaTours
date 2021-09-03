@@ -20,7 +20,7 @@ public class AxB extends Promos {
 	}
 
 	protected String getPromo() {
-		return "Llevá " + this.atraccion1.nombre + " + " + this.atraccion2.nombre + " por " + this.monto + " y " + this.atraccion3.nombre + " es gratis!";
+		return "Lleva " + atraccion1.nombre + " + " + atraccion2.nombre + " por " + this.monto + " y " + atraccion3.nombre + " es gratis!";
 	}
 
 	@Override
