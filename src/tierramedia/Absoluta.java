@@ -2,11 +2,11 @@ package tierramedia;
 
 public class Absoluta extends Promos {
 	protected String tipoAtraccion;
-	protected int monto;
+	protected double monto;
 	protected Atraccion atraccion1;
 	protected Atraccion atraccion2;
 	
-	protected Absoluta(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, int monto) {
+	protected Absoluta(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, double monto) {
 		super();
 		this.monto = monto;
 		this.tipoAtraccion = tipoAtraccion;
@@ -15,7 +15,7 @@ public class Absoluta extends Promos {
 	}
 	
 	protected String getPromo() {
-		return "Llev· " + atraccion1.nombre + " + " + atraccion2.nombre +" por "+ this.monto + "!";
+		return " Llev√° " + this.atraccion1.nombre + " + " + this.atraccion2.nombre +" por "+ this.monto + "!";
 	}
 	@Override
 	protected double calcularMonto() {
