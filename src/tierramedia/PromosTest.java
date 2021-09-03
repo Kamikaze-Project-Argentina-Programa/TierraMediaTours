@@ -10,6 +10,7 @@ public class PromosTest {
 	public void crearAtraccionesTest() {
 		@SuppressWarnings("unused")
 		Atraccion atraccion1 = new Atraccion("atraccion1", 20, 2.5, 10, "tipoUno");
+		assertNotNull(atraccion1);
 	}
 
 	@Test
@@ -53,8 +54,7 @@ public class PromosTest {
 		
 		AxB promoAxB1 = new AxB("Paisajes", minas, abismo, erebor);
 		assertEquals(10, promoAxB1.calcularMonto(), 0);
-		assertEquals("Llevá " + minas.nombre + " + " + abismo.nombre + " por " + promoAxB1.calcularMonto() + " y " 
-		+ erebor.nombre + " es gratis!", promoAxB1.getPromo());
+		assertEquals("Llevá " + minas.nombre + " + " + abismo.nombre +" por "+ promoAxB1.calcularMonto() + " y " + erebor.nombre + " es gratis!", promoAxB1.getPromo());
 	}
 
 }

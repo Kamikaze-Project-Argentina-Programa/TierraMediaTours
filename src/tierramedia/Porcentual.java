@@ -16,7 +16,7 @@ public class Porcentual extends Promos{
 	}
 	
 	protected String getPromo() {
-		return " Llev√° " + atraccion1.nombre + " + " + atraccion2.nombre +" por "+ this.monto + "!";
+		return "Llev· " + atraccion1.nombre + " + " + atraccion2.nombre +" por "+ this.monto + "!";
 	}
 	@Override
 	protected double calcularMonto() {
