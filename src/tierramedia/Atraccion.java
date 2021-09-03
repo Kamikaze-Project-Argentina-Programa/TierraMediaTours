@@ -2,12 +2,12 @@ package tierramedia;
 
 public class Atraccion {
 	protected String nombre;
-	protected int monto;
+	protected double monto;
 	protected double tiempo;
 	protected int cupo;
 	protected String tipo;
 
-	public Atraccion(String nombre, int monto, double tiempo, int cupo, String atraccion) {
+	public Atraccion(String nombre, double monto, double tiempo, int cupo, String atraccion) {
 		super();
 		this.nombre = nombre;
 		this.monto = monto;

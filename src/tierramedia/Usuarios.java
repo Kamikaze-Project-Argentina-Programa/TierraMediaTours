@@ -4,7 +4,7 @@ public class Usuarios {
   protected String nombre;
   protected int monedas;
   protected double tiempo; 
-  protected String atraccion;  // tipo preferida
+  protected String atraccion;  // tipoAtraccion preferida
 public Usuarios(String nombre, String tipo, int monedas, double tiempo ) {
 	super();
 	this.nombre = nombre;

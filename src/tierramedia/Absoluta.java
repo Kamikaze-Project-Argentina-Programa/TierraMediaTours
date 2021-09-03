@@ -15,10 +15,10 @@ public class Absoluta extends Promos {
 	}
 	
 	protected String getPromo() {
-		return " Llevá " + this.atraccion1 + " + " + this.atraccion2 +" por "+ this.monto + "!";
+		return "Llevá " + atraccion1.nombre + " + " + atraccion2.nombre +" por "+ this.monto + "!";
 	}
 	@Override
-	protected int calcularMonto() {
+	protected double calcularMonto() {
 	return this.monto;
 	}
 
