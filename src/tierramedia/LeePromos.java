@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LeePromos {
+	
+	static List<String> promoX = new ArrayList<String>();
 
-	public static void main(String[] args) {
+	public static void leePromos() {
 		FileReader fr = null;
 		BufferedReader br = null;
 
@@ -16,12 +18,10 @@ public class LeePromos {
 			String linea = br.readLine();
 			while ((linea != null)) {
 				
-				List<String> promo = armarListaPromo(linea);
-				
-					
-				System.out.println(promo);
-				
-				//comparaTipoPromo(promo);
+				String[] promo = linea.split(",");
+				for (int i = 0; i < promo.length; i++) {
+					promoX.add(promo[i]);
+				}
 				
 				linea = br.readLine();
 			}
@@ -38,9 +38,9 @@ public class LeePromos {
 		}
 	}
 
-	/*
-	 * protected static void comparaTipoPromo(List<String> promo) {
-		if (promo.get(0) == "Descuento") {
+	/* protected static void armarPromos(List<String> promo) {
+		 
+		if (promo.get(0) == "Descuento") {			
 			Promos promoX = new Porcentual(promo.get(1), promo.get(2), promo.get(3), Integer.parseInt(promo.get(4)));
 			System.out.println(promoX.toString());
 		} else {
@@ -55,16 +55,6 @@ public class LeePromos {
 				}
 			}
 		}
-	}
-	*/
-
-	protected static List<String> armarListaPromo(String linea) {
-		List<String> promoX = new ArrayList<String>();
-		String[] promo = linea.split(",");
-		for (int i = 0; i < promo.length; i++) {
-			promoX.add(promo[i]);
-		}
-		return promoX;
-	}
+	}*/
 	
 }

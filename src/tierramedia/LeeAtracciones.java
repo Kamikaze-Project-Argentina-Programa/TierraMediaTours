@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LeeAtracciones {
-	public static void main(String[] args) {
-		//public static void leeAtracciones() {
-		
+	protected static List<Atraccion> listaActividades = new ArrayList<Atraccion>();
+	protected static ArrayList<Atraccion> actiAventura;
+	protected static ArrayList<Atraccion> actiDegustacion;
+	protected static ArrayList<Atraccion> actiPaisaje;
+
+	public static void leeAtracciones() {
 		FileReader fr = null;
 		BufferedReader br = null;
 
@@ -17,21 +20,16 @@ public class LeeAtracciones {
 			br = new BufferedReader(fr);
 
 			String linea = br.readLine();
-			List<Atraccion> listaActividades = new ArrayList<Atraccion>();
-			
 			while ((linea != null)) {
 
-				Atraccion atraccion = crearActividades(linea);
-				
+				String[] actividad = linea.split(",");
+				Atraccion atraccion = new Atraccion(actividad[0], Integer.parseInt(actividad[1]),
+						Double.parseDouble(actividad[2]), Integer.parseInt(actividad[3]), actividad[4]);
 				listaActividades.add(atraccion);
-				
-				
+
 				linea = br.readLine();
 			}
-			
-			System.out.println(listaActividades);// lo use para ver que ande bien el constructor
-			
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -46,11 +44,28 @@ public class LeeAtracciones {
 		}
 	}
 
+	protected static List<Atraccion> getListaActividades() {
+		return listaActividades;
+	}
+
 	
-	protected static Atraccion crearActividades(String linea) {
-		String[] actividad = linea.split(",");
-		Atraccion atraccion = new Atraccion(actividad[0], Integer.parseInt(actividad[1]),
-				Double.parseDouble(actividad[2]), Integer.parseInt(actividad[3]), actividad[4]);
-		return atraccion;
+	public static void ordenaTipoAtracciones() {
+		actiAventura = new ArrayList<Atraccion>();
+		actiDegustacion = new ArrayList<Atraccion>();
+		actiPaisaje = new ArrayList<Atraccion>();
+
+		for (Atraccion act : getListaActividades()) {
+			if (act.getTipo().equalsIgnoreCase("Aventura")) {
+				actiAventura.add(act);
+			} else {
+				if (act.getTipo().equalsIgnoreCase("Degustacion")) {
+					actiDegustacion.add(act);
+				} else {
+					if (act.getTipo().equalsIgnoreCase("Paisaje")) {
+						actiPaisaje.add(act);
+					}
+				}
+			}
+		}
 	}
 }
