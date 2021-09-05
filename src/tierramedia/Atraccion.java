@@ -21,18 +21,35 @@ public class Atraccion {
 
 	@Override
 	public String toString() {
-		return "Atraccion [nombre=" + nombre + ", monto=" + monto + ", tiempo=" + tiempo + ", cupo=" + cupo
+		return "[nombre=" + getNombre() + ", monto=" + getMonto() + ", tiempo=" + tiempo + ", cupo=" + cupo
 				+ ", tipo=" + tipo + "]";
+	}
+
+	protected double getTiempo() {
+		return this.tiempo;
+	}
+
+	protected int getCupo() {
+		return this.cupo;
 	}
 
 	public String getTipo() {
 		return this.tipo;
 	}
 
-	protected static void ordenarAtracciones() {
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public double getMonto() {
+		return this.monto;
+	}
+
+	protected static void ordenarAtraccionesPorTipo() {
 		LeeAtracciones.leeAtracciones();
 		LeeAtracciones.getListaActividades();
 		LeeAtracciones.ordenaTipoAtracciones();
+		//genera tres listas
 	}
 	
 	protected static ArrayList<Atraccion> getActiAventura() {
@@ -68,7 +85,5 @@ public class Atraccion {
 				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo)
 				&& Objects.equals(tipo, other.tipo);
 	}
-	
-	
 
 }

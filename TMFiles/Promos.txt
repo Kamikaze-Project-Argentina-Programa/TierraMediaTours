@@ -1,3 +1,7 @@
-Descuento,Aventura,Bosque Negro,Mordor,20 
-Final,Degustacion,Lothlórien,La Comarca,36 
+Combo,Degustacion,Lothlorien,La Comarca,El Pony Pisador
 Combo,Paisaje,Minas Tirith,Abismo de Helm,Erebor
+Combo,Aventura,Bosque Negro,Moria,Mordor
+Descuento,Aventura,Bosque Negro,Mordor,20
+Descuento,Degustacion,El Pony Pisador,La Comarca,15
+Final,Paisaje,Minas Tirith,Abismo de Helm,7
+Final,Degustacion,La Comarca,El Pony Pisador,15

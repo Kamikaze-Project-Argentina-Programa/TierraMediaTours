@@ -7,7 +7,7 @@ public class Porcentual extends Promos{
 	private Atraccion atraccion1;
 	private Atraccion atraccion2;
 	
-	protected Porcentual(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, int descuento) {
+	public Porcentual(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, int descuento) {
 		super();
 		this.descuento = descuento;
 		this.tipoAtraccion = tipoAtraccion;
@@ -15,12 +15,21 @@ public class Porcentual extends Promos{
 		this.atraccion2=atraccion2;
 	}
 	
-	protected String getPromo() {
-		return "Lleva " + atraccion1.nombre + " + " + atraccion2.nombre +" por "+ this.monto + "!";
+	public String getPromo() {
+		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.monto + "!";
 	}
 	@Override
 	protected double calcularMonto() {
-		this.monto = Math.round((atraccion1.monto + atraccion2.monto) * (100 - descuento)/100);
+		this.monto = Math.round((atraccion1.monto + atraccion2.monto) * (100 - descuento)/100);	
 		return this.monto;
 	}
+
+	@Override
+	public String toString() {
+		return "Porcentual [tipoAtraccion=" + tipoAtraccion + ", descuento=" + descuento + ", monto=" + monto
+				+ ", atraccion1=" + atraccion1 + ", atraccion2=" + atraccion2 + "]";
+	}
+	
+	
+	
 }

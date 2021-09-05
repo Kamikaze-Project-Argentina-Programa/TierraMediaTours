@@ -1,14 +1,18 @@
-package tierramedia;
+package tierramediaTests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import tierramedia.Absoluta;
+import tierramedia.Atraccion;
+import tierramedia.AxB;
+import tierramedia.Porcentual;
+
 public class PromosTest {
 
 	@Test
 	public void crearAtraccionesTest() {
-		@SuppressWarnings("unused")
 		Atraccion atraccion1 = new Atraccion("atraccion1", 20, 2.5, 10, "tipoUno");
 		assertNotNull(atraccion1);
 	}
@@ -20,19 +24,19 @@ public class PromosTest {
 		Atraccion bosqueNegro = new Atraccion("Bosque Negro", 3, 4, 12, "Aventura");
 		
 		Porcentual promoPorcentual1 = new Porcentual("Aventura", moria, mordor, 20);
-		assertEquals("Llevá " + "Moria" + " + " + "Mordor" + " por "+ promoPorcentual1.calcularMonto() + "!", 
+		assertEquals("Lleva " + "Moria" + " + " + "Mordor" + " por "+ promoPorcentual1.getMonto() + "!", 
 				promoPorcentual1.getPromo());
-		assertEquals(28, promoPorcentual1.calcularMonto(), 0);
+		assertEquals(28, promoPorcentual1.getMonto(), 0);
 		
 		Porcentual promoPorcentual2 = new Porcentual("Aventura", mordor, bosqueNegro, 30);
-		assertEquals("Llevá " + "Mordor" + " + " + "Bosque Negro" +" por "+ promoPorcentual2.calcularMonto() 
+		assertEquals("Lleva " + "Mordor" + " + " + "Bosque Negro" +" por "+ promoPorcentual2.getMonto() 
 				+ "!", promoPorcentual2.getPromo());
-		assertEquals(20, promoPorcentual2.calcularMonto(), 0);
+		assertEquals(20, promoPorcentual2.getMonto(), 0);
 	
 		Porcentual promoPorcentual3 = new Porcentual("Aventura", moria, bosqueNegro, 25);
-		assertEquals("Llevá " + "Moria" + " + " + "Bosque Negro" + " por "+ promoPorcentual3.calcularMonto() 
+		assertEquals("Lleva " + "Moria" + " + " + "Bosque Negro" + " por "+ promoPorcentual3.getMonto() 
 				+ "!", promoPorcentual3.getPromo());
-		assertEquals(10, promoPorcentual3.calcularMonto(), 0); 
+		assertEquals(10, promoPorcentual3.getMonto(), 0); 
 	}
 
 	@Test
@@ -41,9 +45,9 @@ public class PromosTest {
 		Atraccion lothlorien = new Atraccion("Lothlorien", 35, 1, 30, "Degustacion");
 		
 		Absoluta promoAbsoluta1 = new Absoluta("Degustacion", laComarca, lothlorien, 35);
-		assertEquals("Lleva " + laComarca.nombre + " + " + lothlorien.nombre +" por "+ promoAbsoluta1.monto + "!", 
+		assertEquals("Lleva " + laComarca.getNombre() + " + " + lothlorien.getNombre() +" por "+ promoAbsoluta1.getMonto() + "!", 
 						promoAbsoluta1.getPromo());
-		assertEquals(35, promoAbsoluta1.calcularMonto(), 0);
+		assertEquals(35, promoAbsoluta1.getMonto(), 0);
 	}
 	
 	@Test
@@ -53,8 +57,8 @@ public class PromosTest {
 		Atraccion erebor = new Atraccion("Erebor", 12, 3, 32, "Paisajes");
 		
 		AxB promoAxB1 = new AxB("Paisajes", minas, abismo, erebor);
-		assertEquals(10, promoAxB1.calcularMonto(), 0);
-		assertEquals("Lleva " + minas.nombre + " + " + abismo.nombre +" por "+ promoAxB1.calcularMonto() + " y " + erebor.nombre + " es gratis!", promoAxB1.getPromo());
+		assertEquals(10, promoAxB1.getMonto(), 0);
+		assertEquals("Lleva " + minas.getNombre() + " + " + abismo.getNombre() +" por "+ promoAxB1.getMonto() + " y " + erebor.getNombre() + " es gratis!", promoAxB1.getPromo());
 	}
 
 }

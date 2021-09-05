@@ -67,5 +67,8 @@ public class LeeAtracciones {
 				}
 			}
 		}
+	System.out.println(actiAventura);
+	System.out.println(actiDegustacion);
+	System.out.println(actiPaisaje);
 	}
 }
