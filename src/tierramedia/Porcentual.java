@@ -1,6 +1,6 @@
 package tierramedia;
 
-public class Porcentual extends Promos{
+public class Porcentual extends Promocion{
 	protected String tipoAtraccion;
 	protected int descuento;
 	protected double monto;

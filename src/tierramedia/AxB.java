@@ -1,6 +1,6 @@
 package tierramedia;
 
-public class AxB extends Promos {
+public class AxB extends Promocion {
 	// Comprando A y B, C es gratis
 
 	@Override

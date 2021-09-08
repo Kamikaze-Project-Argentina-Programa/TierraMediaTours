@@ -7,7 +7,7 @@ import java.util.List;
 
 public class LeePromos {
 	protected static List<String> promoX = new ArrayList<String>();
-	protected static List<List<String>> listaPromos = new ArrayList<>();
+	protected static ArrayList<List<String>> listaPromos = new ArrayList<>();
 	protected static ArrayList<List<String>> prPorcentual;
 	protected static ArrayList<List<String>> prAbsoluta;
 	protected static ArrayList<List<String>> prAxB;
@@ -65,9 +65,6 @@ public class LeePromos {
 				}
 			}
 		}
-		System.out.println(getPrAbsoluta());
-		System.out.println(getPrAxB());
-		System.out.println(getPrPorcentual());
 	}
 	
 	protected static ArrayList<List<String>> getPrPorcentual() {

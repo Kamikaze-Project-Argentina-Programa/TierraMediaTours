@@ -5,15 +5,15 @@ public class TMApp {
 	public static void main(String[] args) {
 
 		//LeeUsuarios.leeUsuarios();
-		System.out.println("Lista Promos------------------------");
-		Promos.ordenarListasdePromos();
+		//System.out.println("Lista Promocion------------------------");
+		Promocion.ordenarListasdePromos();
 
-		System.out.println("Lista Atracciones------------------------");
+		//System.out.println("Lista Atracciones------------------------");
 		Atraccion.ordenarAtraccionesPorTipo();
 		//for (Usuarios usuario : LeeUsuarios.getListaUsuarios()) {
 			//Usuarios.darBienvenida(usuario);
 			
-			//Promos.ofrecerPromo(usuario.atraccion);
+			//Promocion.ofrecerPromo(usuario.atraccion);
 			/*ya tengo actividades separadas por tipo
 			hay que ver como le pedimos al constructor 
 			de promos que del nombre de la promo en el string
@@ -21,7 +21,7 @@ public class TMApp {
 			
 		//}
 
-		Promos.crearPromosPorTipo(LeePromos.getPrPorcentual());		
-		
+		Promocion.crearPromocion(LeePromos.getListaPromos(),LeeAtracciones.getListaActividades());		
+		System.out.println(Promocion.getListaDePromos());
 	}
 }

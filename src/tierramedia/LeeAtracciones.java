@@ -2,10 +2,9 @@ package tierramedia;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class LeeAtracciones {
-	protected static List<Atraccion> listaActividades = new ArrayList<Atraccion>();
+	protected static ArrayList<Atraccion> listaActividades = new ArrayList<Atraccion>();
 	protected static ArrayList<Atraccion> actiAventura;
 	protected static ArrayList<Atraccion> actiDegustacion;
 	protected static ArrayList<Atraccion> actiPaisaje;
@@ -44,7 +43,7 @@ public class LeeAtracciones {
 		}
 	}
 
-	protected static List<Atraccion> getListaActividades() {
+	protected static ArrayList<Atraccion> getListaActividades() {
 		return listaActividades;
 	}
 
@@ -67,8 +66,5 @@ public class LeeAtracciones {
 				}
 			}
 		}
-	System.out.println(actiAventura);
-	System.out.println(actiDegustacion);
-	System.out.println(actiPaisaje);
 	}
 }

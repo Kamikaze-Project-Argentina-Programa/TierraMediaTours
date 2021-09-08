@@ -1,6 +1,6 @@
 package tierramedia;
 
-public class Absoluta extends Promos {
+public class Absoluta extends Promocion {
 	@Override
 	public String toString() {
 		return "Absoluta [tipoAtraccion=" + tipoAtraccion + ", monto=" + monto + ", atraccion1=" + atraccion1
