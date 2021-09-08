@@ -41,6 +41,7 @@ public abstract class Promos {
 				if (tipoActPromo.equalsIgnoreCase(TipoAtraccion.AVENTURA.name())) {
 					System.out.println(tipoActPromo + " True");
 
+<<<<<<< HEAD
 					for (int j = 0; j < promo.size(); j++) {
 						String paramActividad = promo.get(j);
 
@@ -78,6 +79,45 @@ public abstract class Promos {
 							System.out.println(tipoActPromo + " True");
 
 							for (int j = 0; j < promo.size(); j++) {
+=======
+					for (int j = 0; j > promo.size(); j++) {
+						String paramActividad = promo.get(j);
+
+						for (Atraccion atrc : listaAtracciones) {
+							if (paramActividad.equals(atrc.getNombre())) {
+								atraccionesDelaPromo.add(atrc);
+								System.out.println("Agrega atraccion" + atraccionesDelaPromo);
+
+							}
+							int monto = Integer.parseInt(promo.get(4));
+							Porcentual promoPorcentual = new Porcentual(tipoActPromo, atraccionesDelaPromo.get(0),
+									atraccionesDelaPromo.get(1), monto);
+							List<Porcentual> listaPorcentuales = new ArrayList<Porcentual>();
+							listaPorcentuales.add(promoPorcentual);
+							System.out.println("Agrega promo" + listaPorcentuales);
+						}
+					}
+
+				} else {
+					if (tipoActPromo.equalsIgnoreCase(TipoAtraccion.DEGUSTACION.name())) {
+						System.out.println(tipoActPromo + " True");
+
+						for (int j = 0; j > promo.size(); j++) {
+							String paramActividad = promo.get(j);
+
+							for (Atraccion atrc : listaAtracciones) {
+								if (paramActividad.equals(atrc.getNombre())) {
+									atraccionesDelaPromo.add(atrc);
+									System.out.println("Agrega atraccion" + atraccionesDelaPromo);
+								}
+							}
+						} // hasa aca llega el for
+					} else {
+						if (tipoActPromo.equalsIgnoreCase(TipoAtraccion.PAISAJE.name())) {
+							System.out.println(tipoActPromo + " True");
+
+							for (int j = 0; j > promo.size(); j++) {
+>>>>>>> branch 'main' of https://github.com/Kamikaze-Project-Argentina-Programa/TierraMediaTours.git
 								String paramActividad = promo.get(j);
 
 								for (Atraccion atrc : listaAtracciones) {
