@@ -15,9 +15,16 @@ public class Porcentual extends Promocion{
 		this.atraccion2=atraccion2;
 	}
 	
+	@Override
 	public String getPromo() {
-		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.monto + "!";
+		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + " monedas!";
 	}
+	
+	@Override
+	public String getTipo() {
+		return tipoAtraccion;
+	}
+	
 	@Override
 	protected double calcularMonto() {
 		this.monto = Math.round((atraccion1.monto + atraccion2.monto) * (100 - descuento)/100);	
@@ -26,8 +33,8 @@ public class Porcentual extends Promocion{
 
 	@Override
 	public String toString() {
-		return "Porcentual [tipoAtraccion=" + tipoAtraccion + ", descuento=" + descuento + ", monto=" + monto
-				+ ", atraccion1=" + atraccion1 + ", atraccion2=" + atraccion2 + "]";
+		return "Promo Porcentual [tipo = " + tipoAtraccion + ", descuento= " + descuento + " Porciento , monto final =" + this.getMonto()
+				+ atraccion1.getNombre() + " + " + atraccion2.getNombre() + "]";
 	}
 	
 	

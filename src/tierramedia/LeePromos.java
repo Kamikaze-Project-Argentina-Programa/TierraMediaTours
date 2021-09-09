@@ -43,40 +43,8 @@ public class LeePromos {
 		}
 	}
 
-	protected static List<List<String>> getListaPromos() {
+	protected static ArrayList<List<String>> getListaPromos() {
 		return listaPromos;
-	}
-
-	public static void ordenaTipoPromos() {
-		prPorcentual = new ArrayList<List<String>>();
-		prAbsoluta = new ArrayList<List<String>>();
-		prAxB = new ArrayList<List<String>>();
-
-		for (List<String> promo : getListaPromos()) {
-			if (promo.get(0).equals("Descuento")) {
-				prPorcentual.add(promo);
-			} else {
-				if (promo.get(0).equals("Final")) {
-					prAbsoluta.add(promo);
-				} else {
-					if (promo.get(0).equals("Combo")) {
-						prAxB.add(promo);
-					}
-				}
-			}
-		}
-	}
-	
-	protected static ArrayList<List<String>> getPrPorcentual() {
-		return LeePromos.prPorcentual;
-	}
-
-	protected static ArrayList<List<String>> getPrAbsoluta() {
-		return LeePromos.prAbsoluta;
-	}
-
-	protected static ArrayList<List<String>> getPrAxB() {
-		return LeePromos.prAxB;
 	}
 
 }

@@ -3,7 +3,7 @@ package tierramedia;
 public class Absoluta extends Promocion {
 	@Override
 	public String toString() {
-		return "Absoluta [tipoAtraccion=" + tipoAtraccion + ", monto=" + monto + ", atraccion1=" + atraccion1
+		return "Promo Absoluta [tipo =" + tipoAtraccion + ", monto =" + this.getMonto() + ", atraccion 1=" + atraccion1
 				+ ", atraccion2=" + atraccion2 + "]";
 	}
 	protected String tipoAtraccion;
@@ -19,9 +19,16 @@ public class Absoluta extends Promocion {
 		this.atraccion2=atraccion2;
 	}
 	
+	@Override
 	public String getPromo() {
-		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + "!";
+		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + " monedas!";
 	}
+	
+	@Override
+	public String getTipo() {
+		return tipoAtraccion;
+	}
+	
 	@Override
 	protected double calcularMonto() {
 		return this.monto;

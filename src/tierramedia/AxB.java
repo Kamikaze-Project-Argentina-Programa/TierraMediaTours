@@ -5,14 +5,12 @@ public class AxB extends Promocion {
 
 	@Override
 	public String toString() {
-		return "AxB [tipoAtraccion=" + tipoAtraccion + ", descuento=" + descuento + ", monto=" + monto + ", atraccion1="
-				+ atraccion1 + ", atraccion2=" + atraccion2 + ", atraccion3=" + atraccion3 + "]";
+		return "Promo AxB [tipo = " + tipoAtraccion + ", monto= " + this.getMonto() + ", atraccion 1: "
+				+ atraccion1.getNombre() + ", atraccion 2: " + atraccion2.getNombre() + ", de regalo: " + atraccion3.getNombre() + "]";
 	}
 
 	protected String tipoAtraccion;
-	protected int descuento;
 	protected double monto;
-	
 	protected Atraccion atraccion1;
 	protected Atraccion atraccion2;
 	protected Atraccion atraccion3;
@@ -25,14 +23,22 @@ public class AxB extends Promocion {
 		this.atraccion3 = atraccion3;
 	}
 
+	@Override
 	public String getPromo() {
-		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() + " por " + this.monto + " y " + atraccion3.getNombre() + " es gratis!";
+		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() + " por " + this.getMonto() + " monedas y " + atraccion3.getNombre() + " es gratis!";
 	}
+
+	@Override
+	public String getTipo() {
+		return tipoAtraccion;
+	}
+
 
 	@Override
 	protected double calcularMonto() {
 		this.monto = this.atraccion1.getMonto() + this.atraccion2.getMonto();
 		return this.monto;
 	}
+	
 
 }
