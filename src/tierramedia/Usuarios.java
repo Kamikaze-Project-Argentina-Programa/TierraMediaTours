@@ -32,7 +32,7 @@ protected void setTiempo(double tiempo) {
 /*restar tiempo cuando hace una atracción:
 
 protected void usarTiempo(double tiempoUsado) {
-	tiempoUsado = Atraccion.tiempo; 
+	tiempoUsado = Atraccion.getTiempo; 
 	this.tiempo =- tiempoUsado;
 }
 */
