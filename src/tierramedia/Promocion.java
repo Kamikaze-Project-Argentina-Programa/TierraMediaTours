@@ -8,6 +8,8 @@ public abstract class Promocion {
 	public String tipoAtraccion;
 	public double monto;
 	public static ArrayList<Promocion> listaDePromos;
+	public String respuesta;
+	public static ArrayList<Promocion> listaDePromosAceptadas;
 
 	protected Promocion() {
 		super();
@@ -126,6 +128,7 @@ public abstract class Promocion {
 	public static void ofrecerPromo(String tipoAtraccion) throws IOException {
 		
 		ArrayList<Promocion> promos = Promocion.getListaDePromos();
+		ArrayList<Promocion> promosAceptadas = Promocion.getListaDePromosAceptadas();
 		
 		for (Promocion unaPromo : promos) {
 			String tipo = unaPromo.getTipo();
@@ -135,12 +138,23 @@ public abstract class Promocion {
 				System.out.println("¿Te gustaría adquirir este paquete?");
 				System.out.println("");
 				
-				//metodo que pregunte si desea adquirir:
-			
+			//metodo que pregunte si desea adquirir y que si la respuesta es sí que lo guarde en otra lista que la app mostraría
+			/* 
+			public Boolean aceptaPromo(String respuesta) {
+				respuesta = false;
+				this.respuesta = respuesta.toLowerCase();
+				if (respuesta = "si") {
+					aceptaPromo = true;
+					listaDePromosAceptadas.add(unaPromo);
+				}
+			}
+			*/
 				//entrada por pantalla
 			}
-			
 		}
-
+	}
+	
+	public static ArrayList<Promocion> getListaDePromosAceptadas() {
+		return listaDePromosAceptadas;
 	}
 }
