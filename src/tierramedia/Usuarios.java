@@ -32,10 +32,10 @@ protected void setTiempo(double tiempo) {
 
 
 protected static void darBienvenida(Usuarios usuario) {
-	System.out.println("Bienvenidx " + usuario.getNombre() + "!!");
-	System.out.println("¿Te gustan las atracciones de tipo " + usuario.getTipo() + "?");
-	System.out.println("¡Entonces tenemos estas promos para vos!");
-	System.out.println("-------------");
+	System.out.println("Bienvenidx " + usuario.getNombre() + "!");
+	System.out.println("Â¿Te gustan las atracciones de " + usuario.getTipo() + "?");
+	System.out.println("Â¡Entonces estas promos son para vos! Â¡Esperamos que te gusten tanto como a nosotros!");
+	System.out.println("- - - - - - -");
 }
 
 
