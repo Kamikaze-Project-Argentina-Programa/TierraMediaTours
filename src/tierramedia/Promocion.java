@@ -135,7 +135,7 @@ public abstract class Promocion {
 			if (tipo.equalsIgnoreCase(tipoAtraccion)) {
 				System.out.println(unaPromo.getPromo());
 				System.out.println("");
-				System.out.println("¿Te gustaría adquirir este paquete?");
+				System.out.println("¿Te gustaría adquirir este paquete? si /no ");
 				System.out.println("");
 				
 			//metodo que pregunte si desea adquirir y que si la respuesta es sí que lo guarde en otra lista que la app mostraría
