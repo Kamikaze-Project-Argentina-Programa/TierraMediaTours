@@ -23,6 +23,7 @@ public class TMApp {
 			
 			//TODO un metodo que guarde las promos que se aceptan y luego uno que las imprima 
 			
+			//System.out.println(listaDePromosAceptadas);       -idea de prueba-
 		}
 
 				
