@@ -27,17 +27,21 @@ protected double getTiempo() {
 }
 protected void setTiempo(double tiempo) {
 	this.tiempo = tiempo;
-	/// va a faltar restar cuando haga algo
 }
 
+/*restar tiempo cuando hace una atracción:
 
+protected void usarTiempo(double tiempoUsado) {
+	tiempoUsado = Atraccion.tiempo; 
+	this.tiempo =- tiempoUsado;
+}
+*/
 protected static void darBienvenida(Usuarios usuario) {
 	System.out.println("Bienvenidx " + usuario.getNombre() + "!");
 	System.out.println("¿Te gustan las atracciones de " + usuario.getTipo() + "?");
 	System.out.println("¡Entonces estas promos son para vos! ¡Esperamos que te gusten tanto como a nosotros!");
 	System.out.println("- - - - - - -");
 }
-
 
 public String getNombre() {
 	return nombre;
