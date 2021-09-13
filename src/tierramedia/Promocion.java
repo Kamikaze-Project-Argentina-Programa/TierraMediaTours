@@ -132,10 +132,11 @@ public abstract class Promocion {
 			if (tipo.equalsIgnoreCase(tipoAtraccion)) {
 				System.out.println(unaPromo.getPromo());
 				System.out.println("");
-				System.out.println("¿Te gustaría adquirir este paquete?");
+				System.out.println("Â¿Te gustarÃ­a adquirir este paquete?");
 				System.out.println("");
 				
-				//metodo que pregunte si desea adquirir
+				//metodo que pregunte si desea adquirir:
+			
 				//entrada por pantalla
 			}
 			
