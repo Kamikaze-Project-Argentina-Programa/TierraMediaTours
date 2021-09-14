@@ -36,8 +36,6 @@ public class Absoluta extends Promocion {
 
 	@Override
 	public Boolean puedeComprar(Usuario usuario) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }
