@@ -21,7 +21,7 @@ public class Absoluta extends Promocion {
 	
 	@Override
 	public String getPromo() {
-		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + " monedas!";
+		return atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + " monedas!";
 	}
 	
 	@Override
@@ -34,4 +34,10 @@ public class Absoluta extends Promocion {
 		return this.monto;
 	}
 
+	@Override
+	public Boolean puedeComprar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

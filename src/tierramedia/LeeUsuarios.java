@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LeeUsuarios {
 	
-	protected static List<Usuarios> listaUsuarios = new ArrayList<>();
+	protected static List<Usuario> listaUsuarios = new ArrayList<>();
 
 	protected static void leeUsuarios() {
 
@@ -24,7 +24,7 @@ public class LeeUsuarios {
 			while ((linea != null)) {
 				
 				String[] perfil = linea.split(",");
-				Usuarios usuario = new Usuarios(perfil[0], perfil[1], Integer.parseInt(perfil[2]), Double.parseDouble(perfil[3]));
+				Usuario usuario = new Usuario(perfil[0], perfil[1], Integer.parseInt(perfil[2]), Double.parseDouble(perfil[3]));
 				listaUsuarios.add(usuario);
 				linea = br.readLine();
 			}
@@ -43,7 +43,7 @@ public class LeeUsuarios {
 		}	
 	}
 
-	protected static List<Usuarios> getListaUsuarios() {
+	protected static List<Usuario> getListaUsuarios() {
 		return listaUsuarios;
 	}
 

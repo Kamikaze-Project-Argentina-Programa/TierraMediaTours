@@ -17,7 +17,7 @@ public class Porcentual extends Promocion{
 	
 	@Override
 	public String getPromo() {
-		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + " monedas!";
+		return atraccion1.getNombre() + " + " + atraccion2.getNombre() +" por "+ this.getMonto() + " monedas!";
 	}
 	
 	@Override
@@ -35,6 +35,12 @@ public class Porcentual extends Promocion{
 	public String toString() {
 		return "Promo Porcentual [tipo = " + tipoAtraccion + ", descuento= " + descuento + " Porciento , monto final =" + this.getMonto()
 				+ atraccion1.getNombre() + " + " + atraccion2.getNombre() + "]";
+	}
+
+	@Override
+	public Boolean puedeComprar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

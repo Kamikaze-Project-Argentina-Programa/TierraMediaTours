@@ -25,7 +25,7 @@ public class AxB extends Promocion {
 
 	@Override
 	public String getPromo() {
-		return "Lleva " + atraccion1.getNombre() + " + " + atraccion2.getNombre() + " por " + this.getMonto() + " monedas y " + atraccion3.getNombre() + " es gratis!";
+		return atraccion1.getNombre() + " + " + atraccion2.getNombre() + " por " + this.getMonto() + " monedas y " + atraccion3.getNombre() + " es gratis!";
 	}
 
 	@Override
@@ -40,5 +40,10 @@ public class AxB extends Promocion {
 		return this.monto;
 	}
 	
-
+	@Override
+	public Boolean puedeComprar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

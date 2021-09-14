@@ -11,21 +11,28 @@ public class TMApp {
 		Atraccion.ordenarAtraccionesPorTipo();
 		
 		Promocion.armarListasdePromos();
-		System.out.println(Promocion.getListaDePromos());
+		//System.out.println(Promocion.getListaDePromos());
 		
 		
-		for (Usuarios usuario : LeeUsuarios.getListaUsuarios()) {
-			Usuarios.darBienvenida(usuario);
+		for (Usuario usuario : LeeUsuarios.getListaUsuarios()) {
+			Usuario.darBienvenida(usuario);
 			
-			Promocion.ofrecerPromo(usuario.tipoAtraccion); 
+			Promocion.ofrecePromociones(usuario.tipoAtraccion); 
+			// Metodo que resta a Usuario lo que consume cada pack
+			//Si le queda tiempo y dinero entonces
+			//Metodo que ofrece otras atracciones individuales que no haya comprado ya
 			
-			//FIXME llego a ofrecer promos :) 
 			
-			//TODO un metodo que guarde las promos que se aceptan y luego uno que las imprima 
+			Atraccion.ofreceAtracciones(usuario.tipoAtraccion, usuario);
 			
-			//System.out.println(listaDePromosAceptadas);       -idea de prueba-
+			Atraccion.ofreceOtrasAtracciones(usuario);
+			
+			Usuario.imprimePromos();
+			Usuario.imprimeAtracciones();
 		}
 
 				
 	}
+
+	
 }
