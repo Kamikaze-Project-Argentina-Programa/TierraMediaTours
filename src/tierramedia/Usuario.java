@@ -11,8 +11,6 @@ public class Usuario {
 	public static ArrayList<Promocion> listaDePromosAceptadas = new ArrayList<Promocion>();
 	public static ArrayList<Atraccion> listaDeAtracAceptadas = new ArrayList<Atraccion>();
 
-	
-
 	public Usuario(String nombre, String tipo, int monedas, double tiempo) {
 		super();
 		this.nombre = nombre;
@@ -38,14 +36,13 @@ public class Usuario {
 	protected void setTiempo(double tiempo) {
 		this.tiempo = tiempo;
 	}
-
+	
 //restar tiempo cuando hace una atracción:
-
 	public void gastarTiempo(Atraccion atraccion) {
 		double tiempoUsado = atraccion.getTiempo();
 		this.tiempo -= tiempoUsado;
 	}
-
+//restar monedas cuando hace una atracción:
 	public void gastarMonedas(Atraccion atraccion) {
 		double monedasUsadas = atraccion.getMonto();
 		this.monedas -= monedasUsadas;
@@ -110,5 +107,4 @@ public class Usuario {
 			System.out.println(act.getNombre());
 		}
 	}
-
 }
