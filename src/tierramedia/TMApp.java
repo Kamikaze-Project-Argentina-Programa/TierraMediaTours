@@ -10,7 +10,7 @@ public class TMApp {
 
 		Atraccion.ordenarAtraccionesPorTipo();
 		
-		Promocion.armarListasdePromos();
+		
 		//System.out.println(Promocion.getListaDePromos());
 		
 		

@@ -51,7 +51,7 @@ public class Usuario {
 		this.monedas -= monedasUsadas;
 	}
 
-	protected static void darBienvenida(Usuario usuario) {
+	public static void darBienvenida(Usuario usuario) {
 		System.out.println("");
 		System.out.println("Bienvenid@ " + usuario.getNombre() + "!");
 		System.out.println("Te gustan las atracciones de " + usuario.getTipo() + "?");

@@ -4,10 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class LeeAtracciones {
-	protected static ArrayList<Atraccion> listaActividades = new ArrayList<Atraccion>();
-	protected static ArrayList<Atraccion> actiAventura;
-	protected static ArrayList<Atraccion> actiDegustacion;
-	protected static ArrayList<Atraccion> actiPaisaje;
+	protected static ArrayList<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 
 	public static void leeAtracciones() {
 		FileReader fr = null;
@@ -24,7 +21,7 @@ public class LeeAtracciones {
 				String[] actividad = linea.split(",");
 				Atraccion atraccion = new Atraccion(actividad[0], Integer.parseInt(actividad[1]),
 						Double.parseDouble(actividad[2]), Integer.parseInt(actividad[3]), actividad[4]);
-				listaActividades.add(atraccion);
+				listaAtracciones.add(atraccion);
 
 				linea = br.readLine();
 			}
@@ -43,28 +40,8 @@ public class LeeAtracciones {
 		}
 	}
 
-	protected static ArrayList<Atraccion> getListaActividades() {
-		return listaActividades;
+	public static ArrayList<Atraccion> getListaAtracciones() {
+		return listaAtracciones;
 	}
 
-	
-	public static void ordenaTipoAtracciones() {
-		actiAventura = new ArrayList<Atraccion>();
-		actiDegustacion = new ArrayList<Atraccion>();
-		actiPaisaje = new ArrayList<Atraccion>();
-
-		for (Atraccion act : getListaActividades()) {
-			if (act.getTipo().equalsIgnoreCase("Aventura")) {
-				actiAventura.add(act);
-			} else {
-				if (act.getTipo().equalsIgnoreCase("Degustacion")) {
-					actiDegustacion.add(act);
-				} else {
-					if (act.getTipo().equalsIgnoreCase("Paisaje")) {
-						actiPaisaje.add(act);
-					}
-				}
-			}
-		}
-	}
 }

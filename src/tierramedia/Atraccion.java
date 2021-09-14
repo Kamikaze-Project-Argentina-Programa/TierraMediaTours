@@ -51,22 +51,11 @@ public class Atraccion implements Adquirible {
 
 	protected static void ordenarAtraccionesPorTipo() {
 		LeeAtracciones.leeAtracciones();
-		LeeAtracciones.getListaActividades();
-		LeeAtracciones.ordenaTipoAtracciones();
-		// genera tres listas
+		LeeAtracciones.getListaAtracciones();
+		Promocion.armarListasdePromos();
 	}
 
-	protected static ArrayList<Atraccion> getActiAventura() {
-		return LeeAtracciones.actiAventura;
-	}
-
-	protected static ArrayList<Atraccion> getActiDegustacion() {
-		return LeeAtracciones.actiDegustacion;
-	}
-
-	protected static ArrayList<Atraccion> getActiPaisaje() {
-		return LeeAtracciones.actiPaisaje;
-	}
+		
 
 	public static void aceptaAtraccion(Atraccion unaAtraccion) {
 
@@ -95,7 +84,7 @@ public class Atraccion implements Adquirible {
 	}
 
 	public static void ofreceAtracciones(String tipoAtraccion, Usuario usuario ) throws IOException {
-		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaActividades();
+		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaAtracciones();
 		System.out.println("Te interesa alguna de las siguientes Atracciones?");// iria dentro de ese metodo
 		for (Atraccion unaAtraccion : atracciones) {
 			String tipo = unaAtraccion.getTipo();
@@ -108,7 +97,7 @@ public class Atraccion implements Adquirible {
 	}
 	
 	public static void ofreceOtrasAtracciones(Usuario usuario) {
-		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaActividades();
+		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaAtracciones();
 		System.out.println("Te interesa alguna de las siguientes Atracciones?");// iria dentro de ese metodo
 		for (Atraccion unaAtraccion : atracciones) {
 			sugiereUnaAtraccion(usuario, unaAtraccion);
