@@ -33,7 +33,6 @@ public class AxB extends Promocion {
 		return tipoAtraccion;
 	}
 
-
 	@Override
 	protected double calcularMonto() {
 		this.monto = this.atraccion1.getMonto() + this.atraccion2.getMonto();
@@ -42,8 +41,6 @@ public class AxB extends Promocion {
 	
 	@Override
 	public Boolean puedeComprar(Usuario usuario) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }
