@@ -19,6 +19,8 @@ public abstract class Promocion implements Adquirible {
 	abstract protected double calcularMonto();
 
 	abstract public String getPromo();
+	
+	public abstract double getTiempo() ;
 
 	public double getMonto() {
 		return this.calcularMonto();

@@ -27,8 +27,15 @@ public class TMApp {
 			
 			Atraccion.ofreceOtrasAtracciones(usuario);
 			
+			// para ver que estoy ofreciendo
 			Usuario.imprimePromos();
 			Usuario.imprimeAtracciones();
+			
+			Itinerario.imprimeItinerario(usuario);
+			
+			System.out.println("");
+			System.out.println("Gracias por elegir nuestros servicios, "+ usuario.getNombre() +"!" );
+			
 		}
 
 				

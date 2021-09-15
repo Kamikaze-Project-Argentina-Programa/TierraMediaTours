@@ -95,16 +95,18 @@ public class Usuario {
 	}
 
 	public static void imprimePromos() {
-		System.out.println("Estas llevando:");
+		System.out.println("Estas llevando estas Promos:");
 		for (Promocion promo : getListaDePromosAceptadas()) {
 			System.out.println(promo.getPromo());
+			
 		}
 	}
 	
 	public static void imprimeAtracciones() {
-		System.out.println("Estas llevando:");
+		System.out.println("Ademas llevas estas atracciones individuales:");
 		for (Atraccion act : getListaDeAtracAceptadas()) {
 			System.out.println(act.getNombre());
+			
 		}
 	}
 }

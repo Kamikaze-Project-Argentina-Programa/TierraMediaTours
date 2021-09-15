@@ -106,9 +106,8 @@ public class Atraccion implements Adquirible {
 
 	public static void sugiereUnaAtraccion(Usuario usuario, Atraccion unaAtraccion) {
 		if (unaAtraccion.puedeComprar(usuario)) {
-		System.out.println("");
 		System.out.println("*-*-*-*-*-*-*-*-*");
-		System.out.println("Lleva " + unaAtraccion.getNombre());
+		System.out.println("Lleva " + unaAtraccion.getNombre() + " Por " + unaAtraccion.getMonto() + "  Monedas" );
 		System.out.println("*-*-*-*-*-*-*-*-*");
 		System.out.println("");
 		System.out.println("¿Te gustaria adquirir " + unaAtraccion.getNombre() + "? si / no ");

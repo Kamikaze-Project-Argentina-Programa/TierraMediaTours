@@ -14,6 +14,7 @@ public class AxB extends Promocion {
 	protected Atraccion atraccion1;
 	protected Atraccion atraccion2;
 	protected Atraccion atraccion3;
+	private Atraccion[] atraccionesEnLaPromo;
 
 	public AxB(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, Atraccion atraccion3) {
 		super();
@@ -21,6 +22,15 @@ public class AxB extends Promocion {
 		this.atraccion1 = atraccion1;
 		this.atraccion2 = atraccion2;
 		this.atraccion3 = atraccion3;
+		crealistaDeAtracciones();
+	}
+
+	private void crealistaDeAtracciones() {
+		atraccionesEnLaPromo = new Atraccion[] {this.atraccion1,this.atraccion2,this.atraccion3};
+	}
+	
+	public Atraccion[] getAtraccionesEnLaPromo() {
+		return atraccionesEnLaPromo;
 	}
 
 	@Override
@@ -38,6 +48,15 @@ public class AxB extends Promocion {
 		this.monto = this.atraccion1.getMonto() + this.atraccion2.getMonto();
 		return this.monto;
 	}
+	
+	@Override
+	public double getTiempo() {
+		double tiempoRequerido = 0;
+		for (int i = 0; i < atraccionesEnLaPromo.length; i++ ) {
+			tiempoRequerido =+ atraccionesEnLaPromo[i].getTiempo();
+			}
+		return tiempoRequerido;
+		}
 	
 	@Override
 	public Boolean puedeComprar(Usuario usuario) {
