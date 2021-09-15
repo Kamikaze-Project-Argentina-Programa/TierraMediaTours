@@ -10,7 +10,7 @@ public class PrintItinerarios {
 		
 		PrintWriter salida = new PrintWriter(new FileWriter("TMFiles/itinerarios.txt"));
 	     
-	    //salida.println(LeeUsuarios.leyendo()); //hay que decir que quiero que imprima
+	    salida.println(); //hay que decir que quiero que imprima
 	
 		salida.close(); 
 

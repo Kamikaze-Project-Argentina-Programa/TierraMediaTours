@@ -1,4 +1,4 @@
-package tierramedia;
+ package tierramedia;
 
 import java.io.IOException;
 
@@ -10,20 +10,12 @@ public class TMApp {
 
 		Atraccion.ordenarAtraccionesPorTipo();
 		
-		
-		//System.out.println(Promocion.getListaDePromos());
-		
-		
 		for (Usuario usuario : LeeUsuarios.getListaUsuarios()) {
 			Usuario.darBienvenida(usuario);
 			
-			Promocion.ofrecePromociones(usuario.tipoAtraccion); 
-			// Metodo que resta a Usuario lo que consume cada pack
-			//Si le queda tiempo y dinero entonces
-			//Metodo que ofrece otras atracciones individuales que no haya comprado ya
+			Promocion.ofrecePromociones(usuario, Usuario.tipoAtraccion); 
 			
-			
-			Atraccion.ofreceAtracciones(usuario.tipoAtraccion, usuario);
+			Atraccion.ofreceAtraccionesPreferidas(usuario, Usuario.tipoAtraccion);
 			
 			Atraccion.ofreceOtrasAtracciones(usuario);
 			

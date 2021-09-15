@@ -1,18 +1,16 @@
 package tierramedia;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Atraccion implements Adquirible {
-	private static boolean aceptada;
-	protected String nombre;
-	protected double monto;
-	protected double tiempo;
-	protected int cupo;
-	protected String tipo;
+	private boolean estado;
+	private String nombre;
+	public double monto;
+	private double tiempo;
+	private int cupo;
+	private String tipo;
 
 	public Atraccion(String nombre, double monto, double tiempo, int cupo, String tipoAtraccion) {
 		super();
@@ -55,90 +53,76 @@ public class Atraccion implements Adquirible {
 		Promocion.armarListasdePromos();
 	}
 
-		
+	public static void sugiereUnaAtraccion(Usuario usuario, Atraccion unaAtraccion) {
 
-	public static void aceptaAtraccion(Atraccion unaAtraccion) {
+		if (unaAtraccion.puedeComprarAtraccIndividual(usuario)) {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("");
+			System.out.println("*-*-*-*-*-*-*-*-*");
+			System.out.println("Lleva " + unaAtraccion.getNombre());
+			System.out.println("*-*-*-*-*-*-*-*-*");
+			System.out.println("");
+			System.out.println("¿Te gustaria adquirir " + unaAtraccion.getNombre() + "? si / no ");
 
-		ArrayList<Atraccion> atraccAceptadas = Usuario.listaDeAtracAceptadas;
-		setAceptada(false);
+			Usuario.aceptaAtraccion(unaAtraccion);
 
-		try {
-			String respuesta = br.readLine();
-			if (respuesta.equalsIgnoreCase("si")) {
-				setAceptada(true);
-				atraccAceptadas.add(unaAtraccion);
-				System.out.println("Aceptaste: " + unaAtraccion.getNombre());
-				unaAtraccion.bajarCupo();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			System.out.println("Tenes " + usuario.getTiempo() + " horas disponibles y tu presupuesto es de "
+					+ usuario.getMonedas() + " Monedas.");
+			System.out.println("");
 
-		finally {
-			
-			System.out.println("Gracias por tu respuesta!");
-			System.out.println();
 		}
 	}
 
-	public static void ofreceAtracciones(String tipoAtraccion, Usuario usuario ) throws IOException {
+	public static void ofreceAtraccionesPreferidas(Usuario usuario, String tipoAtraccion) throws IOException {
 		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaAtracciones();
-		System.out.println("Te interesa alguna de las siguientes Atracciones?");// iria dentro de ese metodo
+
+		System.out.println("Te interesa alguna de las siguientes Atracciones?");
+
 		for (Atraccion unaAtraccion : atracciones) {
+
 			String tipo = unaAtraccion.getTipo();
+
 			if (tipo.equalsIgnoreCase(tipoAtraccion)) {
-				
+
 				sugiereUnaAtraccion(usuario, unaAtraccion);
 			}
 
 		}
 	}
-	
+
 	public static void ofreceOtrasAtracciones(Usuario usuario) {
 		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaAtracciones();
-		System.out.println("Te interesa alguna de las siguientes Atracciones?");// iria dentro de ese metodo
+
+		System.out.println("Tambien te podemos ofrecer estas Atracciones:");
+
 		for (Atraccion unaAtraccion : atracciones) {
+
 			sugiereUnaAtraccion(usuario, unaAtraccion);
 		}
 	}
 
-	public static void sugiereUnaAtraccion(Usuario usuario, Atraccion unaAtraccion) {
-		if (unaAtraccion.puedeComprar(usuario)) {
-		System.out.println("");
-		System.out.println("*-*-*-*-*-*-*-*-*");
-		System.out.println("Lleva " + unaAtraccion.getNombre());
-		System.out.println("*-*-*-*-*-*-*-*-*");
-		System.out.println("");
-		System.out.println("¿Te gustaria adquirir " + unaAtraccion.getNombre() + "? si / no ");
-		aceptaAtraccion(unaAtraccion);
-		System.out.println("");
-		
-		}
+	public boolean isAceptada() {
+		return estado;
 	}
 
-	public static boolean isAceptada() {
-		return aceptada;
+	public static void setAceptada(Atraccion atraccionAceptada, boolean estado) {
+		atraccionAceptada.estado = estado;
 	}
-
-	public static void setAceptada(boolean estado) {
-		Atraccion.aceptada = estado;
-	}
-
-	
-
-	
 
 	@Override
 	public Boolean puedeComprar(Usuario usuario) {
-		return ((!isAceptada())||cupo>0||usuario.getTiempo()>this.getTiempo()||usuario.getMonedas()>this.getMonto());
+		return (!this.isAceptada() && this.getCupo() > 0);
+	}
+
+	public Boolean puedeComprarAtraccIndividual(Usuario usuario) {
+		return (puedeComprar(usuario) && usuario.getTiempo() > this.getTiempo()
+				&& usuario.getMonedas() > this.getMonto());
 	}
 
 	protected void bajarCupo() {
 		this.cupo--;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(cupo, monto, nombre, tiempo, tipo);
@@ -158,6 +142,5 @@ public class Atraccion implements Adquirible {
 				&& Double.doubleToLongBits(tiempo) == Double.doubleToLongBits(other.tiempo)
 				&& Objects.equals(tipo, other.tipo);
 	}
-
 
 }

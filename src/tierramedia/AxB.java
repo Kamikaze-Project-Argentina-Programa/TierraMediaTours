@@ -14,6 +14,7 @@ public class AxB extends Promocion {
 	protected Atraccion atraccion1;
 	protected Atraccion atraccion2;
 	protected Atraccion atraccion3;
+	private Atraccion[] atraccionesEnLaPromo;
 
 	public AxB(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, Atraccion atraccion3) {
 		super();
@@ -21,6 +22,11 @@ public class AxB extends Promocion {
 		this.atraccion1 = atraccion1;
 		this.atraccion2 = atraccion2;
 		this.atraccion3 = atraccion3;
+		crealistaDeAtracciones();
+		}
+
+	private void crealistaDeAtracciones() {
+		atraccionesEnLaPromo = new Atraccion[] {this.atraccion1,this.atraccion2,this.atraccion3};
 	}
 
 	@Override
@@ -41,6 +47,22 @@ public class AxB extends Promocion {
 	
 	@Override
 	public Boolean puedeComprar(Usuario usuario) {
-		return null;
+		return (atraccionesEnLaPromo[0].puedeComprar(usuario)&&
+				atraccionesEnLaPromo[1].puedeComprar(usuario)&&
+				atraccionesEnLaPromo[2].puedeComprar(usuario));
 	}
+	
+	@Override
+	public Atraccion[] getAtracciones() {
+		return atraccionesEnLaPromo;
+	}
+
+	@Override
+	public double getTiempo() {
+		double tiempoRequerido = 0;
+		for (int i = 0; i < atraccionesEnLaPromo.length; i++ ) {
+			tiempoRequerido =+ atraccionesEnLaPromo[i].getTiempo();
+			}
+		return tiempoRequerido;
+		}
 }
