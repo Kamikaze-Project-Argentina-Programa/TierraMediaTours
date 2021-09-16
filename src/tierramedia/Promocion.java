@@ -12,15 +12,15 @@ public abstract class Promocion implements Adquirible {
 	public static ArrayList<Promocion> listaDePromos;
 	
 
-	protected Promocion() {
+	public Promocion() {
 		super();
 	}
 
-	abstract protected double calcularMonto();
+	abstract public double calcularMonto();
 
 	abstract public String getPromo();
 	
-	public abstract double getTiempo() ;
+	abstract public double getTiempo() ;
 
 	public double getMonto() {
 		return this.calcularMonto();

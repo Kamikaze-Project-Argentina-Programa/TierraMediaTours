@@ -44,7 +44,7 @@ public class AxB extends Promocion {
 	}
 
 	@Override
-	protected double calcularMonto() {
+	public double calcularMonto() {
 		this.monto = this.atraccion1.getMonto() + this.atraccion2.getMonto();
 		return this.monto;
 	}

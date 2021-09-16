@@ -40,7 +40,7 @@ public class Absoluta extends Promocion {
 	}
 	
 	@Override
-	protected double calcularMonto() {
+	public double calcularMonto() {
 		return this.monto;
 	}
 	
