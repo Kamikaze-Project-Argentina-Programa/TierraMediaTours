@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class LeePromos {
-	protected static List<String> unaPromo = new ArrayList<String>();
-	protected static ArrayList<List<String>> listaPromosParam = new ArrayList<>();
+	public static List<String> unaPromo = new ArrayList<String>();
+	public static ArrayList<List<String>> listaPromosParam = new ArrayList<>();
 	
 	
 	public static void leePromos() {

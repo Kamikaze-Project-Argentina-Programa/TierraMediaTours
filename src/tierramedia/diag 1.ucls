@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <enumeration id="1" language="java" name="tierramedia.TipoPromo" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/TipoPromo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="143" x="142" y="173"/>    
+    <position height="-1" width="-1" x="24" y="97"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,8 +12,8 @@
   </enumeration>  
   <class id="2" language="java" name="tierramedia.Promocion" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Promocion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="687" y="1078"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="369" width="231" x="500" y="337"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -21,8 +21,8 @@
   </class>  
   <class id="3" language="java" name="tierramedia.Atraccion" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Atraccion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="674" y="2004"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="499" width="246" x="479" y="1209"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -30,8 +30,8 @@
   </class>  
   <class id="4" language="java" name="tierramedia.AxB" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/AxB.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="233" x="118" y="1320"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="283" width="233" x="230" y="776"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -39,8 +39,8 @@
   </class>  
   <class id="5" language="java" name="tierramedia.LeePromos" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/LeePromos.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="474" y="652"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="210" width="487" x="368" y="90"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -48,8 +48,8 @@
   </class>  
   <class id="6" language="java" name="tierramedia.Porcentual" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Porcentual.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="227" x="391" y="1320"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="296" width="227" x="503" y="776"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="tierramedia.TMApp" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/TMApp.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="635" y="173"/>    
+    <position height="-1" width="-1" x="213" y="238"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <enumeration id="8" language="java" name="tierramedia.TipoAtraccion" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/TipoAtraccion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="215" y="386"/>    
+    <position height="-1" width="-1" x="188" y="97"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,8 +75,8 @@
   </enumeration>  
   <class id="9" language="java" name="tierramedia.Absoluta" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Absoluta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="219" x="658" y="1320"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="280" width="219" x="770" y="776"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -84,8 +84,8 @@
   </class>  
   <class id="10" language="java" name="tierramedia.Usuario" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Usuario.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="441" width="284" x="958" y="420"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="425" width="284" x="1029" y="405"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -93,8 +93,8 @@
   </class>  
   <class id="11" language="java" name="tierramedia.LeeUsuarios" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/LeeUsuarios.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="989" y="250"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="133" width="184" x="1074" y="195"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -102,8 +102,8 @@
   </class>  
   <class id="12" language="java" name="tierramedia.LeeAtracciones" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/LeeAtracciones.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1004" y="1635"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="140" width="240" x="747" y="1488"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="tierramedia.Itinerario" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Itinerario.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="1245" y="173"/>    
+    <position height="-1" width="-1" x="38" y="236"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,157 +120,165 @@
   </class>  
   <interface id="14" language="java" name="tierramedia.Adquirible" project="TierraMediaTours" 
     file="/TierraMediaTours/src/tierramedia/Adquirible.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="184" x="1174" y="2174"/>    
+    <position height="-1" width="-1" x="65" y="914"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <generalization id="15">    
+  <association id="15">    
+    <bendpoint x="377" y="1169"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="16" name="atraccion1">        
+        <position height="18" width="61" x="383" y="1168"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="1">        
+        <position height="16" width="23" x="449" y="1249"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="18">    
+    <bendpoint x="350" y="712"/>    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <association id="16">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="17" name="atraccion3">        
-        <position height="18" width="61" x="463" y="1804"/>      
-      </attribute>      
-      <multiplicity id="18" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="19">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="20" name="atraccion2">        
-        <position height="18" width="61" x="695" y="1658"/>      
-      </attribute>      
-      <multiplicity id="21" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="23" name="atraccion1">        
-        <position height="18" width="59" x="588" y="1696"/>      
-      </attribute>      
-      <multiplicity id="24" minimum="0" maximum="1">        
-        <position height="16" width="23" x="598" y="1686"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="25">    
-    <bendpoint x="1204" y="901"/>    
-    <bendpoint x="1195" y="1817"/>    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="26" name="listaDeAtracAceptadas">        
-        <position height="18" width="122" x="864" y="1941"/>      
+      <attribute id="20" name="listaDePromosAceptadas">        
+        <position height="18" width="131" x="810" y="537"/>      
       </attribute>      
-      <multiplicity id="27" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="28">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="14"/>  
-  </realization>  
-  <realization id="29">    
-    <bendpoint x="1183" y="1320"/>    
-    <bendpoint x="1249" y="1355"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="14"/>  
-  </realization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <association id="31">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="32" name="atraccion2">        
-        <position height="18" width="61" x="478" y="1783"/>      
-      </attribute>      
-      <multiplicity id="33" minimum="0" maximum="1">        
-        <position height="16" width="23" x="516" y="1876"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="34">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="35" name="listaDePromosAceptadas">        
-        <position height="18" width="131" x="873" y="900"/>      
-      </attribute>      
-      <multiplicity id="36" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="21" minimum="0" maximum="2147483647">        
+        <position height="16" width="21" x="742" y="532"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="38" name="atraccion2">        
-        <position height="18" width="59" x="500" y="1696"/>      
+  <association id="22">    
+    <bendpoint x="820" y="1211"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="23" name="atraccion1">        
+        <position height="18" width="61" x="726" y="1227"/>      
       </attribute>      
-      <multiplicity id="39" minimum="0" maximum="1">        
-        <position height="16" width="23" x="601" y="1669"/>      
+      <multiplicity id="24" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-72" y="-548"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="41" name="atraccion1">        
-        <position height="18" width="61" x="484" y="1765"/>      
-      </attribute>      
-      <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="43">    
+  <generalization id="25">    
+    <bendpoint x="833" y="708"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="26">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="44" name="listaUsuarios">        
-        <position height="18" width="72" x="923" y="353"/>      
+      <attribute id="27" name="listaUsuarios">        
+        <position height="18" width="72" x="1182" y="346"/>      
       </attribute>      
-      <multiplicity id="45" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="14" y="-24"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="47" name="atraccion1">        
-        <position height="18" width="61" x="644" y="1669"/>      
+  <association id="29">    
+    <bendpoint x="637" y="1154"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="30" name="atraccion2">        
+        <position height="18" width="61" x="637" y="1160"/>      
       </attribute>      
-      <multiplicity id="48" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="31" minimum="0" maximum="1">        
+        <position height="16" width="23" x="590" y="1188"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="9"/>    
+  <association id="32">    
+    <bendpoint x="850" y="1230"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="33" name="atraccion2">        
+        <position height="18" width="61" x="785" y="1305"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="1">        
+        <position height="16" width="23" x="762" y="1322"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
+  <association id="36">    
+    <bendpoint x="562" y="1146"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="37" name="atraccion1">        
+        <position height="18" width="61" x="573" y="1147"/>      
+      </attribute>      
+      <multiplicity id="38" minimum="0" maximum="1">        
+        <position height="16" width="23" x="660" y="1192"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="39">    
+    <bendpoint x="345" y="1215"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="40" name="atraccion3">        
+        <position height="18" width="61" x="302" y="1225"/>      
+      </attribute>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="16" width="23" x="442" y="1324"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="42">    
+    <bendpoint x="68" y="698"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <association id="43">    
+    <bendpoint x="1164" y="1454"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="44" name="listaDeAtracAceptadas">        
+        <position height="18" width="122" x="784" y="1428"/>      
+      </attribute>      
+      <multiplicity id="45" minimum="0" maximum="2147483647">        
+        <position height="16" width="21" x="756" y="1431"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="46">    
+    <bendpoint x="303" y="1233"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="47" name="atraccion2">        
+        <position height="18" width="61" x="345" y="1196"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="1">        
+        <position height="16" width="23" x="445" y="1289"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="49">    
+    <bendpoint x="70" y="1426"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

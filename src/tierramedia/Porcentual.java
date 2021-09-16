@@ -4,9 +4,9 @@ public class Porcentual extends Promocion{
 	protected String tipoAtraccion;
 	protected int descuento;
 	protected double monto;
-	private Atraccion atraccion1;
-	private Atraccion atraccion2;
-	private Atraccion[] atraccionesEnLaPromo;
+	protected Atraccion atraccion1;
+	protected Atraccion atraccion2;
+	protected Atraccion[] atraccionesEnLaPromo;
 	
 	public Porcentual(String tipoAtraccion, Atraccion atraccion1, Atraccion atraccion2, int descuento) {
 		super();
@@ -35,7 +35,7 @@ public class Porcentual extends Promocion{
 	}
 	
 	@Override
-	protected double calcularMonto() {
+	public double calcularMonto() {
 		this.monto = Math.round((atraccion1.monto + atraccion2.monto) * (100 - descuento)/100);	
 		return this.monto;
 	}

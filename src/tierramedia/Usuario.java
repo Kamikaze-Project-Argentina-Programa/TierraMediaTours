@@ -25,17 +25,14 @@ public class Usuario {
 				+ " horas y le gusta hacer: " + tipoAtraccion + ".";
 	}
 
-	protected int getMonedas() {
+	public int getMonedas() {
 		return monedas;
 	}
 
-	protected double getTiempo() {
+	public double getTiempo() {
 		return tiempo;
 	}
 
-	protected void setTiempo(double tiempo) {
-		this.tiempo = tiempo;
-	}
 	
 //restar tiempo cuando hace una atracción:
 	public void gastarTiempo(Atraccion atraccion) {
