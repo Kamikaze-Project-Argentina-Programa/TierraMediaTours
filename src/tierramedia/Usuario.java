@@ -35,13 +35,11 @@ public class Usuario {
 
 	
 //restar tiempo cuando hace una atracción:
-	public void gastarTiempo(Atraccion atraccion) {
-		double tiempoUsado = atraccion.getTiempo();
+	public void gastarTiempo(double tiempoUsado) {
 		this.tiempo -= tiempoUsado;
 	}
 //restar monedas cuando hace una atracción:
-	public void gastarMonedas(Atraccion atraccion) {
-		double monedasUsadas = atraccion.getMonto();
+	public void gastarMonedas(double monedasUsadas) {
 		this.monedas -= monedasUsadas;
 	}
 
