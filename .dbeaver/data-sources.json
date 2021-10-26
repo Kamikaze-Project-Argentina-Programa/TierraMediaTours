@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17cb3e96fac-58dea63804bdcc5c": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "tierramedia2.db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "F:\\eclipse-workspace\\tierramediatours2\\tierramedia2.db",
+				"url": "jdbc:sqlite:F:\\eclipse-workspace\\tierramediatours2\\tierramedia2.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
