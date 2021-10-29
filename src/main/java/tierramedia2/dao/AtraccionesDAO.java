@@ -91,6 +91,28 @@ public class AtraccionesDAO {
 		return losLeeAtracciones;
 	}
 	
+	public LeeAtracciones findByNombre(String nombre) throws SQLException {
+
+		LeeAtracciones leeAtracciones = null;
+
+		Connection connection = ConnectionProvider.getConnection();
+
+		String query = "SELECT a.id, a.nombre, a.costo, a.tiempo, a.cupo, ta.tipo\r\n" + "FROM atracciones a\r\n"
+				+ "INNER JOIN tipo_atracciones ta ON ta.id = a.id_tipo WHERE a.id=?";
+
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setString(1, nombre);
+
+		ResultSet resultSet = preparedStatement.executeQuery();
+
+		if (resultSet.next()) {
+
+			leeAtracciones = toLeeAtracciones(resultSet);
+
+			System.out.println(leeAtracciones);
+		}
+		return leeAtracciones;
+	}
 	
 
 }
