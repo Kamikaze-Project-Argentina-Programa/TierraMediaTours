@@ -10,6 +10,7 @@ import tierramedia2.dao.AtraccionesDAO;
 import tierramedia2.dao.PromocionesDAO;
 
 public class LeePromociones {
+	private static boolean aceptada;
 	private String tipo_pack;
 	private Float desc_prom;
 	private String atraccion1;
@@ -110,7 +111,7 @@ public class LeePromociones {
 		System.out.println("Te interesa alguna de las siguientes Promociones?");
 		for (LeeAtracciones leeAtracciones : losLeeAtracciones) {
 
-			sugiereUnaPromocion(leeUsuarios, losLeePromociones, LeeAtracciones );
+			sugiereUnaPromocion(leeUsuarios, losLeePromociones, leeAtracciones );
 
 		}
 		
@@ -119,7 +120,7 @@ public class LeePromociones {
 
 	public static void sugiereUnaPromocion(LeeUsuarios leeUsuarios, LeePromociones leePromociones, LeeAtracciones leeAtracciones) {
 
-		if (leePromociones.puedeComprar(leeUsuarios)) {
+		if (leePromociones.puedeComprar(leeUsuarios, leeAtracciones)) {
 			System.out.println("*-*-*-*-*-*-*-*-*");
 			System.out.println("Lleva " + leePromociones.getAtraccion1() + " y " + leePromociones.getAtraccion2()
 					+ " Por " + leePromociones.getDesc_prom() + " Monedas");
@@ -145,12 +146,12 @@ public class LeePromociones {
 			String respuesta = br.readLine();
 			if (respuesta.equalsIgnoreCase("si")) {
 				setAceptada(true);
-				promosAceptadas.add(leeAtracciones);
-				System.out.println("Aceptaste la promocion: " + leeAtracciones.getTipo());
+				promosAceptadas.add(leePromociones);
+				System.out.println("Aceptaste la promocion: " + leePromociones.getTipo_pack());
 				leeAtracciones.bajarCupo();
 				leeUsuarios.gastarMonedas(leeAtracciones);
 				leeUsuarios.gastarTiempo(leeAtracciones);
-				itinerarios.insert(leeUsuarios, leeAtracciones);
+				itinerarios.insertPromos(leeUsuarios, leeAtracciones);
 
 			}
 		} catch (Exception e) {
@@ -165,10 +166,10 @@ public class LeePromociones {
 
 	}
 
-	public Boolean puedeComprar(LeeUsuarios leeUsuarios) {
+	public Boolean puedeComprar(LeeUsuarios leeUsuarios, LeeAtracciones leeAtracciones) {
 
-		return (this.getCupo() > 0 && leeUsuarios.getTiempo_dispo() > this.getTiempo()
-				&& leeUsuarios.getSaldo() >= this.getCosto() && leeUsuarios.getSaldo() != 0);
+		return (leeAtracciones.getCupo() > 0 && leeUsuarios.getTiempo_dispo() > leeAtracciones.getTiempo()
+				&& leeUsuarios.getSaldo() >= leeAtracciones.getCosto() && leeUsuarios.getSaldo() != 0);
 
 	}
 
@@ -177,7 +178,7 @@ public class LeePromociones {
 	}
 
 	public static void setAceptada(boolean aceptada) {
-		LeeAtracciones.aceptada = aceptada;
+		LeePromociones.aceptada = aceptada;
 
 	}
 
