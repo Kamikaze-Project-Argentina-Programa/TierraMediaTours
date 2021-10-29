@@ -95,11 +95,11 @@ public class Itinerarios {
 
 	}
 	
-	public int insertPromos(LeeUsuarios leeUsuarios, LeePromociones leePromociones) throws SQLException {
+	public int insertPromos(LeeUsuarios leeUsuarios, LeeAtracciones leeAtracciones) throws SQLException {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total) VALUES (?,?,?,?)";
+		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total) VALUES (?,?,?,?,?)";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 
@@ -107,9 +107,10 @@ public class Itinerarios {
 		preparedStatement.setString(2, leeAtracciones.getNombre());
 		preparedStatement.setFloat(3, leeAtracciones.getTiempo());
 		preparedStatement.setInt(4, leeAtracciones.getCosto());
+		preparedStatement.setString(5, leeAtracciones.getId_tipo_atraccion());
 		int rowsUpdated = preparedStatement.executeUpdate();
 		if (rowsUpdated == 1) {
-			System.out.println("Guardado Exitoso!");
+			System.out.println("La promocion " + leeAtracciones.getId_tipo_atraccion() + " fue guardada exitosamente!");
 		}
 		return rowsUpdated;
 
