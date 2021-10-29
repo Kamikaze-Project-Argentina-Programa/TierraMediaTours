@@ -8,6 +8,7 @@ import java.util.Scanner;
 import tierramedia2.dao.AtraccionesDAO;
 import tierramedia2.dao.UsuariosDAO;
 import tierramediatours2.LeeAtracciones;
+import tierramediatours2.LeePromociones;
 import tierramediatours2.LeeUsuarios;
 
 public class TMApp {
@@ -18,6 +19,8 @@ public class TMApp {
 		
 		for(LeeUsuarios leeUsuarios : usuariosDAO.findAll()) {
 			LeeUsuarios.darBienvenida(leeUsuarios);
+			
+			LeePromociones.ofrecePromociones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
 			
 			LeeAtracciones.ofreceAtraccciones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
 			

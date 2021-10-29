@@ -15,6 +15,7 @@ public class LeeUsuarios {
 	private Float tiempo_dispo;
 	private String id_tipo_atraccion;
 	public static ArrayList<LeeAtracciones> listaDeAtracAceptadas = new ArrayList<LeeAtracciones>();
+	public static ArrayList<LeePromociones> listaDePromosPromociones = new ArrayList<LeePromociones>();
 
 	public LeeUsuarios(Integer id, String nombre, Integer saldo, Float tiempo_dispo, String id_tipo_atraccion) {
 		this.id = id;

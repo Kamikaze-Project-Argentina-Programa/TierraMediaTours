@@ -105,14 +105,19 @@ public class LeePromociones {
 
 	public static void ofrecePromociones(String id_tipo_atraccion, LeeUsuarios leeUsuarios) throws SQLException {
 
-		LeePromociones leePromociones = PromocionesDAO.findByTipo(leeUsuarios.getId_tipo_atraccion());
+		LeePromociones losLeePromociones = PromocionesDAO.findByTipo(id_tipo_atraccion);
+		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(id_tipo_atraccion);
 		System.out.println("Te interesa alguna de las siguientes Promociones?");
+		for (LeeAtracciones leeAtracciones : losLeeAtracciones) {
 
-		sugiereUnaPromocion(leeUsuarios, leePromociones);
+			sugiereUnaPromocion(leeUsuarios, losLeePromociones, LeeAtracciones );
+
+		}
+		
 
 	}
 
-	public static void sugiereUnaPromocion(LeeUsuarios leeUsuarios, LeePromociones leePromociones) {
+	public static void sugiereUnaPromocion(LeeUsuarios leeUsuarios, LeePromociones leePromociones, LeeAtracciones leeAtracciones) {
 
 		if (leePromociones.puedeComprar(leeUsuarios)) {
 			System.out.println("*-*-*-*-*-*-*-*-*");
@@ -121,7 +126,7 @@ public class LeePromociones {
 			System.out.println("*-*-*-*-*-*-*-*-*");
 			System.out.println("");
 			System.out.println("¿Te gustaria adquirir la promocion " + leePromociones.getTipo_pack() + "? si / no ");
-			aceptaPromociones(leePromociones, leeUsuarios);
+			aceptaPromociones(leePromociones, leeUsuarios, leeAtracciones);
 			System.out.println("");
 			System.out.println("Su saldo es de " + leeUsuarios.getSaldo() + " monedas");
 
@@ -129,13 +134,11 @@ public class LeePromociones {
 
 	}
 
-	public static void aceptaPromociones(LeePromociones leePromociones, LeeUsuarios leeUsuarios) {
+	public static void aceptaPromociones(LeePromociones leePromociones, LeeUsuarios leeUsuarios, LeeAtracciones leeAtracciones) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Itinerarios itinerarios = new Itinerarios();
-		AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
-		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(leePromociones.getTipo_pack());
-
-		ArrayList<LeePromociones> promosAceptadas = LeeUsuarios.listaDeAtracPromociones;
+			
+		ArrayList<LeePromociones> promosAceptadas = LeeUsuarios.listaDePromosPromociones;
 		setAceptada(false);
 
 		try {
