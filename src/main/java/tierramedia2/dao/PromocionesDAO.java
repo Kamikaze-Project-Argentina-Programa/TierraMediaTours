@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tierramedia2.db.ConnectionProvider;
-import tierramediatours2.LeeAtracciones;
 import tierramediatours2.LeePromociones;
 
 public class PromocionesDAO {
@@ -18,12 +17,13 @@ public class PromocionesDAO {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo\r\n"
-				+ "FROM promociones p\r\n" + "INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\r\n"
-				+ "INNER JOIN atracciones a ON p.atraccion1 = a.id\r\n"
-				+ "INNER JOIN atracciones ab ON p.atraccion2 = ab.id\r\n"
-				+ "INNER JOIN atracciones ac ON p.atraccion3 = ac.id\r\n"
-				+ "WHERE ta.tipo = ?";
+		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo\\r\\n\"\r\n"
+				+ "				+ \"FROM promociones p\\r\\n\"\r\n"
+				+ "				+ \"INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\\r\\n\"\r\n"
+				+ "				+ \"INNER JOIN atracciones a ON p.atraccion1 = a.id\\r\\n\"\r\n"
+				+ "				+ \"INNER JOIN atracciones ab ON p.atraccion2 = ab.id\\r\\n\"\r\n"
+				+ "				+ \"INNER JOIN atracciones ac ON p.atraccion3 = ac.id\\r\\n\"\r\n"
+				+ "				+ \"WHERE ta.tipo = ?";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setString(1, tipo_pack);
@@ -44,8 +44,8 @@ public class PromocionesDAO {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, ab.nombre, ac.nombre\r\n" + "FROM promociones p\r\n"
-				+ "INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\r\n"
+		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo\r\n"
+				+ "FROM promociones p\r\n" + "INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\r\n"
 				+ "INNER JOIN atracciones a ON p.atraccion1 = a.id\r\n"
 				+ "INNER JOIN atracciones ab ON p.atraccion2 = ab.id\r\n"
 				+ "INNER JOIN atracciones ac ON p.atraccion3 = ac.id\r\n" + "WHERE ta.tipo = ?";
@@ -59,7 +59,7 @@ public class PromocionesDAO {
 
 			leePromociones = toLeePromociones(resultSet);
 
-//			System.out.println(leePromociones);
+			System.out.println(leePromociones);
 
 		}
 

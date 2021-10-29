@@ -99,7 +99,7 @@ public class Itinerarios {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total) VALUES (?,?,?,?,?)";
+		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total, id_promo) VALUES (?,?,?,?,?)";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 

@@ -13,7 +13,7 @@ public class PromosDAOTest {
 	public void testFindByTipoPackAventuras() throws SQLException {
 		PromocionesDAO promocionesDAO = new PromocionesDAO();
 
-		LeePromociones leePromociones = promocionesDAO.findByTipo("Aventuras");
+		LeePromociones leePromociones = PromocionesDAO.findByTipo("Aventuras");
 		Assert.assertNotNull(leePromociones);
 		Assert.assertEquals("Aventuras", leePromociones.getTipo_pack());
 		Assert.assertEquals("Moria", leePromociones.getAtraccion1());
@@ -25,7 +25,7 @@ public class PromosDAOTest {
 	public void testFindByTipoPackPaisajes() throws SQLException {
 		PromocionesDAO promocionesDAO = new PromocionesDAO();
 
-		LeePromociones leePromociones = promocionesDAO.findByTipo("Paisajes");
+		LeePromociones leePromociones = PromocionesDAO.findByTipo("Paisajes");
 		Assert.assertNotNull(leePromociones);
 		Assert.assertEquals("Paisajes", leePromociones.getTipo_pack());
 		Assert.assertEquals("Minas Tirith", leePromociones.getAtraccion1());
@@ -38,7 +38,7 @@ public class PromosDAOTest {
 	public void testFindByTipoPackDegustacion() throws SQLException {
 		PromocionesDAO promocionesDAO = new PromocionesDAO();
 
-		LeePromociones leePromociones = promocionesDAO.findByTipo("Degustacion");
+		LeePromociones leePromociones = PromocionesDAO.findByTipo("Degustacion");
 		Assert.assertNotNull(leePromociones);
 		Assert.assertEquals("Degustacion", leePromociones.getTipo_pack());
 		Assert.assertEquals("La Comarca", leePromociones.getAtraccion1());
