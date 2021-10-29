@@ -94,5 +94,25 @@ public class Itinerarios {
 		return rowsUpdated;
 
 	}
+	
+	public int insertPromos(LeeUsuarios leeUsuarios, LeePromociones leePromociones) throws SQLException {
+
+		Connection connection = ConnectionProvider.getConnection();
+
+		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total) VALUES (?,?,?,?)";
+
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+		preparedStatement.setString(1, leeUsuarios.getNombre());
+		preparedStatement.setString(2, leeAtracciones.getNombre());
+		preparedStatement.setFloat(3, leeAtracciones.getTiempo());
+		preparedStatement.setInt(4, leeAtracciones.getCosto());
+		int rowsUpdated = preparedStatement.executeUpdate();
+		if (rowsUpdated == 1) {
+			System.out.println("Guardado Exitoso!");
+		}
+		return rowsUpdated;
+
+	}
 
 }
