@@ -1,5 +1,14 @@
 package tierramediatours2;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import tierramedia2.dao.AtraccionesDAO;
+import tierramedia2.dao.PromocionesDAO;
+
 public class LeePromociones {
 	private String tipo_pack;
 	private Float desc_prom;
@@ -74,7 +83,6 @@ public class LeePromociones {
 		this.atraccion3 = atraccion3;
 	}
 
-
 	public LeePromociones(String tipo_pack, Float desc_prom, String atraccion1, Integer cupo1, String atraccion2,
 			Integer cupo2, String atraccion3, Integer cupo3) {
 		super();
@@ -95,5 +103,79 @@ public class LeePromociones {
 				+ ", cupo3=" + cupo3 + "]";
 	}
 
-	
+	public static void ofrecePromociones(String id_tipo_atraccion, LeeUsuarios leeUsuarios) throws SQLException {
+
+		LeePromociones leePromociones = PromocionesDAO.findByTipo(leeUsuarios.getId_tipo_atraccion());
+		System.out.println("Te interesa alguna de las siguientes Promociones?");
+
+		sugiereUnaPromocion(leeUsuarios, leePromociones);
+
+	}
+
+	public static void sugiereUnaPromocion(LeeUsuarios leeUsuarios, LeePromociones leePromociones) {
+
+		if (leePromociones.puedeComprar(leeUsuarios)) {
+			System.out.println("*-*-*-*-*-*-*-*-*");
+			System.out.println("Lleva " + leePromociones.getAtraccion1() + " y " + leePromociones.getAtraccion2()
+					+ " Por " + leePromociones.getDesc_prom() + " Monedas");
+			System.out.println("*-*-*-*-*-*-*-*-*");
+			System.out.println("");
+			System.out.println("¿Te gustaria adquirir la promocion " + leePromociones.getTipo_pack() + "? si / no ");
+			aceptaPromociones(leePromociones, leeUsuarios);
+			System.out.println("");
+			System.out.println("Su saldo es de " + leeUsuarios.getSaldo() + " monedas");
+
+		}
+
+	}
+
+	public static void aceptaPromociones(LeePromociones leePromociones, LeeUsuarios leeUsuarios) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Itinerarios itinerarios = new Itinerarios();
+		AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
+		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(leePromociones.getTipo_pack());
+
+		ArrayList<LeePromociones> promosAceptadas = LeeUsuarios.listaDeAtracPromociones;
+		setAceptada(false);
+
+		try {
+			String respuesta = br.readLine();
+			if (respuesta.equalsIgnoreCase("si")) {
+				setAceptada(true);
+				promosAceptadas.add(leeAtracciones);
+				System.out.println("Aceptaste la promocion: " + leeAtracciones.getTipo());
+				leeAtracciones.bajarCupo();
+				leeUsuarios.gastarMonedas(leeAtracciones);
+				leeUsuarios.gastarTiempo(leeAtracciones);
+				itinerarios.insert(leeUsuarios, leeAtracciones);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+
+			System.out.println("Gracias por tu respuesta!");
+			System.out.println();
+		}
+
+	}
+
+	public Boolean puedeComprar(LeeUsuarios leeUsuarios) {
+
+		return (this.getCupo() > 0 && leeUsuarios.getTiempo_dispo() > this.getTiempo()
+				&& leeUsuarios.getSaldo() >= this.getCosto() && leeUsuarios.getSaldo() != 0);
+
+	}
+
+	public static boolean esAceptada() {
+		return aceptada;
+	}
+
+	public static void setAceptada(boolean aceptada) {
+		LeeAtracciones.aceptada = aceptada;
+
+	}
+
 }

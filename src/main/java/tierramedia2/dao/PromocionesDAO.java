@@ -38,7 +38,7 @@ public class PromocionesDAO {
 		return losLeePromociones;
 	}
 
-	public LeePromociones findByTipo(String tipo_pack) throws SQLException {
+	public static LeePromociones findByTipo(String tipo_pack) throws SQLException {
 
 		LeePromociones leePromociones = null;
 
