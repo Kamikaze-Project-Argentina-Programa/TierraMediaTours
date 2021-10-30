@@ -1,6 +1,7 @@
 package tierramediatours2;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,6 +9,15 @@ import org.junit.Test;
 import tierramedia2.dao.PromocionesDAO;
 
 public class PromosDAOTest {
+	
+	@Test
+	public void testFindAll() throws SQLException {
+		PromocionesDAO promocionesDAO = new PromocionesDAO();
+		
+		List<LeePromociones>  listaPromociones = PromocionesDAO.findAll();
+		Assert.assertNotNull(listaPromociones);
+		Assert.assertEquals(3,listaPromociones.size());
+	}
 
 	@Test
 	public void testFindByTipoPackAventuras() throws SQLException {

@@ -18,8 +18,9 @@ public class UsuariosDAO {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "SELECT u.id, u.nombre, u.saldo, u.tiempo_dispo, a.tipo FROM usuarios "
-				+ "u LEFT OUTER JOIN tipo_atracciones a ON u.id_tipo_atraccion = a.id WHERE u.id=?";
+		String query = "SELECT u.id, u.nombre, u.saldo, u.tiempo_dispo, a.tipo "
+				+ "FROM usuarios u LEFT OUTER JOIN tipo_atracciones a ON u.id_tipo_atraccion = a.id "
+				+ "WHERE u.id=?";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setInt(1, id);

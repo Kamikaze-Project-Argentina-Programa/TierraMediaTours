@@ -12,18 +12,43 @@ import tierramediatours2.LeePromociones;
 
 public class PromocionesDAO {
 
+	public static List<LeePromociones> findAll() throws SQLException {
+
+		List<LeePromociones> losLeePromos = new ArrayList<LeePromociones>();
+
+		Connection connection = ConnectionProvider.getConnection();
+
+		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo\r\n"
+				+ "				FROM promociones p INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\r\n"
+				+ "				INNER JOIN atracciones a ON p.atraccion1 = a.id\r\n"
+				+ "				INNER JOIN atracciones ab ON p.atraccion2 = ab.id\r\n"
+				+ "				INNER JOIN atracciones ac ON p.atraccion3 = ac.id ";
+
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+		ResultSet resultSet = preparedStatement.executeQuery();
+
+		while (resultSet.next()) {
+			LeePromociones leePromociones = toLeePromociones(resultSet);
+			losLeePromos.add(leePromociones);
+		}
+
+		return losLeePromos;
+
+	}
+
 	public static List<LeePromociones> findByTipoPack(String tipo_pack) throws SQLException {
 		List<LeePromociones> losLeePromociones = new ArrayList<LeePromociones>();
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo\\r\\n\"\r\n"
-				+ "				+ \"FROM promociones p\\r\\n\"\r\n"
-				+ "				+ \"INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\\r\\n\"\r\n"
-				+ "				+ \"INNER JOIN atracciones a ON p.atraccion1 = a.id\\r\\n\"\r\n"
-				+ "				+ \"INNER JOIN atracciones ab ON p.atraccion2 = ab.id\\r\\n\"\r\n"
-				+ "				+ \"INNER JOIN atracciones ac ON p.atraccion3 = ac.id\\r\\n\"\r\n"
-				+ "				+ \"WHERE ta.tipo = ?";
+		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo"
+				+ " FROM promociones"
+				+ " INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id"
+				+ " INNER JOIN atracciones a ON p.atraccion1 = a.id"
+				+ " INNER JOIN atracciones ab ON p.atraccion2 = ab.id"
+				+ " INNER JOIN atracciones ac ON p.atraccion3 = ac.id"
+				+ " WHERE ta.tipo = ?";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setString(1, tipo_pack);
@@ -45,7 +70,8 @@ public class PromocionesDAO {
 		Connection connection = ConnectionProvider.getConnection();
 
 		String query = "SELECT ta.tipo, p.desc_prom, a.nombre, a.cupo, ab.nombre, ab.cupo, ac.nombre, ac.cupo\r\n"
-				+ "FROM promociones p\r\n" + "INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\r\n"
+				+ "FROM promociones p\r\n" 
+				+ "INNER JOIN tipo_atracciones ta ON p.tipo_pack = ta.id\r\n"
 				+ "INNER JOIN atracciones a ON p.atraccion1 = a.id\r\n"
 				+ "INNER JOIN atracciones ab ON p.atraccion2 = ab.id\r\n"
 				+ "INNER JOIN atracciones ac ON p.atraccion3 = ac.id\r\n" + "WHERE ta.tipo = ?";
