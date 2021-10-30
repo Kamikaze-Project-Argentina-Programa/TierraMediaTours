@@ -21,6 +21,7 @@ public class TMApp {
 			LeeUsuarios.darBienvenida(leeUsuarios);
 			
 //			LeePromociones.ofrecePromociones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
+			// porbando git
 			
 			LeeAtracciones.ofreceAtraccciones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
 			
