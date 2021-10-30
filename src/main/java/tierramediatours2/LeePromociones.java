@@ -2,12 +2,15 @@ package tierramediatours2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import tierramedia2.dao.AtraccionesDAO;
 import tierramedia2.dao.PromocionesDAO;
+import tierramedia2.db.ConnectionProvider;
 
 public class LeePromociones {
 	private static boolean aceptada;
