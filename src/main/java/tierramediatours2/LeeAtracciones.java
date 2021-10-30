@@ -86,7 +86,7 @@ public class LeeAtracciones {
 	public static void ofreceAtraccciones(String id_tipo_atraccion, LeeUsuarios leeUsuarios) throws SQLException {
 
 		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(leeUsuarios.getId_tipo_atraccion());
-		System.out.println("La siguiente atracción podría interesarte...");
+		System.out.println("La siguiente atraccion podria interesarte...");
 		for (LeeAtracciones leeAtracciones : losLeeAtracciones) {
 
 			sugiereUnaAtraccion(leeUsuarios, leeAtracciones);
@@ -114,7 +114,7 @@ public class LeeAtracciones {
 			System.out.println("");
 			System.out.println("¿Te interesaria adquirirla? si / no");
 			aceptaAtraccion(leeAtracciones, leeUsuarios);
-			System.out.println("Su saldo actual es de " + leeUsuarios.getSaldo() + " monedas.");
+			System.out.println("Saldo actual: " + leeUsuarios.getSaldo() + " monedas.");
 			System.out.println("");
 		}
 
