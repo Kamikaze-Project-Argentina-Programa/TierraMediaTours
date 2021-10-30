@@ -79,7 +79,7 @@ public class Itinerarios {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total) VALUES (?,?,?,?)";
+		String query = "INSERT INTO itinerario (id_usuario, id_atracciones, tiempo_total, costo_total, id_promo) VALUES (?,?,?,?,?)";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 
@@ -87,6 +87,7 @@ public class Itinerarios {
 		preparedStatement.setString(2, leeAtracciones.getNombre());
 		preparedStatement.setFloat(3, leeAtracciones.getTiempo());
 		preparedStatement.setInt(4, leeAtracciones.getCosto());
+		preparedStatement.setString(5, "N");
 		int rowsUpdated = preparedStatement.executeUpdate();
 		if (rowsUpdated == 1) {
 			System.out.println("~");
