@@ -73,10 +73,9 @@ public class AtraccionesDAO {
 
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "SELECT a.id, a.nombre, a.costo, a.tiempo, a.cupo, ta.tipo \r\n"
-				+ "FROM atracciones a\r\n"
-				+ "INNER JOIN tipo_atracciones ta ON ta.id = a.id_tipo \r\n"
-				+ "WHERE ta.tipo = ?;";
+		String query = "SELECT a.id, a.nombre, a.costo, a.tiempo, a.cupo, ta.tipo\r\n"
+				+ "FROM atracciones a INNER JOIN tipo_atracciones ta ON ta.id = a.id_tipo \r\n"
+				+ "ORDER BY ta.tipo = ? DESC, a.costo DESC, a.tiempo DESC;";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setString(1, tipo);
