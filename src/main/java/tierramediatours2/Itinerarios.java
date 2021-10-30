@@ -89,7 +89,7 @@ public class Itinerarios {
 		preparedStatement.setInt(4, leeAtracciones.getCosto());
 		int rowsUpdated = preparedStatement.executeUpdate();
 		if (rowsUpdated == 1) {
-			System.out.println("Guardado Exitoso!");
+			System.out.println("~");
 		}
 		return rowsUpdated;
 

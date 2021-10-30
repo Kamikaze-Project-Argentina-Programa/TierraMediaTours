@@ -20,7 +20,7 @@ public class TMApp {
 		for(LeeUsuarios leeUsuarios : usuariosDAO.findAll()) {
 			LeeUsuarios.darBienvenida(leeUsuarios);
 			
-			LeePromociones.ofrecePromociones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
+//			LeePromociones.ofrecePromociones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
 			
 			LeeAtracciones.ofreceAtraccciones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
 			

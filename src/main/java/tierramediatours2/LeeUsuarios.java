@@ -69,13 +69,12 @@ public class LeeUsuarios {
 	}
 
 	public static void darBienvenida(LeeUsuarios leeUsuarios) {
-		System.out.println("");
-		System.out.println("Bienvenid@ " + leeUsuarios.getNombre() + "!");
-		System.out.println("Te gustan las atracciones de " + leeUsuarios.id_tipo_atraccion + "?");
-		// System.out.println("Entonces estas promos son para vos!");
+		System.out.println("¡Bienvenid@ " + leeUsuarios.getNombre() + "!");
+		System.out.println("Veo que te gustan las atracciones de " + leeUsuarios.id_tipo_atraccion + "...");
+		System.out.println("Dispones de " + leeUsuarios.getSaldo() + " monedas.");	
 	}
 
-	// Resta tiempo cuando hace una atracciones:
+	// Resta tiempo cuando hace una atraccion:
 	public int gastarTiempo(LeeAtracciones leeAtracciones) throws SQLException {
 		float tiempoUsado = leeAtracciones.getTiempo();
 		this.tiempo_dispo -= tiempoUsado;

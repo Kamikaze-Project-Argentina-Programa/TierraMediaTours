@@ -86,7 +86,7 @@ public class LeeAtracciones {
 	public static void ofreceAtraccciones(String id_tipo_atraccion, LeeUsuarios leeUsuarios) throws SQLException {
 
 		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(leeUsuarios.getId_tipo_atraccion());
-		System.out.println("Te interesa alguna de las siguientes Atracciones?");
+		System.out.println("La siguiente atracción podría interesarte...");
 		for (LeeAtracciones leeAtracciones : losLeeAtracciones) {
 
 			sugiereUnaAtraccion(leeUsuarios, leeAtracciones);
@@ -107,16 +107,15 @@ public class LeeAtracciones {
 	public static void sugiereUnaAtraccion(LeeUsuarios leeUsuarios, LeeAtracciones leeAtracciones) {
 		
 		if (leeAtracciones.puedeComprar(leeUsuarios)) {
-			System.out.println("*-*-*-*-*-*-*-*-*");
+			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 			System.out
-					.println("Lleva " + leeAtracciones.getNombre() + " Por " + leeAtracciones.getCosto() + " Monedas");
-			System.out.println("*-*-*-*-*-*-*-*-*");
+					.println("Te ofrecemos " + leeAtracciones.getNombre() + " por " + leeAtracciones.getCosto() + " monedas.");
+			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 			System.out.println("");
-			System.out.println("¿Te gustaria adquirir " + leeAtracciones.getNombre() + "? si / no ");
+			System.out.println("¿Te interesaria adquirirla? si / no");
 			aceptaAtraccion(leeAtracciones, leeUsuarios);
+			System.out.println("Su saldo actual es de " + leeUsuarios.getSaldo() + " monedas.");
 			System.out.println("");
-			System.out.println("Su saldo es de " + leeUsuarios.getSaldo() + " monedas");
-
 		}
 
 	}
@@ -133,7 +132,6 @@ public class LeeAtracciones {
 			if (respuesta.equalsIgnoreCase("si")) {
 				setAceptada(true);
 				atraccAceptadas.add(leeAtracciones);
-				System.out.println("Aceptaste: " + leeAtracciones.getNombre());
 				leeAtracciones.bajarCupo();
 				leeUsuarios.gastarMonedas(leeAtracciones);
 				leeUsuarios.gastarTiempo(leeAtracciones);
@@ -146,8 +144,8 @@ public class LeeAtracciones {
 
 		finally {
 
-			System.out.println("Gracias por tu respuesta!");
-			System.out.println();
+			System.out.println("Entendido ¡Gracias por tu respuesta!");
+			System.out.println("");
 		}
 
 	}
