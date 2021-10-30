@@ -126,7 +126,7 @@ public class LeePromociones {
 					+ " Por " + leePromociones.getDesc_prom() + " Monedas");
 			System.out.println("*-*-*-*-*-*-*-*-*");
 			System.out.println("");
-			System.out.println("¿Te gustaria adquirir la promocion " + leePromociones.getTipo_pack() + "? si / no ");
+			System.out.println("Â¿Te gustaria adquirir la promocion " + leePromociones.getTipo_pack() + "? si / no ");
 			aceptaPromociones(leePromociones, leeUsuarios, leeAtracciones);
 			System.out.println("");
 			System.out.println("Su saldo es de " + leeUsuarios.getSaldo() + " monedas");
@@ -148,7 +148,7 @@ public class LeePromociones {
 				setAceptada(true);
 				promosAceptadas.add(leePromociones);
 				System.out.println("Aceptaste la promocion: " + leePromociones.getTipo_pack());
-				leeAtracciones.bajarCupo();
+				leePromociones.bajarCupo();
 				leeUsuarios.gastarMonedas(leeAtracciones);
 				leeUsuarios.gastarTiempo(leeAtracciones);
 				itinerarios.insertPromos(leeUsuarios, leeAtracciones);
@@ -182,4 +182,20 @@ public class LeePromociones {
 
 	}
 
+		protected int bajarCupo() throws SQLException {
+		this.cupo1 -= 1;
+		this.cupo2 -= 1;
+		Connection connection = ConnectionProvider.getConnection();
+
+		String query = "UPDATE atracciones\r\n" + "SET cupo = cupo - 1\r\n" + "WHERE nombre = ? OR nombre = ?";
+
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+		preparedStatement.setString(1, this.getAtraccion1());
+		preparedStatement.setString(2, this.getAtraccion2());
+
+		int rowsUpdated = preparedStatement.executeUpdate();
+
+		return rowsUpdated;
+	}
 }
