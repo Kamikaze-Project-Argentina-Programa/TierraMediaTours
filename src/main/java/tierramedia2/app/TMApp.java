@@ -16,18 +16,15 @@ public class TMApp {
 	public static void main(String[] args) throws IOException, SQLException {
 
 		UsuariosDAO usuariosDAO = new UsuariosDAO();
-		
-		for(LeeUsuarios leeUsuarios : usuariosDAO.findAll()) {
-			LeeUsuarios.darBienvenida(leeUsuarios);
-			
-//			LeePromociones.ofrecePromociones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
-			
-			LeeAtracciones.ofreceAtraccciones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
-			
-		}
-		
 
-		
+		for (LeeUsuarios leeUsuarios : usuariosDAO.findAll()) {
+			LeeUsuarios.darBienvenida(leeUsuarios);
+
+			//LeePromociones.ofrecePromociones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
+
+			LeeAtracciones.ofreceAtraccciones(leeUsuarios.getId_tipo_atraccion(), leeUsuarios);
+
+		}
 
 	}
 

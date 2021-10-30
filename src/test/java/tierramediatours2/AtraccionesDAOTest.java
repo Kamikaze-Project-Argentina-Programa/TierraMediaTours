@@ -35,10 +35,10 @@ public class AtraccionesDAOTest {
 	@Test
 	public void testFindByTipo() throws SQLException {
 		
-		LeeUsuarios leeUsuarios = new LeeUsuarios(1, "Jorge", 20, 10f, "Aventuras");
+		LeeUsuarios usuario = new LeeUsuarios(1, "Jorge", 20, 10f, "Aventuras");
 		
 		AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
-		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(leeUsuarios.getId_tipo_atraccion());
+		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(usuario.getId_tipo_atraccion());
 		
 		Assert.assertNotNull(losLeeAtracciones);
 		Assert.assertEquals(4, losLeeAtracciones.size());

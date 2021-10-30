@@ -40,12 +40,12 @@ public class UsuariosDAOTest {
 	@Test
 	public void testFindAll() throws SQLException {
 		UsuariosDAO usuariosDAO = new UsuariosDAO();
-		List<LeeUsuarios> losLeeUsuarios = usuariosDAO.findAll();
+		List<LeeUsuarios> listaUsuarios = usuariosDAO.findAll();
 		
-		Assert.assertNotNull(losLeeUsuarios);
-		Assert.assertEquals(4,losLeeUsuarios.size());
+		Assert.assertNotNull(listaUsuarios);
+		Assert.assertEquals(4,listaUsuarios.size());
 		
-		System.out.println(losLeeUsuarios);
+		System.out.println(listaUsuarios);
 		
 	}
 //	
