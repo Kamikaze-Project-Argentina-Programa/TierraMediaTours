@@ -109,39 +109,41 @@ public class LeePromociones {
 
 	public static void ofrecePromociones(String id_tipo_atraccion, LeeUsuarios leeUsuarios) throws SQLException {
 
-		LeePromociones losLeePromociones = PromocionesDAO.findByTipo(id_tipo_atraccion);
+		List<LeePromociones> losLeePromociones = PromocionesDAO.findByTipoPack(leeUsuarios.getId_tipo_atraccion());
 		List<LeeAtracciones> losLeeAtracciones = AtraccionesDAO.findByTipo(id_tipo_atraccion);
-		System.out.println("Te interesa alguna de las siguientes Promociones?");
+		System.out.println("La siguiente promocion podria interesarte...");
 		for (LeeAtracciones leeAtracciones : losLeeAtracciones) {
-
-			sugiereUnaPromocion(leeUsuarios, losLeePromociones, leeAtracciones );
+			for (LeePromociones leePromociones : losLeePromociones) {
+				sugiereUnaPromocion(leeUsuarios, leePromociones, leeAtracciones);
+			}
 
 		}
-		
 
 	}
 
-	public static void sugiereUnaPromocion(LeeUsuarios leeUsuarios, LeePromociones leePromociones, LeeAtracciones leeAtracciones) {
+	public static void sugiereUnaPromocion(LeeUsuarios leeUsuarios, LeePromociones leePromociones,
+			LeeAtracciones leeAtracciones) {
 
 		if (leePromociones.puedeComprar(leeUsuarios, leeAtracciones)) {
-			System.out.println("*-*-*-*-*-*-*-*-*");
-			System.out.println("Lleva " + leePromociones.getAtraccion1() + " y " + leePromociones.getAtraccion2()
-					+ " Por " + leePromociones.getDesc_prom() + " Monedas");
-			System.out.println("*-*-*-*-*-*-*-*-*");
+			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+			System.out.println("Te ofrecemos " + leePromociones.getAtraccion1() + " y " + leePromociones.getAtraccion2()
+					+ " por " + leePromociones.getDesc_prom() + " monedas.");
+			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 			System.out.println("");
-			System.out.println("Â¿Te gustaria adquirir la promocion " + leePromociones.getTipo_pack() + "? si / no ");
+			System.out.println("¿Te gustaria adquirir la promocion " + leePromociones.getTipo_pack() + "? si / no ");
 			aceptaPromociones(leePromociones, leeUsuarios, leeAtracciones);
 			System.out.println("");
-			System.out.println("Su saldo es de " + leeUsuarios.getSaldo() + " monedas");
-
+			System.out.println("Saldo actual: " + leeUsuarios.getSaldo() + " monedas");
+			System.out.println("");
 		}
 
 	}
 
-	public static void aceptaPromociones(LeePromociones leePromociones, LeeUsuarios leeUsuarios, LeeAtracciones leeAtracciones) {
+	public static void aceptaPromociones(LeePromociones leePromociones, LeeUsuarios leeUsuarios,
+			LeeAtracciones leeAtracciones) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Itinerarios itinerarios = new Itinerarios();
-			
+
 		ArrayList<LeePromociones> promosAceptadas = LeeUsuarios.listaDePromosPromociones;
 		setAceptada(false);
 
@@ -163,8 +165,7 @@ public class LeePromociones {
 
 		finally {
 
-			System.out.println("Gracias por tu respuesta!");
-			System.out.println();
+			System.out.println("Entendido ¡Gracias por tu respuesta!");
 		}
 
 	}
@@ -185,7 +186,7 @@ public class LeePromociones {
 
 	}
 
-		protected int bajarCupo() throws SQLException {
+	protected int bajarCupo() throws SQLException {
 		this.cupo1 -= 1;
 		this.cupo2 -= 1;
 		Connection connection = ConnectionProvider.getConnection();
