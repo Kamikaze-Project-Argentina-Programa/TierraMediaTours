@@ -57,7 +57,7 @@ public class Atraccion implements Adquirible {
 
 		
 
-	public static void aceptaAtraccion(Atraccion unaAtraccion) {
+	public static void aceptaAtraccion(Atraccion unaAtraccion,Usuario usuario) {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -70,6 +70,11 @@ public class Atraccion implements Adquirible {
 				setAceptada(true);
 				atraccAceptadas.add(unaAtraccion);
 				System.out.println("Aceptaste: " + unaAtraccion.getNombre());
+				usuario.gastarMonedas(unaAtraccion.getMonto());
+				System.out.println("Tu saldo restante es de "+usuario.getMonedas()+" Monedas!");
+				usuario.gastarTiempo(unaAtraccion.getTiempo());
+				System.out.println("Tu tiempo restante es de "+usuario.getTiempo()+" Horas!");
+				
 				unaAtraccion.bajarCupo();
 			}
 		} catch (Exception e) {
@@ -85,7 +90,9 @@ public class Atraccion implements Adquirible {
 
 	public static void ofreceAtracciones(String tipoAtraccion, Usuario usuario ) throws IOException {
 		ArrayList<Atraccion> atracciones = LeeAtracciones.getListaAtracciones();
+		
 		System.out.println("Te interesa alguna de las siguientes Atracciones?");// iria dentro de ese metodo
+		
 		for (Atraccion unaAtraccion : atracciones) {
 			String tipo = unaAtraccion.getTipo();
 			if (tipo.equalsIgnoreCase(tipoAtraccion)) {
@@ -111,7 +118,7 @@ public class Atraccion implements Adquirible {
 		System.out.println("*-*-*-*-*-*-*-*-*");
 		System.out.println("");
 		System.out.println("¿Te gustaria adquirir " + unaAtraccion.getNombre() + "? si / no ");
-		aceptaAtraccion(unaAtraccion);
+		aceptaAtraccion(unaAtraccion,usuario);
 		System.out.println("");
 		
 		}

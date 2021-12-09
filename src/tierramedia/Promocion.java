@@ -48,7 +48,7 @@ public abstract class Promocion implements Adquirible {
 		return Promocion.listaDePromos;
 	}
 
-	public static void ofrecePromociones(String tipoAtraccion) throws IOException {
+	public static void ofrecePromociones(String tipoAtraccion, Usuario usuario) throws IOException {
 		ArrayList<Promocion> promos = getListaDePromos();
 
 		for (Promocion unaPromo : promos) {
@@ -62,7 +62,9 @@ public abstract class Promocion implements Adquirible {
 				System.out.println("*-*-*-*-*-*-*-*-*");
 				System.out.println("");
 				System.out.println("¿Te gustaria adquirir este paquete? si / no ");
-				aceptaPromo(unaPromo);
+				
+				aceptaPromo(unaPromo,usuario);
+				
 				System.out.println("");
 			}
 			
@@ -72,7 +74,7 @@ public abstract class Promocion implements Adquirible {
 	// metodo que pregunte si desea adquirir y que si la respuesta es si que lo
 	// guarde en otra lista que la app muestra
 
-	public static void aceptaPromo(Promocion unaPromo) {
+	public static void aceptaPromo(Promocion unaPromo, Usuario usuario) {
 		
 	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	    
@@ -85,6 +87,12 @@ public abstract class Promocion implements Adquirible {
 				setPromoAceptada(true);
 				promosAceptadas.add(unaPromo);
 				System.out.println("Aceptaste: " + unaPromo.getPromo());
+				
+				usuario.gastarMonedas(unaPromo.getMonto());
+				System.out.println("Tu saldo restante es de "+usuario.getMonedas()+" Monedas!");
+				usuario.gastarTiempo(unaPromo.getTiempo());
+				System.out.println("Tu Tiempo restante es de "+usuario.getTiempo()+" Horas!");
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
