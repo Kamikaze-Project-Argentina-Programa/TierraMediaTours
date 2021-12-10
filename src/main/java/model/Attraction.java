@@ -12,7 +12,9 @@ public class Attraction {
  private Integer capacity;
  private Integer type;
  private String description;
- private String img;
+ private String image;
+ private Boolean isActiv;
+ 
  public Integer getType() {
 	return type;
 }
@@ -37,11 +39,11 @@ public void setImage(String image) {
 	this.image = image;
 }
 
-private String image;
+
   
  private Map<String, String> errors; 
   
- public Attraction(Integer id, String name, Integer cost, Double duration, Integer capacity, Integer type, String description, String image) { 
+ public Attraction(Integer id, String name, Integer cost, Double duration, Integer capacity, Integer type, String description, String image, Boolean isActiv) { 
   super(); 
   this.id = id; 
   this.name = name; 
@@ -51,6 +53,7 @@ private String image;
   this.type = type;
   this.description = description;
   this.image = image;
+  this.isActiv = isActiv;
  } 
   
  public boolean isValid() { 
@@ -116,18 +119,19 @@ private String image;
   this.capacity = capacity; 
  } 
  
- public String getImg() {
-	return img;
+
+public Boolean getIsActiv() {
+	return isActiv;
 }
 
-public void setImg(String img) {
-	this.img = img;
+public void setIsActiv(Boolean isActiv) {
+	this.isActiv = isActiv;
 }
 
 @Override 
  public String toString() { 
   return "Attraction [id=" + id + ", name=" + name + ", cost=" + cost + ", duration=" + duration + ", capacity=" 
-    + capacity + "imagen=" + img + "]"; 
+    + capacity + " imagen=" + image + " isActiv=" + isActiv +"]"; 
  } 
  
  public boolean canHost(int i) { 

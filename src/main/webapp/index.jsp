@@ -12,7 +12,7 @@
    <h1> 
     ¡Bienvenido, <c:out value="${user.username}" />!
    </h1> 
-   <img alt="probando" src="assets/img/moria.jpg">
+    <img alt="probando" src="<c:out value="${attraction.image}" />">
   </div> 
  </main> 
 </body> 

@@ -27,7 +27,7 @@ public class DeleteAttractionServlet extends HttpServlet {
 
   attractionService.delete(id);
 
-  resp.sendRedirect("/TierraMediaTours1/attractions/index.do");
+  resp.sendRedirect("/TierraMedia3/attractions/index.do");
  }
 
 
