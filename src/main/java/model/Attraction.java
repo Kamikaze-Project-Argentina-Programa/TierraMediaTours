@@ -12,6 +12,7 @@ public class Attraction {
  private Integer capacity;
  private Integer type;
  private String description;
+ private String img;
  public Integer getType() {
 	return type;
 }
@@ -115,7 +116,15 @@ private String image;
   this.capacity = capacity; 
  } 
  
- @Override 
+ public String getImg() {
+	return img;
+}
+
+public void setImg(String img) {
+	this.img = img;
+}
+
+@Override 
  public String toString() { 
   return "Attraction [id=" + id + ", name=" + name + ", cost=" + cost + ", duration=" + duration + ", capacity=" 
     + capacity + "]"; 

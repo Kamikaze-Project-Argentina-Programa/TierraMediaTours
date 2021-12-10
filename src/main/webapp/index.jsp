@@ -10,8 +10,9 @@
  <main class="container"> 
   <div class="bg-light p-4 rounded"> 
    <h1> 
-    ¡Bienvenido, <c:out value="${user.username}" />! 
+    ¡Bienvenido, <c:out value="${user.username}" />!
    </h1> 
+   <img alt="probando" src="assets/img/moria.jpg">
   </div> 
  </main> 
 </body> 
