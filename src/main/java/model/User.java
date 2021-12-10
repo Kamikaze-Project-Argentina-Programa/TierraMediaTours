@@ -9,32 +9,32 @@ public class User {
 
 	private Integer id;
 	private String username, password;
-	private Integer admin;
-	private Integer coins;
+	private Boolean admin;
+	private Integer money;
 	private Double time;
 	private Integer preferences;
-	private HashMap <String, String> errors;
+	private HashMap<String, String> errors;
 
-	public User(Integer id, String username, String password, Integer admin, Integer money, Double time,
+	public User(Integer id, String username, String password, Boolean admin, Integer money, Double time,
 			Integer preferences) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.coins = money;
+		this.money = money;
 		this.time = time;
 		this.admin = admin;
 		this.preferences = preferences;
 	}
 
 	public void addToItinerary(Attraction attraction) {
-		this.coins -= attraction.getCost();
+		this.money -= attraction.getCost();
 		this.time -= attraction.getDuration();
 		// TODO agregar a su lista
 	}
 
 	public boolean canAfford(Attraction attraction) {
-		return attraction.getCost() <= this.coins;
+		return attraction.getCost() <= this.money;
 	}
 
 	public boolean canAttend(Attraction attraction) {
@@ -46,12 +46,12 @@ public class User {
 		return Crypt.match(password, this.password);
 	}
 
-	public Integer getAdmin() {
+	public Boolean getAdmin() {
 		return admin;
 	}
 
-	public Integer getCoins() {
-		return coins;
+	public Integer getMoney() {
+		return money;
 	}
 
 	public Integer getId() {
@@ -70,7 +70,7 @@ public class User {
 		return username;
 	}
 
-	public Integer isAdmin() {
+	public Boolean isAdmin() {
 		return admin;
 	}
 
@@ -78,12 +78,12 @@ public class User {
 		return false;
 	}
 
-	public void setAdmin(Integer admin) {
+	public void setAdmin(Boolean admin) {
 		this.admin = admin;
 	}
 
-	public void setCoins(Integer coins) {
-		this.coins = coins;
+	public void setMoney(Integer money) {
+		this.money = money;
 	}
 
 	public void setId(Integer id) {
@@ -110,8 +110,8 @@ public class User {
 	public void validate() {
 		errors = new HashMap<String, String>();
 
-		if (coins < 0) {
-			errors.put("coins", "No debe ser negativo");
+		if (money < 0) {
+			errors.put("money", "No debe ser negativo");
 		}
 		if (time < 0) {
 			errors.put("time", "No debe ser negativo");

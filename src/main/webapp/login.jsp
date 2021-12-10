@@ -39,7 +39,7 @@
     </div> 
    </form> 
    
-   <h3><a href="/TierraMediaTours1/signup.jsp">Registrarse</a></h3>
+   <h3><a href="/TierraMedia3/signup.jsp">Registrarse</a></h3>
  
   </main> 
  </div> 

@@ -52,9 +52,7 @@
     <c:forEach items="${attractions}" var="attraction"> 
      <tr> 
       <td><strong><c:out value="${attraction.name}"></c:out></strong> 
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Cras pretium eros urna. Sed quis erat congue, bibendum tortor 
-        malesuada, iaculis diam. Ut ut imperdiet sapien.</p></td> 
+       <c:out value="${attraction.description}"></c:out></td> 
       <td><c:out value="${attraction.cost}"></c:out></td> 
       <td><c:out value="${attraction.duration}"></c:out></td> 
       <td><c:out value="${attraction.capacity}"></c:out></td> 

@@ -17,7 +17,7 @@
    </div> 
   </c:if> 
  
-  <form action="/TierraMediaTours1/attractions/create.do" method="post"> 
+  <form action="/TierraMedia3/attractions/create.do" method="post"> 
    <jsp:include page="/views/attractions/form.jsp"></jsp:include> 
   </form> 
  </main> 
