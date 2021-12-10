@@ -1,5 +1,0 @@
-https://github.com/Kamikaze-Project-Argentina-Programa/TierraMediaTours.git
-
-Ejecutar el método main de la Clase TMApp. Allí se guiara por consola al usuario para elegir que productos desea adquirir. 
-Finalmente se imprimen en un archivo de texto los itinerarios y el costo de cada Adquirible y su duración. 
-Al terminar, se pasa al siguiente usuario y se repite hasta completar con todos los usuarios propuestos.

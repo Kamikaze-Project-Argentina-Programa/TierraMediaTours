@@ -5,5 +5,5 @@
 .project
 .classpath
 /target/
-env.properties
+src/main/resources/env.properties
 /bin/
