@@ -9,32 +9,32 @@ public class User {
 
 	private Integer id;
 	private String username, password;
-	private Boolean admin;
-	private Integer money;
+	private Integer admin;
+	private Integer coins;
 	private Double time;
 	private Integer preferences;
 	private HashMap <String, String> errors;
 
-	public User(Integer id, String username, String password, Boolean admin, Integer money, Double time,
+	public User(Integer id, String username, String password, Integer admin, Integer money, Double time,
 			Integer preferences) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.money = money;
+		this.coins = money;
 		this.time = time;
 		this.admin = admin;
 		this.preferences = preferences;
 	}
 
 	public void addToItinerary(Attraction attraction) {
-		this.money -= attraction.getCost();
+		this.coins -= attraction.getCost();
 		this.time -= attraction.getDuration();
 		// TODO agregar a su lista
 	}
 
 	public boolean canAfford(Attraction attraction) {
-		return attraction.getCost() <= this.money;
+		return attraction.getCost() <= this.coins;
 	}
 
 	public boolean canAttend(Attraction attraction) {
@@ -46,12 +46,12 @@ public class User {
 		return Crypt.match(password, this.password);
 	}
 
-	public Boolean getAdmin() {
+	public Integer getAdmin() {
 		return admin;
 	}
 
-	public Integer getMoney() {
-		return money;
+	public Integer getCoins() {
+		return coins;
 	}
 
 	public Integer getId() {
@@ -70,7 +70,7 @@ public class User {
 		return username;
 	}
 
-	public Boolean isAdmin() {
+	public Integer isAdmin() {
 		return admin;
 	}
 
@@ -78,12 +78,12 @@ public class User {
 		return false;
 	}
 
-	public void setAdmin(Boolean admin) {
+	public void setAdmin(Integer admin) {
 		this.admin = admin;
 	}
 
-	public void setMoney(Integer money) {
-		this.money = money;
+	public void setCoins(Integer coins) {
+		this.coins = coins;
 	}
 
 	public void setId(Integer id) {
@@ -110,8 +110,8 @@ public class User {
 	public void validate() {
 		errors = new HashMap<String, String>();
 
-		if (money < 0) {
-			errors.put("money", "No debe ser negativo");
+		if (coins < 0) {
+			errors.put("coins", "No debe ser negativo");
 		}
 		if (time < 0) {
 			errors.put("time", "No debe ser negativo");

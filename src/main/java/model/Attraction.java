@@ -118,7 +118,7 @@ private String image;
  @Override 
  public String toString() { 
   return "Attraction [id=" + id + ", name=" + name + ", cost=" + cost + ", duration=" + duration + ", capacity=" 
-    + capacity + ", description=" + description + "]"; 
+    + capacity + "]"; 
  } 
  
  public boolean canHost(int i) { 

@@ -43,9 +43,8 @@
     <tr> 
      <th>Nombre</th> 
      <th>Monedas</th> 
-     <th>Tiempo</th>       
-     <th>Preferencias</th>
-     <th>Rol</th>
+     <th>Tiempo</th> 
+     <th>Rol</th> 
      <th>Acciones</th> 
     </tr> 
    </thead> 
@@ -53,10 +52,9 @@
     <c:forEach items="${users}" var="tmp_user"> 
      <tr> 
       <td><strong><c:out value="${tmp_user.username}"></c:out></strong></td> 
-      <td><c:out value="${tmp_user.money}"></c:out></td> 
-      <td><c:out value="${tmp_user.time}"></c:out></td>
-      <td><c:out value="${tmp_user.preferences}"></c:out></td> 
-      <td>
+      <td><c:out value="${tmp_user.coins}"></c:out></td> 
+      <td><c:out value="${tmp_user.time}"></c:out></td> 
+      <td> 
        <c:choose> 
         <c:when test="${tmp_user.admin}"> 
          Admin 
