@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -6,7 +9,7 @@
 			la Tierra Media</a>
 		<div>
 			<c:choose>
-				<c:when test="${ user != Null}">
+				<c:when test="${ user != null}">
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
 						aria-controls="navbarCollapse" aria-expanded="false"
@@ -19,7 +22,9 @@
 
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="/TierraMedia3/attractions/index.do">Atracciones</a></li>
-
+							
+							<li class="nav-item"><a class="nav-link active"
+								aria-current="page" href="/TierraMedia3/promos/index.do">Promos</a></li>
 
 							<c:if test="${user.isAdmin()}">
 								<li class="nav-item"><a class="nav-link active"

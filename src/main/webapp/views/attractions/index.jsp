@@ -40,8 +40,10 @@
   </c:if> 
   <table class="table table-stripped table-hover"> 
    <thead> 
-    <tr> 
-     <th>Atracci&oacute;n</th> 
+    <tr>
+    <th>Imagen</th>
+     <th>Atracci&oacute;n</th>
+     <th>Descripci&oacute;n</th> 
      <th>Costo</th> 
      <th>Duraci&oacute;n</th> 
      <th>Cupo</th> 
@@ -50,9 +52,11 @@
    </thead> 
    <tbody> 
     <c:forEach items="${attractions}" var="attraction"> 
-     <tr> 
+     <tr>
+     <td><img alt="imagen" src="assets/img/moria.jpg"></td> 
       <td><strong><c:out value="${attraction.name}"></c:out></strong> 
-       <c:out value="${attraction.description}"></c:out></td> 
+       </td>
+      <td><c:out value="${attraction.description}"></c:out></td> 
       <td><c:out value="${attraction.cost}"></c:out></td> 
       <td><c:out value="${attraction.duration}"></c:out></td> 
       <td><c:out value="${attraction.capacity}"></c:out></td> 

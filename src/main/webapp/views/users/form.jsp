@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
  
 <div class="mb-3"> 
- <label for="name" class="col-form-label">Username:</label> <input 
+ <label for="name" class="col-form-label">Nombre:</label> <input 
   type="text" class="form-control" id="name" name="username" 
   required value="${tmp_user.username}"> 
 </div> 
