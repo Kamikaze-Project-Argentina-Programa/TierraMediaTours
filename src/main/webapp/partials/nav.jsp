@@ -25,7 +25,7 @@
      <ul class="dropdown-menu dropdown-menu-end" 
       aria-labelledby="navbarDropdown"> 
       <li><a class="dropdown-item disabled" style="color: black;"> 
-       <i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.coins}"></c:out> 
+       <i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.money}"></c:out> 
       </a></li> 
       <li><a class="dropdown-item disabled" style="color: black;"> 
        <i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.time}h"></c:out> 
