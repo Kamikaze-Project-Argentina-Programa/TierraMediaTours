@@ -1,4 +1,7 @@
 /bin/
 /tierramediaFiles/
-/*.png
+/.png
 /.settings
+.project
+.classpath
+/target/

@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>kamikaze-project</groupId>
-	<artifactId>TierraMediaTours1</artifactId>
+	<artifactId>TierraMedia3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>TierraMediaTours1 Maven Webapp</name>
+	<name>TierraMedia3 Maven Webapp</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -60,7 +60,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>TierraMediaTours1</finalName>
+		<finalName>TierraMedia3</finalName>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>
