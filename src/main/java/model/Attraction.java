@@ -127,7 +127,7 @@ public void setImg(String img) {
 @Override 
  public String toString() { 
   return "Attraction [id=" + id + ", name=" + name + ", cost=" + cost + ", duration=" + duration + ", capacity=" 
-    + capacity + "]"; 
+    + capacity + "imagen=" + img + "]"; 
  } 
  
  public boolean canHost(int i) { 
