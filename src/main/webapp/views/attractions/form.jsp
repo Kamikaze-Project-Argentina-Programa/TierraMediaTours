@@ -16,7 +16,7 @@
  </div> 
  <div class="mb-3"> 
   <label for="duration" 
-   class='col-form-label ${attraction.errors.get("duration") != null ? "is-invalid" : "" }'>Duration:</label> 
+   class='col-form-label ${attraction.errors.get("duration") != null ? "is-invalid" : "" }'>Duración:</label> 
   <input class="form-control" type="number" id="duration" name="duration" 
    required value="${attraction.duration}"></input> 
   <div class="invalid-feedback"> 
@@ -25,7 +25,7 @@
  </div> 
  <div class="mb-3"> 
   <label for="capacity" 
-   class='col-form-label ${attraction.errors.get("capacity") != null ? "is-invalid" : "" }'>Capacity:</label> 
+   class='col-form-label ${attraction.errors.get("capacity") != null ? "is-invalid" : "" }'>Cupo:</label> 
   <input class="form-control" type="number" id="capacity" name="capacity" 
    required value="${attraction.capacity}"></input> 
   <div class="invalid-feedback"> 
