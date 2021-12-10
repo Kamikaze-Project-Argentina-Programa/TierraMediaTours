@@ -6,3 +6,4 @@
 .classpath
 /target/
 env.properties
+/bin/
