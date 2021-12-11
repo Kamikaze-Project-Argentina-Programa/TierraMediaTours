@@ -62,7 +62,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public User findByUsername(String username) {
 		try {
-			String sql = "SELECT * FROM users WHERE username = ? && is_active = 1";
+			String sql = "SELECT * FROM users WHERE username = ? AND is_active = 1";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, username);

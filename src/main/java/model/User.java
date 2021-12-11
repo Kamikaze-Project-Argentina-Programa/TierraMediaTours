@@ -16,8 +16,7 @@ public class User {
 	private Boolean isActive;
 	private HashMap<String, String> errors;
 
-	public User(Integer id, String username, String password, Boolean admin, Integer money, Double time,
-			Integer preferences, Boolean isActive) {
+	public User(Integer id, String username, String password, Boolean admin, Integer money, Double time,Integer preferences, Boolean isActive) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -124,9 +123,11 @@ public class User {
 		return errors;
 	}
 
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", admin=" + admin + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", admin=" + admin + ", money="
+				+ money + ", time=" + time + ", preferences=" + preferences + ", isActive=" + isActive + "]";
 	}
 
 	public Integer getPreferences() {
