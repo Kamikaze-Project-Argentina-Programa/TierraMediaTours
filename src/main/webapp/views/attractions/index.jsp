@@ -5,6 +5,14 @@
 <html> 
 <head> 
 <jsp:include page="/partials/head.jsp"></jsp:include> 
+<style type="text/css">
+h1{
+font-size: x-large;
+}
+h3{
+font-size:large;
+}
+</style>
 </head> 
 <body> 
  
@@ -28,7 +36,8 @@
   </c:if> 
  
   <div class="bg-light p-4 mb-3 rounded"> 
-   <h1>Estas son las atracciones de la Tierra Media</h1> 
+   <h1>En Tierra Media tenemos una gran variedad de atracciones</h1><br> 
+			<h3>¡Esperamos que las disfrutes tanto como nosotros!</h3>
   </div> 
 
   <c:if test="${user.isAdmin()}"> 
