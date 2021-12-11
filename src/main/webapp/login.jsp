@@ -8,25 +8,27 @@
 <%-- <jsp:include page="partials/nav.jsp"></jsp:include> --%>
 <style type="text/css">
 h1 {
-text-transform: uppercase;
-font-size: xx-large;
-font-weight: bold;
-text-shadow: 2px 2px 3px #B5651D;
+	text-transform: uppercase;
+	font-size: xx-large;
+	font-weight: bold;
+	text-shadow: 2px 2px 3px #B5651D;
 }
-h3{
-font-size: large;
+
+h3 {
+	font-size: large;
 }
+
 body {
-background-color: #faf6c5;
+	background-color: #faf6c5;
 }
-</style>	
+</style>
 </head>
 <body>
 
 	<div class="col-lg-5 mx-auto p-3 py-md-5">
 
 		<main>
-			<h1>Turismo en la Tierra Media</h1>
+			<h1 class="mt-3 mb-5 text-center">Turismo en la Tierra Media</h1>
 
 			<c:if test="${flash != null}">
 				<div class="alert alert-danger">
@@ -35,9 +37,9 @@ background-color: #faf6c5;
 					</p>
 				</div>
 			</c:if>
-			
-			<h3>Ingresá a la web iniciando tu sesión:</h3><br><br>
-			
+
+			<h3>Ingresa a la web iniciando tu sesión:</h3>
+
 			<form action="login" method="post">
 
 				<div class="mb-3">
@@ -49,15 +51,20 @@ background-color: #faf6c5;
 					<label for="password" class="form-label">Contraseña</label> <input
 						type="password" class="form-control" name="password">
 				</div>
-				
+
 				<div class="d-grid gap-2">
 					<button type="submit" class="btn btn-success">Ingresar</button>
-				</div>
-			</form>
 
-			<h5 class="mt-3 mb-5 text-center">
-				<a href="/TierraMedia3/signup.jsp">Registrarse</a>
-			</h5>
+				</div>
+				<br> <a href="/TierraMedia3/signup.jsp">
+					<div class="d-grid gap-2">
+
+						<button type="button" class="btn btn-primary">Registrarse</button>
+
+
+					</div>
+				</a>
+			</form>
 
 		</main>
 	</div>
