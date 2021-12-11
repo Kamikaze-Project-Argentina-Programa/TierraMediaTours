@@ -30,14 +30,15 @@
   <div class="bg-light p-4 mb-3 rounded"> 
    <h1>Estas son las atracciones de la Tierra Media</h1> 
   </div> 
- 
+
   <c:if test="${user.isAdmin()}"> 
    <div class="mb-3"> 
     <a href="/TierraMedia3/attractions/create.do" class="btn btn-primary" 
      role="button"> <i class="bi bi-plus-lg"></i> Nueva Atracción 
     </a> 
    </div> 
-  </c:if> 
+  </c:if>
+ 
   <table class="table table-stripped table-hover"> 
    <thead> 
     <tr>
@@ -53,7 +54,7 @@
    <tbody> 
     <c:forEach items="${attractions}" var="attraction"> 
      <tr>
-     <td><img alt="imagen" src="assets/img/moria.jpg"></td> 
+     <td><img alt="imagen" src="${attaction.image}"></td> 
       <td><strong><c:out value="${attraction.name}"></c:out></strong> 
        </td>
       <td><c:out value="${attraction.description}"></c:out></td> 
