@@ -16,7 +16,6 @@
    <h2> 
     ¡Te damos la bienvenida, <c:out value="${user.username}" />!
    </h2> 
-    
   </div> 
  </main> 
 </body> 

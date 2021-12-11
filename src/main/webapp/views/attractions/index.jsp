@@ -63,7 +63,7 @@ body {
 			<tbody>
 				<c:forEach items="${attractions}" var="attraction">
 					<tr>
-						<td><img alt="imagen" src="${attaction.image}"></td>
+						<td><img alt="imagen" src="${attraction.getImage()}"></td>
 						<td><strong><c:out value="${attraction.name}"></c:out></strong>
 						</td>
 						<td><c:out value="${attraction.description}"></c:out></td>

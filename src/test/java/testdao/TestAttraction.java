@@ -2,6 +2,8 @@ package testdao;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import model.Attraction;
@@ -12,9 +14,9 @@ public class TestAttraction {
 	@Test
 	public void testLlamadaAttraction() {
 		AttractionDAOImpl attraction = new AttractionDAOImpl();
-		Attraction attraction1 = attraction.find(1);
+		List<Attraction> theAttractions = attraction.findAll();
 		
-		System.out.println(attraction1.toString());
+		System.out.println(theAttractions.toString());
 	}
 
 }
