@@ -40,9 +40,9 @@
 				</div>
 			</form>
 
-			<h3>
+			<h5 class="mt-3 mb-5 text-center">
 				<a href="/TierraMedia3/signup.jsp">Registrarse</a>
-			</h3>
+			</h5>
 
 		</main>
 	</div>
