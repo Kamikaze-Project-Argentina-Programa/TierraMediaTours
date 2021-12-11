@@ -3,6 +3,15 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<style>
+nav{
+background-color: #d99b4a;
+font-size: large;
+font-style: normal;
+font-weight: bold;
+}
+</style>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
 		<a class="navbar-brand" href="/TierraMedia3/index.jsp">Turismo en
