@@ -6,14 +6,11 @@
 <head>
 <jsp:include page="/partials/head.jsp"></jsp:include>
 <style type="text/css">
-h1 {
-	font-size: x-large;
-}
-
-h3 {
-	font-size: large;
+body {
+	background-color: #faf6c5;
 }
 </style>
+<link href="assets/css/estilosbase.css" rel= "stylesheet" />
 </head>
 <body>
 

@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <html> 
 <head> 
+
 <jsp:include page="partials/head.jsp"></jsp:include> 
 <link href="assets/css/estilosbase.css" rel= "stylesheet" />
 </head> 

@@ -4,14 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="partials/head.jsp"></jsp:include>
 
+<jsp:include page="partials/head.jsp"></jsp:include>
+<link href="assets/css/estilosbase.css" rel="stylesheet" />
 <style type="text/css">
 h3 {
 	font-size: large;
 }
 </style>
-<link href="assets/css/estilosbase.css" rel="stylesheet" />
+
 </head>
 <body>
 

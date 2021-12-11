@@ -4,7 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <jsp:include page="/partials/head.jsp"></jsp:include>
+<style type="text/css">
+body {
+	background-color: #faf6c5;
+}
+</style>
 </head>
 <body>
 
