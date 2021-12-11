@@ -5,23 +5,13 @@
 <html>
 <head>
 <jsp:include page="partials/head.jsp"></jsp:include>
-<%-- <jsp:include page="partials/nav.jsp"></jsp:include> --%>
-<style type="text/css">
-h1 {
-	text-transform: uppercase;
-	font-size: xx-large;
-	font-weight: bold;
-	text-shadow: 2px 2px 3px #B5651D;
-}
 
+<style type="text/css">
 h3 {
 	font-size: large;
 }
-
-body {
-	background-color: #faf6c5;
-}
 </style>
+<link href="assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -34,6 +24,14 @@ body {
 				<div class="alert alert-danger">
 					<p>
 						<c:out value="${flash}" />
+					</p>
+				</div>
+			</c:if>
+
+			<c:if test="${success !=null}">
+				<div class="alert alert-info">
+					<p>
+						<c:out value="${ success }"></c:out>
 					</p>
 				</div>
 			</c:if>
@@ -65,7 +63,6 @@ body {
 					</div>
 				</a>
 			</form>
-
 		</main>
 	</div>
 </body>

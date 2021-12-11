@@ -27,7 +27,7 @@
 			</div>
 		</c:if>
 
-		<div class="bg-light p-4 mb-3 rounded">
+		<div class="p-4 mb-3 rounded">
 			<h1>Usuarios</h1>
 		</div>
 

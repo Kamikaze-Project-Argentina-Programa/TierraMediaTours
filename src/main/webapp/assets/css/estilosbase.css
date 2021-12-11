@@ -1,0 +1,10 @@
+@charset "UTF-8";
+h1 {
+	text-transform: uppercase;
+	font-size: xx-large;
+	font-weight: bold;
+	text-shadow: 2px 2px 3px #B5651D;
+}
+body {
+	background-color: #faf6c5;
+}

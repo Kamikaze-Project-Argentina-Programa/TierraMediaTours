@@ -5,17 +5,23 @@
 
 <style>
 nav{
-background-color: #d99b4a;
+background-color: #B86D46;
 font-size: large;
 font-style: normal;
 font-weight: bold;
 }
+h1 {
+	text-transform: uppercase;
+	font-size: xx-large;
+	font-weight: bold;
+	text-shadow: 2px 2px 3px #B5651D;
+}
 </style>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-md navbar-dark mb-4">
 	<div class="container">
-		<a class="navbar-brand" href="/TierraMedia3/index.jsp">Turismo en
-			la Tierra Media</a>
+		<h1><a class="navbar-brand" href="/TierraMedia3/index.jsp">Turismo en
+			la Tierra Media</a></h1>
 		<div>
 			<c:choose>
 				<c:when test="${ user != null}">
