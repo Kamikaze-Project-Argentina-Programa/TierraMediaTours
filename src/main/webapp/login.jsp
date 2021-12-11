@@ -6,6 +6,20 @@
 <head>
 <jsp:include page="partials/head.jsp"></jsp:include>
 <%-- <jsp:include page="partials/nav.jsp"></jsp:include> --%>
+<style type="text/css">
+h1 {
+text-transform: uppercase;
+font-size: xx-large;
+font-weight: bold;
+text-shadow: 2px 2px 3px #B5651D;
+}
+h3{
+font-size: large;
+}
+body {
+background-color: #faf6c5;
+}
+</style>	
 </head>
 <body>
 
@@ -14,7 +28,6 @@
 		<main>
 			<h1>Turismo en la Tierra Media</h1>
 
-
 			<c:if test="${flash != null}">
 				<div class="alert alert-danger">
 					<p>
@@ -22,7 +35,9 @@
 					</p>
 				</div>
 			</c:if>
-
+			
+			<h3>Ingresá a la web iniciando tu sesión:</h3><br><br>
+			
 			<form action="login" method="post">
 
 				<div class="mb-3">
@@ -34,9 +49,9 @@
 					<label for="password" class="form-label">Contraseña</label> <input
 						type="password" class="form-control" name="password">
 				</div>
-
+				
 				<div class="d-grid gap-2">
-					<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
+					<button type="submit" class="btn btn-success">Ingresar</button>
 				</div>
 			</form>
 
