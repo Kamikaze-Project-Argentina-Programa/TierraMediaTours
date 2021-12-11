@@ -13,10 +13,11 @@ public class User {
 	private Integer money;
 	private Double time;
 	private Integer preferences;
+	private Boolean isActive;
 	private HashMap<String, String> errors;
 
 	public User(Integer id, String username, String password, Boolean admin, Integer money, Double time,
-			Integer preferences) {
+			Integer preferences, Boolean isActive) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -25,6 +26,7 @@ public class User {
 		this.time = time;
 		this.admin = admin;
 		this.preferences = preferences;
+		this.isActive = isActive;
 	}
 
 	public void addToItinerary(Attraction attraction) {
@@ -134,5 +136,15 @@ public class User {
 	public void setPreferences(Integer preferences) {
 		this.preferences = preferences;
 	}
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+	
+	
 
 }

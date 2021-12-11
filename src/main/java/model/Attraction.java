@@ -12,12 +12,9 @@ public class Attraction {
  private Integer capacity;
  private Integer type;
  private String description;
-<<<<<<< HEAD
-=======
  private String image;
- private Boolean isActiv;
- 
->>>>>>> 5446cdbbc97d255581fc29870de509b439dbf5f3
+ private Boolean isActive;
+
  public Integer getType() {
 	return type;
 }
@@ -46,7 +43,8 @@ public void setImage(String image) {
   
  private Map<String, String> errors; 
   
- public Attraction(Integer id, String name, Integer cost, Double duration, Integer capacity, Integer type, String description, String image, Boolean isActiv) { 
+ public Attraction(Integer id, String name, Integer cost, Double duration, 
+		 Integer capacity, Integer type, String description, String image, Boolean isActive) { 
   super(); 
   this.id = id; 
   this.name = name; 
@@ -56,7 +54,7 @@ public void setImage(String image) {
   this.type = type;
   this.description = description;
   this.image = image;
-  this.isActiv = isActiv;
+  this.isActive = isActive;
  } 
   
  public boolean isValid() { 
@@ -122,26 +120,18 @@ public void setImage(String image) {
   this.capacity = capacity; 
  } 
  
-<<<<<<< HEAD
- @Override 
- public String toString() { 
-  return "Attraction [id=" + id + ", name=" + name + ", cost=" + cost + ", duration=" + duration + ", capacity=" 
-    + capacity + "]"; 
-=======
-
-public Boolean getIsActiv() {
-	return isActiv;
+public Boolean getIsActive() {
+	return isActive;
 }
 
-public void setIsActiv(Boolean isActiv) {
-	this.isActiv = isActiv;
+public void setIsActive(Boolean isActive) {
+	this.isActive = isActive;
 }
 
 @Override 
  public String toString() { 
   return "Attraction [id=" + id + ", name=" + name + ", cost=" + cost + ", duration=" + duration + ", capacity=" 
-    + capacity + " imagen=" + image + " isActiv=" + isActiv +"]"; 
->>>>>>> 5446cdbbc97d255581fc29870de509b439dbf5f3
+    + capacity + " imagen=" + image + " isActive=" + isActive +"]"; 
  } 
  
  public boolean canHost(int i) { 

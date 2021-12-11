@@ -16,7 +16,7 @@ public class AttractionDAOImpl implements AttractionDAO {
  
  public List<Attraction> findAll() { 
   try { 
-   String sql = "SELECT * FROM attractions WHERE is_activ = 1"; 
+   String sql = "SELECT * FROM attractions WHERE is_active = 1"; 
    Connection conn = ConnectionProvider.getConnection(); 
    PreparedStatement statement = conn.prepareStatement(sql); 
    ResultSet resultados = statement.executeQuery(); 
@@ -35,7 +35,7 @@ public class AttractionDAOImpl implements AttractionDAO {
  @Override 
  public Attraction find(Integer id) { 
   try { 
-   String sql = "SELECT * FROM attractions WHERE id = ? AND is_activ = 1"; 
+   String sql = "SELECT * FROM attractions WHERE id = ? AND is_active = 1"; 
    Connection conn = ConnectionProvider.getConnection(); 
    PreparedStatement statement = conn.prepareStatement(sql); 
    statement.setInt(1, id); 
@@ -62,7 +62,7 @@ public class AttractionDAOImpl implements AttractionDAO {
  @Override 
  public int insert(Attraction attraction) { 
   try { 
-   String sql = "INSERT INTO attractions (name, cost, duration, capacity, type, description, image, is_activ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; 
+   String sql = "INSERT INTO attractions (name, cost, duration, capacity, type, description, image, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; 
    Connection conn = ConnectionProvider.getConnection(); 
  
    PreparedStatement statement = conn.prepareStatement(sql); 
@@ -74,7 +74,7 @@ public class AttractionDAOImpl implements AttractionDAO {
    statement.setInt(i++, attraction.getType());
    statement.setString(i++, attraction.getDescription());
    statement.setString(i++, attraction.getImage());
-   statement.setBoolean(i++, attraction.getIsActiv());
+   statement.setBoolean(i++, attraction.getIsActive());
    int rows = statement.executeUpdate(); 
  
    return rows; 
@@ -86,7 +86,7 @@ public class AttractionDAOImpl implements AttractionDAO {
  @Override 
  public int update(Attraction attraction) { 
   try { 
-   String sql = "UPDATE attractions SET name = ?, cost = ?, duration = ?, capacity = ?, type = ?, description = ?, image = ?, is_activ = ? WHERE id = ?"; 
+   String sql = "UPDATE attractions SET name = ?, cost = ?, duration = ?, capacity = ?, type = ?, description = ?, image = ?, is_active = ? WHERE id = ?"; 
    Connection conn = ConnectionProvider.getConnection(); 
  
    PreparedStatement statement = conn.prepareStatement(sql); 
@@ -98,7 +98,7 @@ public class AttractionDAOImpl implements AttractionDAO {
    statement.setInt(i++, attraction.getType());
    statement.setString(i++, attraction.getDescription());
    statement.setString(i++, attraction.getImage());
-   statement.setBoolean(i++, attraction.getIsActiv());
+   statement.setBoolean(i++, attraction.getIsActive());
    statement.setInt(i++, attraction.getId());
    int rows = statement.executeUpdate(); 
  
@@ -111,7 +111,7 @@ public class AttractionDAOImpl implements AttractionDAO {
  @Override 
  public int delete(Attraction attraction) { 
   try { 
-   String sql = "UPDATE attractions SET is_activ = 0 WHERE id = ?"; 
+   String sql = "UPDATE attractions SET is_active = 0 WHERE id = ?"; 
    Connection conn = ConnectionProvider.getConnection(); 
  
    PreparedStatement statement = conn.prepareStatement(sql); 

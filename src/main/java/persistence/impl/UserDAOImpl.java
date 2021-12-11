@@ -62,7 +62,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public User findByUsername(String username) {
 		try {
-			String sql = "SELECT * FROM USERS WHERE USERNAME = ?";
+			String sql = "SELECT * FROM users WHERE username = ? && is_active = 1";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, username);
@@ -80,7 +80,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public User find(Integer id) {
 		try {
-			String sql = "SELECT * FROM USERS WHERE ID = ?";
+			String sql = "SELECT * FROM users WHERE id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);
@@ -97,7 +97,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public int countAll() {
 		try {
-			String sql = "SELECT COUNT(1) AS TOTAL FROM USERS";
+			String sql = "SELECT COUNT(1) AS TOTAL FROM users";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -111,7 +111,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public List<User> findAll() {
 		try {
-			String sql = "SELECT * FROM USERS";
+			String sql = "SELECT * FROM users";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -127,6 +127,6 @@ public class UserDAOImpl implements UserDAO {
 
 	private User toUser(ResultSet userRegister) throws SQLException {
 		return new User(userRegister.getInt(1), userRegister.getString(2), userRegister.getString(3),
-				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7));
+				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7), userRegister.getBoolean(8));
 	}
 }
