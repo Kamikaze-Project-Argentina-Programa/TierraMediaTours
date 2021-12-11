@@ -4,6 +4,14 @@
 <html> 
 <head> 
 <jsp:include page="partials/head.jsp"></jsp:include> 
+<style type="text/css">
+body {
+background-color: #f7d59c;
+}
+h1{
+font-size: x-large;
+}
+</style>
 </head> 
 <body> 
  
@@ -12,7 +20,7 @@
  <main class="container"> 
   <div class="bg-light p-4 rounded"> 
    <h1> 
-    ¡Bienvenido, <c:out value="${user.username}" />!
+    ¡Bienvenido a Tierra Media, <c:out value="${user.username}" />!
    </h1> 
     
   </div> 
