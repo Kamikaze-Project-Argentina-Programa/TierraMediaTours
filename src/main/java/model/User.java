@@ -33,6 +33,11 @@ public class User {
 		this.time -= attraction.getDuration();
 		// TODO agregar a su lista
 	}
+	public void addToItinerary(Promotion promotion) {
+		this.money -= promotion.getCost();
+		this.time -= promotion.getDuration();
+		// TODO agregar a su lista
+	}
 
 	public boolean canAfford(Attraction attraction) {
 		return attraction.getCost() <= this.money;

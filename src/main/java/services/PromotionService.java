@@ -2,7 +2,6 @@ package services;
 
 import java.util.List;
 
-
 import model.Promotion;
 import persistence.PromotionDAO;
 import persistence.commons.DAOFactory;
@@ -12,10 +11,12 @@ public class PromotionService {
 		return DAOFactory.getPromotionDAO().findAll();
 	}
 
-	public Promotion create(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image, Boolean isActive, Double duration) {
+	public Promotion create(Integer id, String name, Integer cost, String attraction1, Integer capacity1,
+			String attraction2, Integer capacity2, String attraction3, Integer capacity3, String image,
+			Boolean isActive, Double duration) {
 
-		Promotion promotion = new Promotion(-1, name, cost, attraction1, attraction2, attraction3, image, isActive, duration);
+		Promotion promotion = new Promotion(-1, name, cost, attraction1, capacity1, attraction2, capacity2, attraction3,
+				capacity3, image, isActive, duration);
 
 		if (promotion.isValid()) {
 			PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
@@ -26,8 +27,8 @@ public class PromotionService {
 		return promotion;
 	}
 
-	public Promotion update(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image, Boolean isActive, Double duration) {
+	public Promotion update(Integer id, String name, Integer cost, String attraction1, String attraction2,
+			String attraction3, String image, Boolean isActive, Double duration) {
 
 		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
 		Promotion promotion = promotionDAO.find(id);
@@ -50,7 +51,7 @@ public class PromotionService {
 	}
 
 	public void delete(Integer id) {
-		Promotion promotion = new Promotion(id, null, null, null, null, null, null, false, null);
+		Promotion promotion = new Promotion(id, null, null, null, null, null, null, null, null, null, false, null);
 
 		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
 		promotionDAO.delete(promotion);

@@ -9,22 +9,29 @@ public class Promotion {
 	private String name;
 	private Integer cost;
 	private String attraction1;
+	private Integer capacity1;
 	private String attraction2;
+	private Integer capacity2;
 	private String attraction3;
+	private Integer capacity3;
 	private String image;
 	private Boolean isActive;
 	private Double duration;
 	private Map<String, String> errors;
 
-	public Promotion(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
+	public Promotion(Integer id, String name, Integer cost, String attraction1, Integer capacity1, 
+			String attraction2, Integer capacity2, String attraction3, Integer capacity3,
 			String image, Boolean isActive, Double duration) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.cost = cost;
 		this.attraction1 = attraction1;
+		this.capacity1 = capacity1;
 		this.attraction2 = attraction2;
+		this.capacity2 = capacity2;
 		this.attraction3 = attraction3;
+		this.capacity3 = capacity3;
 		this.image = image;
 		this.isActive = isActive;
 		this.duration = duration;
@@ -44,9 +51,15 @@ public class Promotion {
 		if (duration <= 0) {
 			errors.put("duration", "Debe ser positivo");
 		}
-//		if (capacity <= 0) {
-//			errors.put("capacity", "Debe ser positivo");
-//		}
+		if (capacity1 <= 0) {
+			errors.put("capacity", "Debe ser positivo");
+		}
+		if (capacity2 <= 0) {
+			errors.put("capacity", "Debe ser positivo");
+		}
+		if (capacity3 <= 0) {
+			errors.put("capacity", "Debe ser positivo");
+		}
 	}
 
 	public String getAttraction1() {
@@ -102,13 +115,13 @@ public class Promotion {
 	}
 
 
-//	public Integer getCapacity() {
-//		return capacity;
-//	}
-//
-//	public void setCapacity(Integer capacity) {
-//		this.capacity = capacity;
-//	}
+	public Integer getCapacity1() {
+		return capacity1;
+	}
+
+	public void setCapacity1(Integer capacity1) {
+		this.capacity1 = capacity1;
+	}
 
 	public String getImage() {
 		return image;
@@ -146,12 +159,14 @@ public class Promotion {
 				+ ", attraction2=" + attraction2 + ", attraction3=" + attraction3 + ", image=" + image + ", duration=" + duration +"]";
 	}
 
-//	public boolean canHost(int i) {
-//		return capacity >= i;
-//	}
-//
-//	public void host(int i) {
-//		this.capacity -= i;
-//	}
+	public boolean canHost(int i) {
+		return capacity1 >= i;
+	}
+
+	public void host(int i) {
+		this.capacity1 -= i;
+		this.capacity2 -= i;
+		this.capacity3 -= i;
+	}
 
 }
