@@ -10,7 +10,6 @@
 
 </head>
 <body>
-
 	<div class="col-lg-5 mx-auto p-3 py-md-5">
 
 		<main>
@@ -33,7 +32,6 @@
 			</c:if>
 
 			<form action="login" method="post">
-
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
 						class="form-control" name="username">
@@ -46,14 +44,11 @@
 
 				<div class="d-grid gap-2">
 					<button type="submit" class="btn btn-success">Ingresar</button>
-
 				</div>
+				
 				<br> <a href="/TierraMedia3/signup.jsp">
 					<div class="d-grid gap-2">
-
 						<button type="button" class="btn btn-primary">Registrarse</button>
-
-
 					</div>
 				</a>
 			</form>
