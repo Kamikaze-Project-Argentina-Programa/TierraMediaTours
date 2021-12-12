@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
 	<main class="container">
 
 		<c:if test="${flash != null}">
@@ -29,8 +28,10 @@
 			</div>
 		</c:if>
 
-		<div class="bg-light p-4 mb-3 rounded">
+		<div class="p-4 mb-3 rounded">
 			<h1>Estas son las promociones de la Tierra Media</h1>
+			<br>
+			<h2>Esperemos que te gusten las promociones que tenemos para vos</h2>
 		</div>
 
 		<c:if test="${user.isAdmin()}">

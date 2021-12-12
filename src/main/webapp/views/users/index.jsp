@@ -55,7 +55,7 @@
 			<tbody>
 				<c:forEach items="${users}" var="tmp_user">
 					<tr>
-						<td><strong><c:out value="${tmp_user.username}"></c:out></strong></td>
+						<td class="name"><strong><c:out value="${tmp_user.username}"></c:out></strong></td>
 						<td><c:out value="${tmp_user.money}"></c:out></td>
 						<td><c:out value="${tmp_user.time}"></c:out></td>
 						<td><c:out value="${tmp_user.preferences}"></c:out></td>

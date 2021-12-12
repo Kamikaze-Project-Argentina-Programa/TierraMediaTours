@@ -16,12 +16,12 @@ public class PromotionDAOImpl implements PromotionDAO {
 
 	public List<Promotion> findAll() {
 		try {
-			String sql = "SELECT p.id, at.type, p.cost, a.name, ab.name, ac.name, p.image, p.is_active , a.duration + ab.duration + ac.duration AS duration\r\n" 
+			String sql = "SELECT p.id, at.type, p.cost, a.name, ab.name, ac.name, p.image, p.is_active , a.duration + ab.duration + ac.duration AS duration \r\n" 
 					+ "FROM promotions p\r\n"
 					+ "INNER JOIN attraction_types at ON at.id = p.name\r\n"
 					+ "INNER JOIN attractions a ON a.id = p.attraction1\r\n"
 					+ "INNER JOIN attractions ab ON ab.id = p.attraction2\r\n"
-					+ "INNER JOIN attractions ac ON ac.id = p.attraction3";
+					+ "INNER JOIN attractions ac ON ac.id = p.attraction3 WHERE p.is_active = 1";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
