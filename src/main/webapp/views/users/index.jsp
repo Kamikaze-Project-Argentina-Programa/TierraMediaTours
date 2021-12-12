@@ -10,11 +10,7 @@
 <link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
-
-	
-
 	<main class="container">
-
 		<c:if test="${flash != null}">
 			<div class="alert alert-danger">
 				<p>
@@ -41,6 +37,7 @@
 				</a>
 			</div>
 		</c:if>
+		
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
@@ -80,8 +77,6 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
 	</main>
-
 </body>
 </html>
