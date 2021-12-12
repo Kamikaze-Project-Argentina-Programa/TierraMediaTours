@@ -10,9 +10,7 @@
 <link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
-
 	<main class="container">
-
 		<c:if test="${flash != null}">
 			<div class="alert alert-danger">
 				<p>
@@ -20,7 +18,7 @@
 					<c:if test="${errors != null}">
 						<ul>
 							<c:forEach items="${errors}" var="entry">
-								<li><c:out value="${entry.getValue()}"></c:out></li>
+							<li><c:out value="${entry.getValue()}"></c:out></li>
 							</c:forEach>
 						</ul>
 					</c:if>
@@ -41,6 +39,7 @@
 				</a>
 			</div>
 		</c:if>
+		
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
@@ -56,8 +55,7 @@
 			<tbody>
 				<c:forEach items="${promotions}" var="promotion">
 					<tr>
-						<td><img alt="imagen" class="img-thumbnail"
-							src="${promotion.getImage()}"></td>
+						<td><img alt="imagen" class="img-thumbnail" src="${promotion.getImage()}"></td>
 						<td class="name"><c:out value="${promotion.name}"></c:out></td>
 						<td><c:out value="${promotion.cost}"></c:out></td>
 						<td><c:out value="${promotion.attraction1}"></c:out></td>
@@ -85,8 +83,6 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
 	</main>
-
 </body>
 </html>
