@@ -3,24 +3,10 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<style>
-nav{
-background-color: #B86D46;
-font-size: large;
-font-style: normal;
-font-weight: bold;
-}
-h1 {
-	text-transform: uppercase;
-	font-size: xx-large;
-	font-weight: bold;
-	text-shadow: 2px 2px 3px #B5651D;
-}
-</style>
-
+<link href="/TierraMedia3/assets/css/nav-style.css" rel="stylesheet" />
 <nav class="navbar navbar-expand-md navbar-dark mb-4">
 	<div class="container">
-		<h1><a class="navbar-brand" href="/TierraMedia3/index.jsp">Turismo en
+		<h1 class="titulo-nav"><a class="navbar-brand" href="/TierraMedia3/index.jsp">Turismo en
 			la Tierra Media</a></h1>
 		<div>
 			<c:choose>

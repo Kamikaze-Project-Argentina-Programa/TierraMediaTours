@@ -5,11 +5,10 @@
 <html>
 <head>
 <jsp:include page="/partials/head.jsp"></jsp:include>
+<jsp:include page="/partials/nav.jsp"></jsp:include>
 <link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
-
-	<jsp:include page="/partials/nav.jsp"></jsp:include>
 
 	<main class="container">
 
@@ -31,7 +30,7 @@
 		<div class="p-4 mb-3 rounded">
 			<h1>En Tierra Media tenemos una gran variedad de atracciones</h1>
 			<br>
-			<h2>¡Esperamos que las disfrutes tanto como nosotros!</h2>
+			<h2>¡Esperamos que las disfrutes!</h2>
 		</div>
 
 		<c:if test="${user.isAdmin()}">
@@ -59,7 +58,7 @@
 				<c:forEach items="${attractions}" var="attraction">
 					<tr>
 						<td><img alt="imagen" src="${attraction.getImage()}"></td>
-						<td><strong><c:out value="${attraction.name}"></c:out></strong>
+						<td class="name"><c:out value="${attraction.name}"></c:out>
 						</td>
 						<td><c:out value="${attraction.description}"></c:out></td>
 						<td><c:out value="${attraction.cost}"></c:out></td>
