@@ -142,7 +142,7 @@ public class Promotion {
 	}
 
 	public Boolean tienePromotion() {
-		return this.attraction3.equals("N");
+		return !this.attraction3.equals("N");
 	}
 	
 	public Double getDuration() {

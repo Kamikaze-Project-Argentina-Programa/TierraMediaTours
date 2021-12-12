@@ -62,7 +62,7 @@
 						<td><c:out value="${promotion.cost}"></c:out></td>
 						<td><c:out value="${promotion.attraction1}"></c:out></td>
 						<td><c:out value="${promotion.attraction2}"></c:out></td>
-						<td><c:out value="${promotion.attraction3}"></c:out></td>
+						<td><c:if test="${promotion.tienePromotion()}"><c:out value="${promotion.attraction3}"></c:out></c:if></td>
 						<td><c:if test="${user.admin}">
 								<a href="/TierraMedia3/promotions/edit.do?id=${promotion.id}"
 									class="btn btn-light rounded-0" role="button"><i
