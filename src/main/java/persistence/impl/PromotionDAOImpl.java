@@ -143,4 +143,10 @@ public class PromotionDAOImpl implements PromotionDAO {
 		}
 	}
 
+	@Override
+	public List<Promotion> findOrderByType(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

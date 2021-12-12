@@ -52,6 +52,25 @@ public class AttractionDAOImpl implements AttractionDAO {
    throw new MissingDataException(e); 
   } 
  } 
+ 
+ @Override 
+ public List<Attraction> findOrderByType(Integer id) { 
+  try { 
+	   String sql = "SELECT * FROM attractions WHERE is_active = 1 ORDER BY type = ? DESC"; 
+	   Connection conn = ConnectionProvider.getConnection(); 
+	   PreparedStatement statement = conn.prepareStatement(sql); 
+	   ResultSet resultados = statement.executeQuery(); 
+	 
+	   List<Attraction> attractions = new LinkedList<Attraction>(); 
+	   while (resultados.next()) { 
+	    attractions.add(toAttraction(resultados)); 
+	   } 
+	 
+	   return attractions; 
+	  } catch (Exception e) { 
+	   throw new MissingDataException(e); 
+	  } 
+ } 
   
  private Attraction toAttraction(ResultSet attractionRegister) throws SQLException { 
   return new Attraction(attractionRegister.getInt(1), attractionRegister.getString(2), 

@@ -129,4 +129,10 @@ public class UserDAOImpl implements UserDAO {
 		return new User(userRegister.getInt(1), userRegister.getString(2), userRegister.getString(3),
 				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7), userRegister.getBoolean(8));
 	}
+
+	@Override
+	public List<User> findOrderByType(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

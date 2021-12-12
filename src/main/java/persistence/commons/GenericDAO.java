@@ -4,7 +4,9 @@ import java.util.List;
 
 public interface GenericDAO<T> {
 	public T find(Integer id);
-
+	
+	public List<T> findOrderByType(Integer id);
+	
 	public List<T> findAll();
 
 	public int countAll();
@@ -14,4 +16,6 @@ public interface GenericDAO<T> {
 	public int update(T t);
 
 	public int delete(T t);
+	
+	
 }
