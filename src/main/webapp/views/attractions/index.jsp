@@ -57,7 +57,7 @@
 			<tbody>
 				<c:forEach items="${attractions}" var="attraction">
 					<tr>
-						<td><img alt="imagen" src="${attraction.getImage()}"></td>
+						<td><img alt="imagen" class="img-thumbnail" src="${attraction.getImage()}"></td>
 						<td class="name"><c:out value="${attraction.name}"></c:out>
 						</td>
 						<td><c:out value="${attraction.description}"></c:out></td>
