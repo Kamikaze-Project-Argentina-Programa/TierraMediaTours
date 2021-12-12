@@ -10,8 +10,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Attraction;
-import services.AttractionService;
+import model.Promotion;
+import services.PromotionService;
+
 
 @WebServlet("/promotions/index.do")
 public class ListPromotionsServlet extends HttpServlet implements Servlet {
@@ -22,13 +23,13 @@ public class ListPromotionsServlet extends HttpServlet implements Servlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.promotionService = new AttractionService();
+		this.promotionService = new PromotionService();
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Attraction> attractions = promotionService.list();
-		req.setAttribute("attractions", attractions);
+		List<Promotion> promotions = promotionService.list();
+		req.setAttribute("attractions", promotions);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promotions/index.jsp");
 		dispatcher.forward(req, resp);
