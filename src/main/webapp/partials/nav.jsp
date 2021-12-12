@@ -25,7 +25,7 @@
 								aria-current="page" href="/TierraMedia3/attractions/index.do">Atracciones</a></li>
 							
 							<li class="nav-item"><a class="nav-link active"
-								aria-current="page" href="/TierraMedia3/promos/index.do">Promos</a></li>
+								aria-current="page" href="/TierraMedia3/promotions/index.do">Promociones</a></li>
 
 							<c:if test="${user.isAdmin()}">
 								<li class="nav-item"><a class="nav-link active"

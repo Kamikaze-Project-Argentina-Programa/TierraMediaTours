@@ -3,12 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<!-- Index de promotions -->
 <head>
 <jsp:include page="/partials/head.jsp"></jsp:include>
+<jsp:include page="/partials/nav.jsp"></jsp:include>
+<link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
 
-	<jsp:include page="/partials/nav.jsp"></jsp:include>
 
 	<main class="container">
 
@@ -35,7 +37,7 @@
 			<div class="mb-3">
 				<a href="/TierraMedia3/attractions/create.do"
 					class="btn btn-primary" role="button"> <i class="bi bi-plus-lg"></i>
-					Nueva promo
+					Nueva promocion
 				</a>
 			</div>
 		</c:if>
