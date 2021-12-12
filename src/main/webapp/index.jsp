@@ -15,8 +15,7 @@
 		<div class="p-4 rounded">
 			<h2>
 				¡Te damos la bienvenida,
-				<c:out value="${user.username}" />
-				!
+				<c:out value="${user.username}"/>!
 			</h2>
 			<div id="carouselExampleIndicators" class="carousel slide"
 				data-bs-ride="carousel">
