@@ -13,10 +13,11 @@ public class Promotion {
 	private String attraction3;
 	private String image;
 	private Boolean isActive;
+	private Double duration;
 	private Map<String, String> errors;
 
 	public Promotion(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image, Boolean isActive) {
+			String image, Boolean isActive, Double duration) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -26,19 +27,8 @@ public class Promotion {
 		this.attraction3 = attraction3;
 		this.image = image;
 		this.isActive = isActive;
+		this.duration = duration;
 	}
-
-//	public Attraction(Integer id, String name, Integer cost, Double duration, Integer capacity, Integer type, String description, String image) { 
-//  super(); 
-//  this.id = id; 
-//  this.name = name; 
-//  this.cost = cost; 
-//  this.duration = duration; 
-//  this.capacity = capacity;
-//  this.type = type;
-//  this.description = description;
-//  this.image = image;
-// }
 
 	public boolean isValid() {
 		validate();
@@ -51,9 +41,9 @@ public class Promotion {
 		if (cost <= 0) {
 			errors.put("cost", "Debe ser positivo");
 		}
-//		if (duration <= 0) {
-//			errors.put("duration", "Debe ser positivo");
-//		}
+		if (duration <= 0) {
+			errors.put("duration", "Debe ser positivo");
+		}
 //		if (capacity <= 0) {
 //			errors.put("capacity", "Debe ser positivo");
 //		}
@@ -111,14 +101,7 @@ public class Promotion {
 		this.cost = cost;
 	}
 
-//	public Double getDuration() {
-//		return duration;
-//	}
-//
-//	public void setDuration(Double duration) {
-//		this.duration = duration;
-//	}
-//
+
 //	public Integer getCapacity() {
 //		return capacity;
 //	}
@@ -148,10 +131,19 @@ public class Promotion {
 	public Boolean tienePromotion() {
 		return this.attraction3.equals("N");
 	}
+	
+	public Double getDuration() {
+		return duration;
+	}
+
+	public void setDuration(Double duration) {
+		this.duration = duration;
+	}
+
 	@Override
 	public String toString() {
 		return "Promotion [id=" + id + ", name=" + name + ", cost=" + cost + ", attraction1=" + attraction1
-				+ ", attraction2=" + attraction2 + ", attraction3=" + attraction3 + ", image=" + image + "]";
+				+ ", attraction2=" + attraction2 + ", attraction3=" + attraction3 + ", image=" + image + ", duration=" + duration +"]";
 	}
 
 //	public boolean canHost(int i) {

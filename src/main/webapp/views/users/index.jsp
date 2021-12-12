@@ -3,14 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<!-- Index de users -->
 <head>
-
 <jsp:include page="/partials/head.jsp"></jsp:include>
+<jsp:include page="/partials/nav.jsp"></jsp:include>
 <link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
 
-	<jsp:include page="/partials/nav.jsp"></jsp:include>
+	
 
 	<main class="container">
 

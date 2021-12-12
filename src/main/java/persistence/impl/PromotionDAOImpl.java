@@ -16,7 +16,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 
 	public List<Promotion> findAll() {
 		try {
-			String sql = "SELECT p.id, at.type, p.cost, a.name, ab.name, ac.name, p.image, p.is_active\r\n" 
+			String sql = "SELECT p.id, at.type, p.cost, a.name, ab.name, ac.name, p.image, p.is_active , a.duration + ab.duration + ac.duration AS duration\r\n" 
 					+ "FROM promotions p\r\n"
 					+ "INNER JOIN attraction_types at ON at.id = p.name\r\n"
 					+ "INNER JOIN attractions a ON a.id = p.attraction1\r\n"
@@ -60,7 +60,8 @@ public class PromotionDAOImpl implements PromotionDAO {
 
 	private Promotion toPromotion(ResultSet promotionRegister) throws SQLException {
 		return new Promotion(promotionRegister.getInt(1), promotionRegister.getString(2), promotionRegister.getInt(3),
-				promotionRegister.getString(4), promotionRegister.getString(5), promotionRegister.getString(6), promotionRegister.getString(7),promotionRegister.getBoolean(8) );
+				promotionRegister.getString(4), promotionRegister.getString(5), promotionRegister.getString(6)
+				, promotionRegister.getString(7),promotionRegister.getBoolean(8), promotionRegister.getDouble(9) );
 	}
 
 	@Override

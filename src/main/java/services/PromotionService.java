@@ -13,9 +13,9 @@ public class PromotionService {
 	}
 
 	public Promotion create(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image, Boolean isActive) {
+			String image, Boolean isActive, Double duration) {
 
-		Promotion promotion = new Promotion(-1, name, cost, attraction1, attraction2, attraction3, image, isActive);
+		Promotion promotion = new Promotion(-1, name, cost, attraction1, attraction2, attraction3, image, isActive, duration);
 
 		if (promotion.isValid()) {
 			PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
@@ -27,7 +27,7 @@ public class PromotionService {
 	}
 
 	public Promotion update(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image, Boolean isActive) {
+			String image, Boolean isActive, Double duration) {
 
 		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
 		Promotion promotion = promotionDAO.find(id);
@@ -39,7 +39,7 @@ public class PromotionService {
 		promotion.getAttraction3();
 		promotion.setImage(image);
 		promotion.setIsActive(isActive);
-		
+		promotion.setDuration(duration);
 
 		if (promotion.isValid()) {
 			promotionDAO.update(promotion);
@@ -50,7 +50,7 @@ public class PromotionService {
 	}
 
 	public void delete(Integer id) {
-		Promotion promotion = new Promotion(id, null, null, null, null, null, null, false);
+		Promotion promotion = new Promotion(id, null, null, null, null, null, null, false, null);
 
 		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
 		promotionDAO.delete(promotion);

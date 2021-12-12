@@ -41,6 +41,14 @@ public class User {
 	public boolean canAttend(Attraction attraction) {
 		return attraction.getDuration() <= this.time;
 	}
+	
+	public boolean canAffordPromotion(Promotion promotion) {
+		return promotion.getCost() <= this.money;
+	}
+
+	public boolean canAttendPromotion(Promotion promotion) {
+		return promotion.getDuration() <= this.time;
+	}	
 
 	public boolean checkPassword(String password) {
 		// this.password en realidad es el hash del password

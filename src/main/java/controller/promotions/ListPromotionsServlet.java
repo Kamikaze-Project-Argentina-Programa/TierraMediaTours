@@ -17,7 +17,8 @@ import services.PromotionService;
 @WebServlet("/promotions/index.do")
 public class ListPromotionsServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = -8346640902238722429L;
+	
+	private static final long serialVersionUID = 6474943813265557209L;
 	private PromotionService promotionService;
 
 	@Override

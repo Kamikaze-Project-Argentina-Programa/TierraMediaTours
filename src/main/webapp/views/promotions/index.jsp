@@ -71,7 +71,7 @@
 									class="bi bi-x-circle-fill"></i></a>
 							</c:if> <c:choose>
 								<c:when
-									test="${user.canAfford(promotion) && user.canAttend(promotion) && promotion.canHost(1)}">
+									test="${user.canAffordPromotion(promotion) && user.canAttendPromotion(promotion) && promotion.canHost(1)}">
 									<a href="/TierraMedia3/promotions/buy.do?id=${promotion.id}"
 										class="btn btn-success rounded" role="button">Comprar</a>
 								</c:when>
