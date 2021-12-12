@@ -44,14 +44,11 @@
 		<div>
 			<button type="submit" class="btn btn-primary">Guardar</button>
 			<!--  falta la logica  -->
-			
-			<a onclick="window.history.back();" class="btn btn-secondary"
+			<a onclick="window.history.back();" class="btn btn-danger"
 				role="button">Cancelar</a>
 		</div>
 
 	</div>
-	
 	</div>
-
 </body>
 </html>
