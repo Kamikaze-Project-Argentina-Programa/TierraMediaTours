@@ -5,12 +5,7 @@
 <html>
 <head>
 <jsp:include page="/partials/head.jsp"></jsp:include>
-<style type="text/css">
-body {
-	background-color: #faf6c5;
-}
-</style>
-<link href="assets/css/estilosbase.css" rel= "stylesheet" />
+<link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>
 

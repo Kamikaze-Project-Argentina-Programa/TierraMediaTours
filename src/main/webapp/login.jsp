@@ -6,12 +6,7 @@
 <head>
 
 <jsp:include page="partials/head.jsp"></jsp:include>
-<link href="assets/css/estilosbase.css" rel="stylesheet" />
-<style type="text/css">
-h3 {
-	font-size: large;
-}
-</style>
+<link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -36,8 +31,6 @@ h3 {
 					</p>
 				</div>
 			</c:if>
-
-			<h3>Ingresa a la web iniciando tu sesión:</h3>
 
 			<form action="login" method="post">
 

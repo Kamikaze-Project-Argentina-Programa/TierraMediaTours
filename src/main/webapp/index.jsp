@@ -5,7 +5,7 @@
 <head> 
 
 <jsp:include page="partials/head.jsp"></jsp:include> 
-<link href="assets/css/estilosbase.css" rel= "stylesheet" />
+<link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head> 
 <body> 
  

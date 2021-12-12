@@ -1,10 +1,32 @@
 @charset "UTF-8";
+@font-face{
+	font-family: ciber-gotica;
+	src: url(/TierraMedia3/assets/fonts/ciber-gotica.otf);
+}
+@font-face{
+	font-family: josefin-sans;
+	src: url(/TierraMedia3/assets/fonts/josefin-sans.ttf);
+}
 h1 {
-	text-transform: uppercase;
-	font-size: xx-large;
-	font-weight: bold;
-	text-shadow: 2px 2px 3px #B5651D;
+	font-size: 40px;
+	color: #B5651D;
+	font-family: "ciber-gotica";
+	
 }
 body {
 	background-color: #faf6c5;
+	font-family: "josefin-sans";
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+}
+.subtitulo-login {
+	font-size: 22px;
+	font-family: "josefin-sans";
+	color: #000000;
+	font-weight: bold;
+}
+.probando-color{
+	color: black;
+	
 }
