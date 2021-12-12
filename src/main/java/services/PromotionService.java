@@ -2,9 +2,9 @@ package services;
 
 import java.util.List;
 
-import model.Attraction;
+
 import model.Promotion;
-import persistence.AttractionDAO;
+import persistence.PromotionDAO;
 import persistence.commons.DAOFactory;
 
 public class PromotionService {
@@ -12,10 +12,10 @@ public class PromotionService {
 		return DAOFactory.getPromotionDAO().findAll();
 	}
 
-	public Promotion(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image) {
+	public Promotion create(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
+			String image, Boolean isActive) {
 
-		Promotion promotion = new Promotion(-1, name, cost, attraction1, attraction2, attraction3, image);
+		Promotion promotion = new Promotion(-1, name, cost, attraction1, attraction2, attraction3, image, isActive);
 
 		if (promotion.isValid()) {
 			PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
@@ -26,8 +26,8 @@ public class PromotionService {
 		return promotion;
 	}
 
-	public Promotion(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image) {
+	public Promotion update(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
+			String image, Boolean isActive) {
 
 		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
 		Promotion promotion = promotionDAO.find(id);
@@ -36,8 +36,9 @@ public class PromotionService {
 		promotion.setCost(cost);
 		promotion.getAttraction1();
 		promotion.getAttraction2();
-		promotion.getAttraction3()
+		promotion.getAttraction3();
 		promotion.setImage(image);
+		promotion.setIsActive(isActive);
 		
 
 		if (promotion.isValid()) {
@@ -49,14 +50,14 @@ public class PromotionService {
 	}
 
 	public void delete(Integer id) {
-		Attraction attraction = new Attraction(id, null, null, null, null, null, null, null, false);
+		Promotion promotion = new Promotion(id, null, null, null, null, null, null, false);
 
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
-		attractionDAO.delete(attraction);
+		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
+		promotionDAO.delete(promotion);
 	}
 
-	public Attraction find(Integer id) {
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
-		return attractionDAO.find(id);
+	public Promotion find(Integer id) {
+		PromotionDAO promotionDAO = DAOFactory.getPromotionDAO();
+		return promotionDAO.find(id);
 	}
 }

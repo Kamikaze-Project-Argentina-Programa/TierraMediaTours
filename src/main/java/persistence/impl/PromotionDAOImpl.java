@@ -16,7 +16,8 @@ public class PromotionDAOImpl implements PromotionDAO {
 
 	public List<Promotion> findAll() {
 		try {
-			String sql = "SELECT p.id, at.type, p.cost, a.name, ab.name, ac.name\r\n" + "FROM promotions p\r\n"
+			String sql = "SELECT p.id, at.type, p.cost, a.name, ab.name, ac.name, p.image, p.is_active\r\n" 
+					+ "FROM promotions p\r\n"
 					+ "INNER JOIN attraction_types at ON at.id = p.name\r\n"
 					+ "INNER JOIN attractions a ON a.id = p.attraction1\r\n"
 					+ "INNER JOIN attractions ab ON ab.id = p.attraction2\r\n"
@@ -59,13 +60,13 @@ public class PromotionDAOImpl implements PromotionDAO {
 
 	private Promotion toPromotion(ResultSet promotionRegister) throws SQLException {
 		return new Promotion(promotionRegister.getInt(1), promotionRegister.getString(2), promotionRegister.getInt(3),
-				promotionRegister.getString(4), promotionRegister.getString(5), promotionRegister.getString(6), promotionRegister.getString(7) );
+				promotionRegister.getString(4), promotionRegister.getString(5), promotionRegister.getString(6), promotionRegister.getString(7),promotionRegister.getBoolean(8) );
 	}
 
 	@Override
 	public int insert(Promotion promotion) {
 		try {
-			String sql = "INSERT INTO promotions (name, cost, duration, capacity, type, description, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO promotions (name, cost, attraction1, attraction2, attraction3, image, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -76,6 +77,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 			statement.setString(i++, promotion.getAttraction2());
 			statement.setString(i++, promotion.getAttraction3());			
 			statement.setString(i++, promotion.getImage());
+			statement.setBoolean(i++, promotion.getIsActive());
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -87,7 +89,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 	@Override
 	public int update(Promotion promotion) {
 		try {
-			String sql = "UPDATE promotions SET name = ?, cost = ?, duration = ?, capacity = ?, type = ?, description = ?, image = ? WHERE id = ?";
+			String sql = "UPDATE promotions SET name = ?, cost = ?, attraction1 = ?, attraction2 = ?, attraction3 = ?, image = ?, is_active = ? WHERE id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -98,6 +100,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 			statement.setString(i++, promotion.getAttraction2());
 			statement.setString(i++, promotion.getAttraction3());			
 			statement.setString(i++, promotion.getImage());
+			statement.setBoolean(i++, promotion.getIsActive());
 			int rows = statement.executeUpdate();
 
 			return rows;

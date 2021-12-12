@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<!-- Index de attraction -->
 <head>
 <jsp:include page="/partials/head.jsp"></jsp:include>
 <jsp:include page="/partials/nav.jsp"></jsp:include>

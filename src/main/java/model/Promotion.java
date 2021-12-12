@@ -12,10 +12,11 @@ public class Promotion {
 	private String attraction2;
 	private String attraction3;
 	private String image;
+	private Boolean isActive;
 	private Map<String, String> errors;
 
 	public Promotion(Integer id, String name, Integer cost, String attraction1, String attraction2, String attraction3,
-			String image) {
+			String image, Boolean isActive) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -24,6 +25,7 @@ public class Promotion {
 		this.attraction2 = attraction2;
 		this.attraction3 = attraction3;
 		this.image = image;
+		this.isActive = isActive;
 	}
 
 //	public Attraction(Integer id, String name, Integer cost, Double duration, Integer capacity, Integer type, String description, String image) { 
@@ -132,7 +134,20 @@ public class Promotion {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	
 
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Boolean tienePromotion() {
+		return this.attraction3.equals("N");
+	}
 	@Override
 	public String toString() {
 		return "Promotion [id=" + id + ", name=" + name + ", cost=" + cost + ", attraction1=" + attraction1

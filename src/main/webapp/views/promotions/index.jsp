@@ -35,13 +35,55 @@
 
 		<c:if test="${user.isAdmin()}">
 			<div class="mb-3">
-				<a href="/TierraMedia3/attractions/create.do"
-					class="btn btn-primary" role="button"> <i class="bi bi-plus-lg"></i>
-					Nueva promocion
+				<a href="/TierraMedia3/promotions/create.do" class="btn btn-primary"
+					role="button"> <i class="bi bi-plus-lg"></i> Nueva promocion
 				</a>
 			</div>
 		</c:if>
-
+		<table class="table table-stripped table-hover">
+			<thead>
+				<tr>
+					<th>Imagen</th>
+					<th>Tipo de Promoci&oacute;n</th>
+					<th>Costo</th>
+					<th>Atracci&oacute;n 1</th>
+					<th>Atracci&oacute;n 2</th>
+					<th>Atracci&oacute;n 3</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${promotions}" var="promotion">
+					<tr>
+						<td><img alt="imagen" class="img-thumbnail"
+							src="${promotion.getImage()}"></td>
+						<td class="name"><c:out value="${promotion.name}"></c:out></td>
+						<td><c:out value="${promotion.cost}"></c:out></td>
+						<td><c:out value="${promotion.attraction1}"></c:out></td>
+						<td><c:out value="${promotion.attraction2}"></c:out></td>
+						<td><c:out value="${promotion.attraction3}"></c:out></td>
+						<td><c:if test="${user.admin}">
+								<a href="/TierraMedia3/promotions/edit.do?id=${promotion.id}"
+									class="btn btn-light rounded-0" role="button"><i
+									class="bi bi-pencil-fill"></i></a>
+								<a href="/TierraMedia3/promotions/delete.do?id=${promotion.id}"
+									class="btn btn-danger rounded" role="button"><i
+									class="bi bi-x-circle-fill"></i></a>
+							</c:if> <c:choose>
+								<c:when
+									test="${user.canAfford(promotion) && user.canAttend(promotion) && promotion.canHost(1)}">
+									<a href="/TierraMedia3/promotions/buy.do?id=${promotion.id}"
+										class="btn btn-success rounded" role="button">Comprar</a>
+								</c:when>
+								<c:otherwise>
+									<a href="#" class="btn btn-secondary rounded disabled"
+										role="button">No se puede comprar</a>
+								</c:otherwise>
+							</c:choose></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 
 	</main>
 
