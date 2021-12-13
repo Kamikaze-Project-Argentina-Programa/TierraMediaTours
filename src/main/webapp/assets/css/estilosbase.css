@@ -42,29 +42,29 @@ td {
 	font-weight: bold;
 	color: #000000;
 }
-#centrado-img{
+
+#centrado-img {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-
 .slide {
-	margin:auto;
+	margin: auto;
 	width: 720px;
 	height: 360px;
 }
 
 .slide img {
 	height: 360px;
-
 }
 
-.centrado-slide{
-	 text-align: center;
-	 margin-left: auto; 
-	 margin-right: auto;
+.centrado-slide {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
-.bg-brown{
+
+.bg-brown {
 	background-color: #754213;
 }
 
@@ -86,6 +86,21 @@ td {
 	border-color: #C4925C;
 }
 
+.btn-success:visited {
+	background-color: #B5B476;
+	border-color: #B5B476;
+}
+
+.btn-success:focus {
+	background-color: #B5B476;
+	border-color: #B5B476;
+}
+
+.btn-success:active {
+	background-color: #C4925C;
+	border-color: #C4925C;
+}
+
 .btn-primary {
 	background-color: #78774E;
 	border-color: #78774E;
@@ -96,9 +111,25 @@ td {
 	border-color: #B5B476;
 }
 
+.btn-primary:visited {
+	background-color: #C4925C;
+	border-color: #C4925C;
+}
+
+.btn-primary:focus {
+	background-color: #C4925C;
+	border-color: #C4925C;
+}
+
+.btn-primary:active {
+	background-color: #C4925C;
+	border-color: #C4925C;
+}
+
 a {
 	text-decoration: none;
 }
-h2{
+
+h2 {
 	font-weight: bold;
 }
