@@ -64,6 +64,9 @@ td {
 	 margin-left: auto; 
 	 margin-right: auto;
 }
+.bg-brown{
+	background-color: #754213;
+}
 
 .alert-info {
 	font-size: large;
