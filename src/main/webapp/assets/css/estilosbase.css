@@ -45,10 +45,14 @@ td {
 
 .slide {
 	margin-top: 25px;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .slide img {
-	height: 65vh;
+	height: 500px;
+
 }
 
 .alert-info {
