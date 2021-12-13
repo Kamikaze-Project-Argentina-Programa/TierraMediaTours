@@ -44,7 +44,7 @@
 			<thead>
 				<tr>
 					<th>Imagen</th>
-					<th>Tipo de Promoci&oacute;n</th>
+					<th>Tipo de Pack</th>
 					<th>Costo</th>
 					<th>Atracci&oacute;n 1</th>
 					<th>Atracci&oacute;n 2</th>
