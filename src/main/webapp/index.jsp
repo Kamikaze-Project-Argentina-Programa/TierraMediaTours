@@ -12,8 +12,8 @@
 </head>
 <body>
 	<main class="container">
-		<div class="p-4 rounded">
-			<h2>
+		<div class="p-4 rounded" style="text-align: center">
+			<h2 style="font-size: 50px">
 				¡Te damos la bienvenida, 
 				<c:out value="${user.username}"/>!
 			</h2>
