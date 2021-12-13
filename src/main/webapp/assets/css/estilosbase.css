@@ -59,6 +59,12 @@ td {
 
 }
 
+.centrado-slide{
+	 text-align: center;
+	 margin-left: auto; 
+	 margin-right: auto;
+}
+
 .alert-info {
 	font-size: large;
 }
