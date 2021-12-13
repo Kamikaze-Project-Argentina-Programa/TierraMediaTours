@@ -5,9 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Sign Up</title>
-<jsp:include page="partials/head.jsp"></jsp:include>
+<jsp:include page="/partials/head.jsp"></jsp:include>
 <link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
 </head>
 <body>

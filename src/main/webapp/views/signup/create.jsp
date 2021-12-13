@@ -12,15 +12,14 @@
 
 	<main class="container">
 
-		<c:if test="${attraction != null && !attraction.isValid()}">
+		<c:if test="${user != null && !user.isValid()}">
 			<div class="alert alert-danger">
-				<p>Se encontraron errores al actualizar la atracción.</p>
+				<p>Se encontraron errores al crear el usuario.</p>
 			</div>
 		</c:if>
 
-		<form action="/turismo/attractions/edit.do" method="post">
-			<input type="hidden" name="id" value="${attraction.id}">
-			<jsp:include page="/views/attractions/form.jsp"></jsp:include>
+		<form action="/TierraMedia3/users/create.do" method="post">
+			<jsp:include page="/views/users/form.jsp"></jsp:include>
 		</form>
 	</main>
 </body>
