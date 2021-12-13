@@ -11,7 +11,7 @@ public class UserService {
   return DAOFactory.getUserDAO().findAll();
  }
 
- public User create(Integer id, String username, String password, Boolean admin, Integer money, Double time, Integer preferences, Boolean isActive) {
+ public User create(String username, String password, Boolean admin, Integer money, Double time, Integer preferences, Boolean isActive) {
   User user = new User(-1, username, password, admin, money, time, preferences, isActive);
   user.setPassword(password);
 

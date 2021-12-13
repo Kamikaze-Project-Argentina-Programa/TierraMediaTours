@@ -5,13 +5,24 @@
   type="text" class="form-control" id="name" name="username" 
   required value="${tmp_user.username}"> 
 </div> 
+
 <div class="mb-3"> 
- <label for="coins" 
-  class='col-form-label ${tmp_user.errors.get("coins") != null ? "is-invalid" : "" }'>Monedas:</label> 
- <input class="form-control" type="number" id="coins" name="coins" 
-  required value="${tmp_user.coins}"></input> 
+ <label for="password" 
+  class='col-form-label ${tmp_user.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label> 
+ <input class="form-control" type="password" id="password" name="password" 
+  required value="${tmp_user.password}"></input> 
  <div class="invalid-feedback"> 
-  <c:out value='${tmp_user.errors.get("coins")}'></c:out> 
+  <c:out value='${tmp_user.errors.get("password")}'></c:out> 
+ </div> 
+</div> 
+
+<div class="mb-3"> 
+ <label for="money" 
+  class='col-form-label ${tmp_user.errors.get("money") != null ? "is-invalid" : "" }'>Monedas:</label> 
+ <input class="form-control" type="number" id="money" name="money" 
+  required value="${tmp_user.money}"></input> 
+ <div class="invalid-feedback"> 
+  <c:out value='${tmp_user.errors.get("money")}'></c:out> 
  </div> 
 </div> 
  
@@ -25,20 +36,10 @@
  </div> 
 </div> 
  
-<div class="mb-3"> 
- <label for="password" 
-  class='col-form-label ${tmp_user.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label> 
- <input class="form-control" type="password" id="password" name="password" 
-  required value="${tmp_user.password}"></input> 
- <div class="invalid-feedback"> 
-  <c:out value='${tmp_user.errors.get("password")}'></c:out> 
- </div> 
-</div> 
- 
  <div class="mb-3"> 
  <label for="preferences" 
   class='col-form-label ${tmp_user.errors.get("preferences") != null ? "is-invalid" : "" }'>Preferencias:</label> 
- <input class="form-control" type="text" id="preferences" name="preferences" 
+ <input class="form-control" type="number" id="preferences" name="preferences" 
   required value="${tmp_user.preferences}"></input> 
  <div class="invalid-feedback"> 
   <c:out value='${tmp_user.errors.get("preferences")}'></c:out> 

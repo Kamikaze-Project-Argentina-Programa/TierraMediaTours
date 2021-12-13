@@ -16,15 +16,17 @@ import persistence.commons.MissingDataException;
 public class UserDAOImpl implements UserDAO {
 	public int insert(User user) {
 		try {
-			String sql = "INSERT INTO users (username, password, admin, money, time, preferences) VALUES (?, ?, ?, ?, ?,?)";
+			String sql = "INSERT INTO users (username, password, admin, money, time, preferences, is_active) VALUES (?, ?, ?, ?, ?, ?,?)";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, user.getUsername());
-			statement.setString(2, user.getPassword());
-			statement.setBoolean(3, user.getAdmin());
-			statement.setInt(4, user.getMoney());
-			statement.setDouble(5, user.getTime());
-			statement.setInt(6, user.getPreferences());
+			int i = 1;
+			statement.setString(i++, user.getUsername());
+			statement.setString(i++, user.getPassword());
+			statement.setBoolean(i++, user.getAdmin());
+			statement.setInt(i++, user.getMoney());
+			statement.setDouble(i++, user.getTime());
+			statement.setInt(i++, user.getPreferences());
+			statement.setBoolean(i++, user.getIsActive());
 			int rows = statement.executeUpdate();
 			return rows;
 		} catch (Exception e) {
@@ -127,7 +129,8 @@ public class UserDAOImpl implements UserDAO {
 
 	private User toUser(ResultSet userRegister) throws SQLException {
 		return new User(userRegister.getInt(1), userRegister.getString(2), userRegister.getString(3),
-				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7), userRegister.getBoolean(8));
+				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7),
+				userRegister.getBoolean(8));
 	}
 
 	@Override
