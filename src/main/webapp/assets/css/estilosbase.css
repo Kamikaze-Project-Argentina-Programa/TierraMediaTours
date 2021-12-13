@@ -49,12 +49,13 @@ td {
 
 
 .slide {
-	margin-top: 25px;
-	width: 1080px;
+	margin:auto;
+	width: 720;
+	height: 360;
 }
 
 .slide img {
-	height: 420px;
+	height: 360px;
 
 }
 
