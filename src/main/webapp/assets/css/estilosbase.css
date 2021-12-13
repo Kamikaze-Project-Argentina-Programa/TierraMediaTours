@@ -42,16 +42,19 @@ td {
 	font-weight: bold;
 	color: #000000;
 }
-
-.slide {
-	margin-top: 25px;
-	width: 1200px;
+#centrado-img{
 	margin-left: auto;
 	margin-right: auto;
 }
 
+
+.slide {
+	margin-top: 25px;
+	width: 1080px;
+}
+
 .slide img {
-	height: 500px;
+	height: 420px;
 
 }
 
