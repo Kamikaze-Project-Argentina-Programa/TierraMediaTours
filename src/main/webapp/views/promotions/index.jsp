@@ -45,10 +45,11 @@
 				<tr>
 					<th>Imagen</th>
 					<th>Tipo de Pack</th>
-					<th>Costo</th>
 					<th>Atracci&oacute;n 1</th>
 					<th>Atracci&oacute;n 2</th>
 					<th>Atracci&oacute;n 3</th>
+					<th>Costo</th>
+					<th>Duracion</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -57,10 +58,11 @@
 					<tr>
 						<td><img alt="imagen" class="img-thumbnail" src="${promotion.getImage()}"></td>
 						<td class="name"><c:out value="${promotion.name}"></c:out></td>
-						<td><c:out value="${promotion.cost}"></c:out></td>
 						<td><c:out value="${promotion.attraction1}"></c:out></td>
 						<td><c:out value="${promotion.attraction2}"></c:out></td>
 						<td><c:if test="${promotion.tienePromotion()}"><c:out value="${promotion.attraction3}"></c:out></c:if></td>
+						<td><c:out value="${promotion.cost}"></c:out></td>
+						<td><c:out value="${promotion.duration}"></c:out>h</td>
 						<td><c:if test="${user.admin}">
 								<a href="/TierraMedia3/promotions/edit.do?id=${promotion.id}"
 									class="btn btn-light rounded-0" role="button"><i

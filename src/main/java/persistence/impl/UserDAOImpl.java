@@ -113,7 +113,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public List<User> findAll() {
 		try {
-			String sql = "SELECT * FROM users";
+			String sql = "SELECT * FROM users ORDER BY admin DESC, username";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
