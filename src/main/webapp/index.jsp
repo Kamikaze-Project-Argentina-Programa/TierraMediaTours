@@ -12,7 +12,7 @@
 </head>
 <body>
 	<main class="container">
-		<div class="p-4 rounded" style="text-align: center; margin-left: 100px; margin-right: auto">
+		<div class="p-4 rounded" style="text-align: center; margin-left: auto; margin-right: auto">
 			<h2 style="font-size: 50px">
 				¡Te damos la bienvenida, 
 				<c:out value="${user.username}"/>!
