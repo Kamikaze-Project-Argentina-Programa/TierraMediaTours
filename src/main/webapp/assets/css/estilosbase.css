@@ -1,22 +1,27 @@
 @charset "UTF-8";
-@font-face{
+
+@font-face {
 	font-family: ciber-gotica;
 	src: url(/TierraMedia3/assets/fonts/ciber-gotica.otf);
 }
-@font-face{
+
+@font-face {
 	font-family: josefin-sans;
 	src: url(/TierraMedia3/assets/fonts/josefin-sans.ttf);
 }
-@font-face{
+
+@font-face {
 	font-family: josefinsans-semibold;
 	src: url(/TierraMedia3/assets/fonts/josefinsans-semibold.ttf);
 }
+
 h1 {
 	font-size: 40px;
 	color: #754213;
 	font-family: "ciber-gotica";
 	-webkit-text-stroke: 1px #541206;
 }
+
 body {
 	background-color: #fff6d3;
 	font-family: "josefin-sans";
@@ -24,45 +29,59 @@ body {
 	font-weight: bold;
 	font-size: 22px;
 }
+
 td {
 	font-size: large;
 	font-family: "josefin-sans";
 	color: #626266;
 }
-.name{
+
+.name {
 	font-size: large;
 	font-family: "josefinsans-semibold";
 	font-weight: bold;
 	color: #000000;
 }
-.slide{
+
+.slide {
 	margin-top: 25px;
 }
-.slide img{
+
+.slide img {
 	height: 65vh;
 }
-.alert-info{
+
+.alert-info {
 	font-size: large;
 }
-.alert-danger{
+
+.alert-danger {
 	font-size: large;
 }
-.btn-success{
+
+.btn-success {
 	background-color: #754213;
 	border-color: #754213;
 }
-.btn-success:hover{
+
+.btn-success:hover {
 	background-color: #C4925C;
 	border-color: #C4925C;
 }
-.btn-primary{
+
+.btn-primary {
 	background-color: #78774E;
 	border-color: #78774E;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
 	background-color: #B5B476;
 	border-color: #B5B476;
 }
-a{
+
+a {
 	text-decoration: none;
+}
+h2{
+	font-weight: bold;
 }

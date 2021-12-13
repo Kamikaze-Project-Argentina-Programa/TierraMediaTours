@@ -27,9 +27,9 @@
 		</c:if>
 
 		<div class="p-4 mb-3 rounded">
-			<h1>Estas son las promociones de la Tierra Media</h1>
+			<h2>¡Estas son las promociones de la Tierra Media que tenemos para vos!</h2>
 			<br>
-			<h2>Esperemos que te gusten las promociones que tenemos para vos</h2>
+			<h3>¡Esperamos que las aproveches!</h3>
 		</div>
 
 		<c:if test="${user.isAdmin()}">

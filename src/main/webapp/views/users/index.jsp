@@ -27,7 +27,7 @@
 		</c:if>
 
 		<div class="p-4 mb-3 rounded">
-			<h1>Usuarios</h1>
+			<h2>Usuarios</h2>
 		</div>
 
 		<c:if test="${user.isAdmin()}">

@@ -27,9 +27,9 @@
 		</c:if>
 
 		<div class="p-4 mb-3 rounded">
-			<h1>En Tierra Media tenemos una gran variedad de atracciones</h1>
+			<h2>En Tierra Media tenemos una gran variedad de atracciones para ofrecerte...</h2>
 			<br>
-			<h2>¡Esperamos que las disfrutes!</h2>
+			<h3>¡Esperamos que las disfrutes!</h3>
 		</div>
 
 		<c:if test="${user.isAdmin()}">
