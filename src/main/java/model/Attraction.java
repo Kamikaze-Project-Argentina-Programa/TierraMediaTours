@@ -26,7 +26,11 @@ public class Attraction {
 		this.capacity = capacity;
 		this.type = type;
 		this.description = description;
-		this.image = image;
+		if(image == null) {
+			this.image = "/TierraMedia3/assets/img/logo-kp.jpg";
+		}else {
+			this.image = image;
+		}
 		this.isActive = isActive;
 	}
 
