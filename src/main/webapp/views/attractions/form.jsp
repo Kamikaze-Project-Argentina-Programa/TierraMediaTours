@@ -33,7 +33,7 @@
 		</div>
 <br>		
 		<div class="mb-3">
-			<label for="formFile" class="form-label">Tipo de atracion
+			<label for="formFile" class="form-label">Tipo de atraccion
 				preferida:</label> <select class="form-select"
 				aria-label="Default select example">
 				<option selected></option>
