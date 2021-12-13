@@ -2,9 +2,7 @@ package services;
 
 import java.util.List;
 
-import model.Attraction;
 import model.User;
-import persistence.AttractionDAO;
 import persistence.commons.DAOFactory;
 
 public class UserService {

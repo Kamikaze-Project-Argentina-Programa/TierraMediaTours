@@ -45,8 +45,9 @@ public class EditAttractionServlet extends HttpServlet {
   Integer type = Integer.parseInt(req.getParameter("type"));
   String description = req.getParameter("description");
   String image = req.getParameter("image");
+  Boolean isActive = Boolean.parseBoolean("isActive");
 
-  Attraction attraction = attractionService.update(id, name, cost, duration, capacity, type, description, image);
+  Attraction attraction = attractionService.update(id, name, cost, duration, capacity, type, description, image, isActive);
 
   if (attraction.isValid()) {
    resp.sendRedirect("/TierraMedia3/attractions/index.do");

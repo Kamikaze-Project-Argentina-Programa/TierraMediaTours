@@ -36,7 +36,7 @@ public class CreateUserServlet extends HttpServlet {
 		Integer money = Integer.parseInt(req.getParameter("money"));
 		Double time = Double.parseDouble(req.getParameter("time"));
 		Integer preferences = Integer.parseInt(req.getParameter("preferences"));
-		Boolean isActiv = Boolean.parseBoolean(req.getParameter("isActive"));
+		Boolean isActive = Boolean.parseBoolean(req.getParameter("isActive"));
 		User tmp_user = userService.create(id, username, password, admin, money, time, preferences, isActive);
 		if (tmp_user.isValid()) {
 			resp.sendRedirect("/TierraMedia3/users/index.do");

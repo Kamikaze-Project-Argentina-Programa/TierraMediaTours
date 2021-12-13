@@ -33,7 +33,7 @@
 		<c:if test="${user.isAdmin()}">
 			<div class="mb-3">
 				<a href="/TierraMedia3/users/create.do" class="btn btn-primary"
-					role="button"> <i class="bi bi-plus-lg"></i> Nuevo Usuario
+					role="button"> <i class="bi bi-plus-lg"></i> Usuario
 				</a>
 			</div>
 		</c:if>

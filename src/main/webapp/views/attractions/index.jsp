@@ -36,7 +36,7 @@
 			<div class="mb-3">
 				<a href="/TierraMedia3/attractions/create.do"
 					class="btn btn-primary" role="button"> <i class="bi bi-plus-lg"></i>
-					Nueva Atracción
+					Atracción
 				</a>
 			</div>
 		</c:if>
