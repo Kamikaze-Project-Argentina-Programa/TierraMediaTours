@@ -20,11 +20,11 @@
 					<c:out value="${fn:toUpperCase(user.username)}" />!
 				</h2>
 				<br>
-				<table style="height: 100px;" class="centrado-slide">
+				<table style="height: auto;" class="centrado-slide">
 					<tbody>
 						<tr>
 							<c:forEach items="${promotions}" var="promotions">
-								<td><div class="card border border-3" style="width: 25rem;">
+								<td><div class="card border border-3" style="width: auto;">
 										<img src="${promotions.getImage()}" class="card-img-top rounded"
 											alt="imagen">
 										<div class="card-body">
