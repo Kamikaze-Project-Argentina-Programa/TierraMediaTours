@@ -16,7 +16,7 @@ public class ItineraryDAOImpl  implements ItineraryDAO {
 	 
 	 public List<Itinerary> findAll() { 
 	  try { 
-	   String sql = "SELECT * FROM attractions WHERE is_active = 1"; 
+	   String sql = "SELECT * FROM itinerary"; 
 	   Connection conn = ConnectionProvider.getConnection(); 
 	   PreparedStatement statement = conn.prepareStatement(sql); 
 	   ResultSet resultados = statement.executeQuery(); 

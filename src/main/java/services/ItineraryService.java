@@ -24,38 +24,8 @@ public class ItineraryService {
 		return itinerary;
 	}
 
-	public Itinerary update(Integer id, String username, String attraction, Integer cost, Double duration,
-			Boolean promotion) {
-
-		ItineraryDAO itineraryDAO = DAOFactory.getitineraryDAO();
-		Itinerary itinerary = itineraryDAO.find(id);
-
-		attraction.setName(name);
-		attraction.setCost(cost);
-		attraction.setDuration(duration);
-		attraction.setCapacity(capacity);
-		attraction.setType(type);
-		attraction.setDescription(description);
-		attraction.setImage(image);
-		attraction.setIsActive(isActive);
-
-		if (attraction.isValid()) {
-			attractionDAO.update(attraction);
-			// XXX: si no devuelve "1", es que hubo más errores
-		}
-
-		return attraction;
-	}
-
-	public void delete(Integer id) {
-		Attraction attraction = new Attraction(id, null, null, null, null, null, null, null, false);
-
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
-		attractionDAO.delete(attraction);
-	}
-
-	public Attraction find(Integer id) {
-		AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
-		return attractionDAO.find(id);
+	public Itinerary find(Integer id) {
+		ItineraryDAO itineraryDAO = DAOFactory.getItineraryDAO();
+		return itineraryDAO.find(id);
 	}
 }
