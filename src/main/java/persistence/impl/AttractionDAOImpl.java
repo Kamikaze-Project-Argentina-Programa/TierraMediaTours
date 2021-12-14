@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.util.LinkedList; 
 import java.util.List; 
  
-import model.Attraction; 
+import model.Attraction;
+import model.AttractionTypes;
+import model.Promotion;
+import model.User;
 import persistence.AttractionDAO; 
 import persistence.commons.ConnectionProvider; 
 import persistence.commons.MissingDataException; 
@@ -158,7 +161,19 @@ public class AttractionDAOImpl implements AttractionDAO {
   } catch (Exception e) { 
    throw new MissingDataException(e); 
   } 
- } 
+ }
+
+@Override
+public List<Attraction> findItinerary(Integer id) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public int insert(Attraction t, User a, Promotion b, AttractionTypes c) {
+	// TODO Auto-generated method stub
+	return 0;
+} 
  
  
  

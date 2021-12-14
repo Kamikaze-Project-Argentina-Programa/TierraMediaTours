@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import model.Attraction;
+import model.AttractionTypes;
 import model.Promotion;
+import model.User;
 import persistence.PromotionDAO;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
@@ -153,6 +156,18 @@ public class PromotionDAOImpl implements PromotionDAO {
 	public List<Promotion> findOrderByType(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Promotion> findItinerary(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insert(Promotion t, User a, Attraction b, AttractionTypes c) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

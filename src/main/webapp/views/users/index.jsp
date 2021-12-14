@@ -55,7 +55,7 @@
 						<td class="name"><strong><c:out value="${tmp_user.username}"></c:out></strong></td>
 						<td><c:out value="${tmp_user.money}"></c:out></td>
 						<td><c:out value="${tmp_user.time}"></c:out></td>
-						<td><c:out value="${tmp_user.preferences}"></c:out></td>
+						<td><c:out value="${tmp_user.preferencetype}"></c:out></td>
 						<td><c:choose>
 								<c:when test="${tmp_user.admin}"> 
          Admin 

@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import model.Attraction;
 import model.AttractionTypes;
+import model.Promotion;
+import model.User;
 import persistence.AttractionTypesDAO;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
@@ -132,5 +135,17 @@ public class AttractionTypesDAOImpl implements AttractionTypesDAO {
 	private AttractionTypes toAttractionTypes(ResultSet attractionTypesRegister) throws SQLException {
 		return new AttractionTypes(attractionTypesRegister.getInt(1), attractionTypesRegister.getString(2),
 				attractionTypesRegister.getBoolean(3));
+	}
+
+	@Override
+	public List<AttractionTypes> findItinerary(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insert(AttractionTypes t, User a, Attraction b, Promotion c) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -15,12 +15,6 @@ public class ItineraryService {
 
 		Itinerary itinerary = new Itinerary(-1, username, attraction, cost, duration, promotion);
 
-		if (itinerary.isValid()) {
-			ItineraryDAO itineraryDAO = DAOFactory.getItineraryDAO();
-			itineraryDAO.insert(itinerary);
-			// XXX: si no devuelve "1", es que hubo más errores
-		}
-
 		return itinerary;
 	}
 
@@ -28,4 +22,5 @@ public class ItineraryService {
 		ItineraryDAO itineraryDAO = DAOFactory.getItineraryDAO();
 		return itineraryDAO.find(id);
 	}
+
 }

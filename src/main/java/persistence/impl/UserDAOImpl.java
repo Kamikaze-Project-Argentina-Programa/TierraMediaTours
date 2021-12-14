@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import model.Attraction;
+import model.AttractionTypes;
+import model.Itinerary;
 import model.User;
 import model.nullobjects.NullUser;
 import persistence.UserDAO;
@@ -113,7 +116,10 @@ public class UserDAOImpl implements UserDAO {
 
 	public List<User> findAll() {
 		try {
-			String sql = "SELECT * FROM users ORDER BY admin DESC, username";
+			String sql = "SELECT u.id, u.username, u.password, u.admin, u.money, u.time, u.preferences, at.type, u.is_active "
+					+ "FROM users u" 
+					+ "INNER JOIN attraction_types at ON at.id = u.preferences"
+					+ "ORDER BY admin DESC, username";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -129,13 +135,25 @@ public class UserDAOImpl implements UserDAO {
 
 	private User toUser(ResultSet userRegister) throws SQLException {
 		return new User(userRegister.getInt(1), userRegister.getString(2), userRegister.getString(3),
-				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7),
-				userRegister.getBoolean(8));
+				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7), userRegister.getString(8),
+				userRegister.getBoolean(9));
 	}
 
 	@Override
 	public List<User> findOrderByType(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<User> findItinerary(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insert(User t, Itinerary a, Attraction b, AttractionTypes c) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -13,10 +13,12 @@ public class User {
 	private Integer money;
 	private Double time;
 	private Integer preferences;
+	private String preferencetype;
 	private Boolean isActive;
 	private HashMap<String, String> errors;
 
-	public User(Integer id, String username, String password, Boolean admin, Integer money, Double time,Integer preferences, Boolean isActive) {
+	public User(Integer id, String username, String password, Boolean admin, 
+			Integer money, Double time,Integer preferences, String preferencetype, Boolean isActive) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -25,6 +27,7 @@ public class User {
 		this.time = time;
 		this.admin = admin;
 		this.preferences = preferences;
+		this.preferencetype = preferencetype;
 		this.isActive = isActive;
 	}
 
@@ -157,6 +160,14 @@ public class User {
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
+	}
+
+	public String getPreferencetype() {
+		return preferencetype;
+	}
+
+	public void setPreferencetype(String preferencetype) {
+		this.preferencetype = preferencetype;
 	}
 	
 	

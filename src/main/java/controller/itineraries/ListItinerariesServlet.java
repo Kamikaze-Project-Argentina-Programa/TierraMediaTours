@@ -16,7 +16,7 @@ import services.ItineraryService;
 @WebServlet("/itineraries/index.do")
 public class ListItinerariesServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = -6739214423218277071L;
+	private static final long serialVersionUID = 1323836674941613316L;
 	private ItineraryService itineraryService;
 
 	@Override
