@@ -67,7 +67,9 @@ public class UserDAOImpl implements UserDAO {
 
 	public User findByUsername(String username) {
 		try {
-			String sql = "SELECT * FROM users WHERE username = ? AND is_active = 1";
+			String sql = "SELECT u.id, u.username, u.password, u.admin, u.money, u.time, u.preferences, at.type, u.is_active FROM users u \r\n"
+					+ "INNER JOIN attraction_types at ON at.id = u.preferences\r\n"
+					+ "WHERE u.username = ? AND u.is_active = 1";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, username);
@@ -116,9 +118,8 @@ public class UserDAOImpl implements UserDAO {
 
 	public List<User> findAll() {
 		try {
-			String sql = "SELECT u.id, u.username, u.password, u.admin, u.money, u.time, u.preferences, at.type, u.is_active "
-					+ "FROM users u" 
-					+ "INNER JOIN attraction_types at ON at.id = u.preferences"
+			String sql = "SELECT u.id, u.username, u.password, u.admin, u.money, u.time, u.preferences, at.type, u.is_active FROM users u \r\n"
+					+ "INNER JOIN attraction_types at ON at.id = u.preferences\r\n"
 					+ "ORDER BY admin DESC, username";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
