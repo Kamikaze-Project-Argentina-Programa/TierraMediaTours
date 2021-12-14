@@ -41,6 +41,10 @@ public class Promotion {
 		validate();
 		return errors.isEmpty();
 	}
+	
+	public boolean isValidAttraction3() {
+		return this.attraction3 == "N";
+	}
 
 	public void validate() {
 		errors = new HashMap<String, String>();

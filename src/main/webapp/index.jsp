@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <!-- Index de bienvenida -->
 <head>
@@ -19,46 +19,30 @@
 					¡Te damos la bienvenida,
 					<c:out value="${fn:toUpperCase(user.username)}" />!
 				</h2>
+				<br>
+				<table style="height: 100px;" class="centrado-slide">
+					<tbody>
+						<tr>
+							<c:forEach items="${promotions}" var="promotions">
+								<td><div class="card border border-3" style="width: 25rem;">
+										<img src="${promotions.getImage()}" class="card-img-top rounded"
+											alt="imagen">
+										<div class="card-body">
+											<h5 class="card-title">
+												<c:out value="${promotions.name}"></c:out>
+											</h5>
+											<p class="card-text"><c:out value="${promotions.attraction1}"></c:out> |
+											<c:out value="${promotions.attraction2}"></c:out>
+											<c:if test="${promotions.isValidAttraction3()}">
+											|<c:out value="${promotions.attraction3}"></c:out></c:if></p>
+											<a href="#" class="btn btn-primary">Go somewhere</a>
+										</div>
+									</div></td>
+							</c:forEach>
+						</tr>
 
-				<div id="carouselExampleIndicators" class="carousel slide"
-					data-bs-ride="carousel">
-					<div class="carousel-indicators">
-						<button type="button" data-bs-target="#carouselExampleIndicators"
-							data-bs-slide-to="0" class="active" aria-current="true"
-							aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carouselExampleIndicators"
-							data-bs-slide-to="1" aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#carouselExampleIndicators"
-							data-bs-slide-to="2" aria-label="Slide 3"></button>
-					</div>
-
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="/TierraMedia3/assets/img/aventura.png"
-								class="d-block w-100" alt="...">
-						</div>
-						<div class="carousel-item">
-							<img src="/TierraMedia3/assets/img/paisajes.png"
-								class="d-block w-100" alt="...">
-						</div>
-						<div class="carousel-item">
-							<img src="/TierraMedia3/assets/img/moria.jpg"
-								class="d-block w-100" alt="...">
-						</div>
-					</div>
-
-					<button class="carousel-control-prev" type="button"
-						data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-
-					<button class="carousel-control-next" type="button"
-						data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</main>

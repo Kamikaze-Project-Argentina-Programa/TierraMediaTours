@@ -1,7 +1,13 @@
 package services;
 
+import java.util.List;
+
+import model.AttractionTypes;
+import model.Promotion;
 import model.User; 
-import model.nullobjects.NullUser; 
+import model.nullobjects.NullUser;
+import persistence.AttractionTypesDAO;
+import persistence.PromotionDAO;
 import persistence.UserDAO; 
 import persistence.commons.DAOFactory; 
  
@@ -16,5 +22,9 @@ public class LoginService {
      } 
      return user; 
  } 
-  
+ public List<Promotion> login() { 
+	  PromotionDAO promotionDAO = DAOFactory.getPromotionDAO(); 
+	  List<Promotion> promotions = promotionDAO.findAll(); 
+	     return promotions; 
+	 } 
 }
