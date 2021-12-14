@@ -2,10 +2,12 @@ package persistence.commons;
 
 import persistence.AttractionDAO;
 import persistence.AttractionTypesDAO;
+import persistence.ItineraryDAO;
 import persistence.PromotionDAO;
 import persistence.UserDAO;
 import persistence.impl.AttractionDAOImpl;
 import persistence.impl.AttractionTypesDAOImpl;
+import persistence.impl.ItineraryDAOImpl;
 import persistence.impl.PromotionDAOImpl;
 import persistence.impl.UserDAOImpl;
 
@@ -23,5 +25,8 @@ public class DAOFactory {
 	}
 	public static AttractionTypesDAO getAttractionTypesDAO() {
 		return new AttractionTypesDAOImpl();
+	}
+	public static ItineraryDAO getItineraryDAO() {
+		return new ItineraryDAOImpl();
 	}
 }
