@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<!-- Index de itineraries -->
+<head>
+<jsp:include page="/partials/head.jsp"></jsp:include>
+<jsp:include page="/partials/nav.jsp"></jsp:include>
+<link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
+</head>
+<body>
+	<main class="container">
+		<c:if test="${flash != null}">
+			<div class="alert alert-danger">
+				<p>
+					<c:out value="${flash}" />
+					<c:if test="${errors != null}">
+						<ul>
+							<c:forEach items="${errors}" var="entry">
+								<li><c:out value="${entry.getValue()}"></c:out></li>
+							</c:forEach>
+						</ul>
+					</c:if>
+				</p>
+			</div>
+		</c:if>
+
+		<div class="p-4 mb-3 rounded">
+			<h2>Itinerario</h2>
+		</div>
+	
+		<table class="table table-stripped table-hover">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Monedas</th>
+					<th>Tiempo</th>
+					<th>Preferencias</th>
+					<th>Rol</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${users}" var="tmp_user">
+					<tr>
+						<td class="name"><strong><c:out value="${tmp_user.username}"></c:out></strong></td>
+						<td><c:out value="${tmp_user.money}"></c:out></td>
+						<td><c:out value="${tmp_user.time}"></c:out></td>
+						<td><c:out value="${tmp_user.preferences}"></c:out></td>
+						<td><c:choose>
+								<c:when test="${tmp_user.admin}"> 
+         Admin 
+        </c:when>
+								<c:otherwise> 
+         Normal 
+        </c:otherwise>
+							</c:choose></td>
+						<td><c:if
+								test="${user.admin && (!tmp_user.admin || tmp_user.id == user.id)}">
+								<a href="/TierraMedia3/users/edit.do?id=${tmp_user.id}"
+									class="btn btn-light rounded-0" role="button"><i
+									class="bi bi-pencil-fill"></i></a>
+								<a href="/TierraMedia3/users/delete.do?id=${tmp_user.id}"
+									class="btn btn-danger rounded" role="button"><i
+									class="bi bi-x-circle-fill"></i></a>
+							</c:if></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</main>
+</body>
+</html>

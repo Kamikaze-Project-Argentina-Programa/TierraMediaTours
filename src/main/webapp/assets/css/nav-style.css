@@ -8,3 +8,8 @@ font-weight: bold;
 .titulo-nav {
 	font-size: xx-large;
 }
+.itinerario-nav{
+	font-size: medium;
+	font-weight: bold;
+	color: black;
+}

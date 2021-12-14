@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
 <html>
 <!-- Index de bienvenida -->
 <head>
@@ -16,7 +17,7 @@
 			<div class="p-4 rounded">
 				<h2 style="font-size: 50px">
 					¡Te damos la bienvenida,
-					<c:out value="${user.username}" />!
+					<c:out value="${fn:toUpperCase(user.username)}" />!
 				</h2>
 
 				<div id="carouselExampleIndicators" class="carousel slide"
