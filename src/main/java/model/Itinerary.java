@@ -2,8 +2,10 @@ package model;
 
 public class Itinerary {
 	private Integer id;
-	private String username;
-	private String attraction;
+	private Integer username;
+	private String stringUsername;
+	private Integer attraction;
+	private String stringAttraction;
 	private Integer cost;
 	private Double duration;
 	private Boolean promotion;
@@ -16,19 +18,19 @@ public class Itinerary {
 		this.id = id;
 	}
 
-	public String getUsername() {
+	public Integer getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {
+	public void setUsername(Integer username) {
 		this.username = username;
 	}
 
-	public String getAttraction() {
+	public Integer getAttraction() {
 		return attraction;
 	}
 
-	public void setAttraction(String attraction) {
+	public void setAttraction(Integer attraction) {
 		this.attraction = attraction;
 	}
 
@@ -55,6 +57,23 @@ public class Itinerary {
 	public void setPromotion(Boolean promotion) {
 		this.promotion = promotion;
 	}
+	
+
+	public String getStringUsername() {
+		return stringUsername;
+	}
+
+	public void setStringUsername(String stringUsername) {
+		this.stringUsername = stringUsername;
+	}
+
+	public String getStringAttraction() {
+		return stringAttraction;
+	}
+
+	public void setStringAttraction(String stringAttraction) {
+		this.stringAttraction = stringAttraction;
+	}
 
 	@Override
 	public String toString() {
@@ -62,11 +81,22 @@ public class Itinerary {
 				+ ", duration=" + duration + ", promotion=" + promotion + "]";
 	}
 
-	public Itinerary(Integer id, String username, String attraction, Integer cost, Double duration, Boolean promotion) {
+	public Itinerary(Integer id, Integer username, Integer attraction, Integer cost, Double duration, Boolean promotion) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.attraction = attraction;
+		this.cost = cost;
+		this.duration = duration;
+		this.promotion = promotion;
+	}
+	public Itinerary(Integer id, Integer username, String stringUsername, Integer attraction, String stringAttraction, Integer cost, Double duration, Boolean promotion) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.stringUsername = stringUsername;
+		this.attraction = attraction;
+		this.stringAttraction = stringAttraction;
 		this.cost = cost;
 		this.duration = duration;
 		this.promotion = promotion;

@@ -39,12 +39,14 @@ public class UserDAOImpl implements UserDAO {
 
 	public int update(User user) {
 		try {
-			String sql = "UPDATE USERS SET COINS = ?, TIME = ? WHERE ID = ?";
+			String sql = "UPDATE users SET money = ?, time = ?, admin = ?, is_active = ? WHERE id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, user.getMoney());
 			statement.setDouble(2, user.getTime());
 			statement.setDouble(3, user.getId());
+			statement.setBoolean(4, user.getAdmin());
+			statement.setBoolean(5, user.getIsActive());
 			int rows = statement.executeUpdate();
 			return rows;
 		} catch (Exception e) {
@@ -76,7 +78,7 @@ public class UserDAOImpl implements UserDAO {
 			ResultSet resultados = statement.executeQuery();
 			User user = NullUser.build();
 			if (resultados.next()) {
-				user = toUser(resultados);
+				user = toUserInsert(resultados);
 			}
 			return user;
 		} catch (Exception e) {
@@ -94,7 +96,7 @@ public class UserDAOImpl implements UserDAO {
 			ResultSet resultados = statement.executeQuery();
 			User user = NullUser.build();
 			if (resultados.next()) {
-				user = toUser(resultados);
+				user = toUserInsert(resultados);
 			}
 			return user;
 		} catch (Exception e) {
@@ -138,6 +140,12 @@ public class UserDAOImpl implements UserDAO {
 		return new User(userRegister.getInt(1), userRegister.getString(2), userRegister.getString(3),
 				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7), userRegister.getString(8),
 				userRegister.getBoolean(9));
+	}
+	
+	private User toUserInsert(ResultSet userRegister) throws SQLException {
+		return new User(userRegister.getInt(1), userRegister.getString(2), userRegister.getString(3),
+				userRegister.getBoolean(4), userRegister.getInt(5), userRegister.getDouble(6), userRegister.getInt(7),
+				userRegister.getBoolean(8));
 	}
 
 	@Override

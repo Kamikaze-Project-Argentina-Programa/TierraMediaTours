@@ -36,17 +36,20 @@
 					<th>Atracción</th>
 					<th>Costo</th>
 					<th>Duración</th>
-					<th>Promoción</th>
+					<th>Tipo de compra</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${itineraries}" var="itinerary">
 					<tr>
 						<td class="name"><strong><c:out
-									value="${itinerary.attraction}"></c:out></strong></td>
+									value="${itinerary.stringAttraction}"></c:out></strong></td>
 						<td><c:out value="${itinerary.cost}"></c:out></td>
 						<td><c:out value="${itinerary.duration}"></c:out></td>
-						<td><c:out value="${itinerary.promotion}"></c:out></td>
+						<td><c:choose>
+								<c:when test="${itinerary.promotion == true }">Con promocion</c:when>
+								<c:when test="${itinerary.promotion == false }">Sin promocion</c:when>
+							</c:choose></td>
 
 					</tr>
 				</c:forEach>

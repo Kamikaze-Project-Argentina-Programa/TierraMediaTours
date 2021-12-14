@@ -30,13 +30,32 @@ public class User {
 		this.preferencetype = preferencetype;
 		this.isActive = isActive;
 	}
+	
+	public User(Integer id, String username, String password, Boolean admin, 
+			Integer money, Double time,Integer preferences, Boolean isActive) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.money = money;
+		this.time = time;
+		this.admin = admin;
+		this.preferences = preferences;
+		this.isActive = isActive;
+	}
 
-	public void addToItinerary(Attraction attraction) {
+	public void addToItinerary(Attraction attraction, Itinerary itinerary) {
 		this.money -= attraction.getCost();
 		this.time -= attraction.getDuration();
+		itinerary.setUsername(this.id); 
+		itinerary.setAttraction(attraction.getId());
+		itinerary.setCost(attraction.getCost());
+		itinerary.setDuration(attraction.getDuration());
+		
+		
 		// TODO agregar a su lista
 	}
-	public void addToItinerary(Promotion promotion) {
+	public void addToItinerary(Promotion promotion, Itinerary itinerary) {
 		this.money -= promotion.getCost();
 		this.time -= promotion.getDuration();
 		// TODO agregar a su lista

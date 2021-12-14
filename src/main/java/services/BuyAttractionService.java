@@ -3,22 +3,26 @@ package services;
 import java.util.HashMap; 
 import java.util.Map; 
  
-import model.Attraction; 
+import model.Attraction;
+import model.Itinerary;
 import model.User; 
-import persistence.AttractionDAO; 
+import persistence.AttractionDAO;
+import persistence.ItineraryDAO;
 import persistence.UserDAO; 
 import persistence.commons.DAOFactory; 
  
 public class BuyAttractionService { 
  
- AttractionDAO attractionDAO = DAOFactory.getAttractionDAO(); 
+ AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
+ ItineraryDAO itineraryDAO = DAOFactory.getItineraryDAO(); 
  UserDAO userDAO = DAOFactory.getUserDAO(); 
  
- public Map<String, String> buy(Integer userId, Integer attractionId) { 
+ public Map<String, String> buy(Integer userId, Integer attractionId, Integer itineraryId) { 
   Map<String, String> errors = new HashMap<String, String>(); 
  
   User user = userDAO.find(userId); 
-  Attraction attraction = attractionDAO.find(attractionId); 
+  Attraction attraction = attractionDAO.find(attractionId);
+  Itinerary itinerary = itineraryDAO.find(itineraryId);
  
   if (!attraction.canHost(1)) { 
    errors.put("attraction", "No hay cupo disponible"); 
@@ -31,7 +35,7 @@ public class BuyAttractionService {
   } 
  
   if (errors.isEmpty()) { 
-   user.addToItinerary(attraction); 
+   user.addToItinerary(attraction, itinerary); 
    attraction.host(1); 
  
    // no grabamos para no afectar la base de pruebas 

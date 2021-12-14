@@ -19,10 +19,9 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 
 	public List<Itinerary> findAll() {
 		try {
-			String sql = "SELECT i.id, u.username, a.name, i.cost, i.duration, p.name FROM itinerary i "
-					+ "INNER JOIN users u ON u.id = i.username "
-					+ "INNER JOIN attractions a ON a.id = i.attraction "
-					+ "INNER JOIN promotions p ON p.id = i.promotion";
+			String sql = "SELECT i.id, i.username, u.username, i.attraction, a.name, i.cost, i.duration, i.promotion FROM itinerary i\r\n"
+					+ "INNER JOIN users u ON u.id = i.username\r\n"
+					+ "INNER JOIN attractions a ON a.id = i.attraction";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -41,7 +40,9 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 	@Override
 	public Itinerary find(Integer id) {
 		try {
-			String sql = "SELECT * FROM attractions WHERE id = ? AND is_active = 1";
+			String sql = "SELECT i.id, i.username, u.username, i.attraction, a.name, i.cost, i.duration, i.promotion FROM itinerary i\r\n"
+					+ "INNER JOIN users u ON u.id = i.username\r\n"
+					+ "INNER JOIN attractions a ON a.id = i.attraction WHERE i.username = ? ";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);
@@ -80,8 +81,14 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 	}
 
 	private Itinerary toItinerary(ResultSet itineraryRegister) throws SQLException {
-		return new Itinerary(itineraryRegister.getInt(1), itineraryRegister.getString(2),
-				itineraryRegister.getString(3), itineraryRegister.getInt(4), itineraryRegister.getDouble(5),
+		return new Itinerary(itineraryRegister.getInt(1), itineraryRegister.getInt(2), itineraryRegister.getString(3),
+				itineraryRegister.getInt(4), itineraryRegister.getString(5), 
+				itineraryRegister.getInt(6), itineraryRegister.getDouble(7),	itineraryRegister.getBoolean(8));
+	}
+	
+	private Itinerary toItineraryInserrt(ResultSet itineraryRegister) throws SQLException {
+		return new Itinerary(itineraryRegister.getInt(1), itineraryRegister.getInt(2),
+				itineraryRegister.getInt(3), itineraryRegister.getInt(4), itineraryRegister.getDouble(5),
 				itineraryRegister.getBoolean(6));
 	}
 
@@ -93,8 +100,8 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			int i = 1;
-			statement.setString(i++, itinerary.getUsername());
-			statement.setString(i++, itinerary.getAttraction());
+			statement.setInt(i++, itinerary.getUsername());
+			statement.setInt(i++, itinerary.getAttraction());
 			statement.setInt(i++, itinerary.getCost());
 			statement.setDouble(i++, itinerary.getDuration());
 			statement.setBoolean(i++, itinerary.getPromotion());
@@ -114,8 +121,8 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			int i = 1;
-			statement.setString(i++, itinerary.getUsername());
-			statement.setString(i++, itinerary.getAttraction());
+			statement.setInt(i++, itinerary.getUsername());
+			statement.setInt(i++, itinerary.getAttraction());
 			statement.setInt(i++, itinerary.getCost());
 			statement.setDouble(i++, itinerary.getDuration());
 			statement.setBoolean(i++, itinerary.getPromotion());
@@ -163,10 +170,10 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 	@Override
 	public List<Itinerary> findItinerary(Integer id) {
 		try {
-			String sql = "SELECT i.id, u.username, a.name, i.cost, i.duration, p.name FROM itinerary i\r\n"
+			String sql = "SELECT i.id, u.username, a.name, i.cost, i.duration, i.promotion FROM itinerary i\r\n"
 					+ "INNER JOIN users u ON u.id = i.username\r\n"
 					+ "INNER JOIN attractions a ON a.id = i.attraction\r\n"
-					+ "INNER JOIN promotions p ON p.id = i.promotion\r\n" + "WHERE u.id = ?";
+					+ "WHERE u.id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
