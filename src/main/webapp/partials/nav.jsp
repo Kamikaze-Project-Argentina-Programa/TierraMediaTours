@@ -4,10 +4,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <link href="/TierraMedia3/assets/css/nav-style.css" rel="stylesheet" />
+<link href="/TierraMedia3/assets/css/estilosbase.css" rel="stylesheet" />
+
 <nav class="navbar navbar-expand-md navbar-dark mb-4 sticky-top">
 	<div class="container">
-		<h1 class="titulo-nav">
-			<a class="navbar-brand" href="/TierraMedia3/index.jsp">Turismo en
+		<h1>
+			<a class="navbar-brand titulo-nav" href="/TierraMedia3/index.jsp">Turismo en
 				la Tierra Media</a>
 		</h1>
 		<div>
