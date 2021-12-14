@@ -47,12 +47,10 @@ public class User {
 	public void addToItinerary(Attraction attraction, Itinerary itinerary) {
 		this.money -= attraction.getCost();
 		this.time -= attraction.getDuration();
-		itinerary.setUsername(this.id); 
+		itinerary.setUsername(id); 
 		itinerary.setAttraction(attraction.getId());
 		itinerary.setCost(attraction.getCost());
-		itinerary.setDuration(attraction.getDuration());
-		
-		
+		itinerary.setDuration(attraction.getDuration());		
 		// TODO agregar a su lista
 	}
 	public void addToItinerary(Promotion promotion, Itinerary itinerary) {

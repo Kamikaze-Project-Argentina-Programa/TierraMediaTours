@@ -56,7 +56,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public int delete(User user) {
 		try {
-			String sql = "DELETE FROM USERS WHERE USERNAME = ?";
+			String sql = "UPDATE users SET is_active = 0 WHERE id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, user.getUsername());

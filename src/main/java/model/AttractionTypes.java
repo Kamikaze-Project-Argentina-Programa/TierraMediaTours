@@ -1,14 +1,13 @@
 package model;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class AttractionTypes {
 
 	private Integer id;
 	private String type;
 	private Boolean isActive;
-	private HashMap<String, String> errors;
+
 
 	public AttractionTypes(Integer id, String type, Boolean isActive) {
 		super();
@@ -45,25 +44,5 @@ public class AttractionTypes {
 	public String toString() {
 		return "AttractionTypes [id=" + id + ", type=" + type + ", isActive=" + isActive + "]";
 	}
-
-//	public boolean isValid() {
-//		validate();
-//		return errors.isEmpty();
-//	}
-//	
-//	public void validate() {
-//		errors = new HashMap<String, String>();
-//
-//		if (money < 0) {
-//			errors.put("money", "No debe ser negativo");
-//		}
-//		if (time < 0) {
-//			errors.put("time", "No debe ser negativo");
-//		}
-//	}
-//
-//	public Map<String, String> getErrors() {
-//		return errors;
-//	}
 
 }
