@@ -15,11 +15,16 @@
 	src: url(/TierraMedia3/assets/fonts/josefinsans-semibold.ttf);
 }
 
+@font-face {
+	font-family: ringbearer;
+	src: url(/TierraMedia3/assets/fonts/ringbearer.TTF);
+}
+
 h1 {
 	font-size: 40px;
-	color: #754213;
-	font-family: "ciber-gotica";
-	-webkit-text-stroke: 1px #541206;
+	color: gold;
+	font-family: "ringbearer";
+	-webkit-text-stroke: 1px #000000;
 }
 
 body {
@@ -132,4 +137,14 @@ a {
 
 h2 {
 	font-weight: bold;
+}
+.bg-color{
+	background-color: #E8D9B5;
+	margin: 50px;
+}
+
+.font-login{
+	font-family: josefinsans-semibold;
+	color: black;
+	font-size: 20px;
 }

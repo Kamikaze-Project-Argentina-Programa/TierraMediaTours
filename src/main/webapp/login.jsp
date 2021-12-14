@@ -10,7 +10,7 @@
 
 </head>
 <body>
-	<div class="col-lg-5 mx-auto p-3 py-md-5">
+	<div class="bg-color p-3 rounded col-lg-5 mx-auto py-md-4">
 
 		<main>
 			<h1 class="mt-3 mb-5 text-center">Turismo en la Tierra Media</h1>
@@ -34,12 +34,12 @@
 			<form action="login" method="post">
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
-						class="form-control" name="username">
+						class="form-control font-login" name="username">
 				</div>
 
 				<div class="mb-3">
 					<label for="password" class="form-label">Contraseña</label> <input
-						type="password" class="form-control" name="password">
+						type="password" class="form-control font-login" name="password">
 				</div>
 
 				<div class="d-grid gap-2">

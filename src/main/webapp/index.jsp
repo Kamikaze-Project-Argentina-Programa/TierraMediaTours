@@ -34,11 +34,11 @@
 
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="/TierraMedia3/assets/img/moria.jpg"
+							<img src="/TierraMedia3/assets/img/aventura.png"
 								class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item">
-							<img src="/TierraMedia3/assets/img/moria.jpg"
+							<img src="/TierraMedia3/assets/img/paisajes.png"
 								class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item">

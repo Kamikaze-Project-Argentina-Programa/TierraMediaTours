@@ -33,10 +33,10 @@
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
-					<th>Atraccion</th>
+					<th>Atracción</th>
 					<th>Costo</th>
-					<th>Duracion</th>
-					<th>Promocion</th>
+					<th>Duración</th>
+					<th>Promoción</th>
 				</tr>
 			</thead>
 			<tbody>
