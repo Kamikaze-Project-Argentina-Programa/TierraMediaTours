@@ -46,11 +46,11 @@
 					<button type="submit" class="btn btn-success">Ingresar</button>
 				</div>
 				
-				<br> <a href="/TierraMedia3/signup.jsp">
-					<div class="d-grid gap-2">
-						<button type="button" class="btn btn-primary">Registrarse</button>
-					</div>
-				</a>
+<!-- 				<br> <a href="/TierraMedia3/signup.jsp"> -->
+<!-- 					<div class="d-grid gap-2"> -->
+<!-- 						<button type="button" class="btn btn-primary">Registrarse</button> -->
+<!-- 					</div> -->
+<!-- 				</a> -->
 			</form>
 		</main>
 	</div>

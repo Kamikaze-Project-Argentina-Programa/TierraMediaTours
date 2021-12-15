@@ -108,7 +108,7 @@ public class AttractionDAOImpl implements AttractionDAO {
  @Override 
  public int update(Attraction attraction) { 
   try { 
-   String sql = "UPDATE attractions SET name = ?, cost = ?, duration = ?, capacity = ?, type = ?, description = ?, image = ?, is_active = ? WHERE id = ?"; 
+   String sql = "UPDATE attractions SET name = ?, cost = ?, duration = ?, capacity = ?, type = ?, description = ? WHERE id = ?"; 
    Connection conn = ConnectionProvider.getConnection(); 
  
    PreparedStatement statement = conn.prepareStatement(sql); 
@@ -119,8 +119,6 @@ public class AttractionDAOImpl implements AttractionDAO {
    statement.setInt(i++, attraction.getCapacity()); 
    statement.setInt(i++, attraction.getType());
    statement.setString(i++, attraction.getDescription());
-   statement.setString(i++, attraction.getImage());
-   statement.setBoolean(i++, attraction.getIsActive());
    statement.setInt(i++, attraction.getId());
    int rows = statement.executeUpdate(); 
  

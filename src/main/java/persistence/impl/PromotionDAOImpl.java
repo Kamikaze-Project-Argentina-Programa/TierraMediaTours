@@ -122,7 +122,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 	@Override
 	public int delete(Promotion promotion) {
 		try {
-			String sql = "DELETE FROM promotions WHERE id = ?";
+			String sql = "UPDATE promotions SET is_active = 0 WHERE id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
