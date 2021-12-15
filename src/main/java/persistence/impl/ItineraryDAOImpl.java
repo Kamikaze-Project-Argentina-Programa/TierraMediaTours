@@ -19,8 +19,7 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 
 	public List<Itinerary> findAll() {
 		try {
-			String sql = "SELECT i.id, i.username, u.username, i.attraction, a.name, i.cost, i.duration, i.promotion FROM itinerary i\r\n"
-					+ "INNER JOIN users u ON u.id = i.username\r\n" + "INNER JOIN attractions a ON a.id = i.attraction";
+			String sql = "SELECT i.id, i.username,i.attraction, i.cost, i.duration, i.promotion FROM itinerary i";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();

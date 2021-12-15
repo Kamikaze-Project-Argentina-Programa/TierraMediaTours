@@ -22,7 +22,10 @@ public class Itinerary {
 		this.promotion = promotion;
 	}
 	
-	public Itinerary(Integer id, Integer userId,Integer cost, Double duration,
+	//Si no armaba este constructor no funcionaba la web, no supimos como armar el constructor de la clase ItineraryDAOImpl
+	//En la DB se muestra bien el itinerario pero no al momento de llamarla, 
+	//no supimos como hacer la consulta o como armar el constructor
+	public Itinerary(Integer id, Integer userId,Integer cost, Double duration, 
 			Boolean promotion) {
 		super();
 		this.id = id;

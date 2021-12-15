@@ -43,6 +43,7 @@
 			<thead>
 				<tr>
 					<th>Tipo de Atracci&oacute;n</th>
+					<th>Estado</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -50,6 +51,7 @@
 				<c:forEach items="${attractionTypes}" var="attractionTypes">
 					<tr>
 						<td class="name"><c:out value="${attractionTypes.type}"></c:out></td>
+						<td class="name"><c:out value="${attractionTypes.isActive}"></c:out></td>
 						<td><a
 							href="/TierraMedia3/attraction-types/edit.do?id=${attractionTypes.id}"
 							class="btn btn-light rounded-0" role="button"><i

@@ -16,11 +16,8 @@ public class AttractionTypesService {
 
 		AttractionTypes attractionTypes = new AttractionTypes(-1, type, isActive);
 
-//		if (attractionTypes.isValid()) {
-//			AttractionTypesDAO attractionTypesDAO = DAOFactory.getAttractionTypesDAO();
-//			attractionTypesDAO.insert(attractionTypes);
-//			// XXX: si no devuelve "1", es que hubo más errores
-//		}
+		AttractionTypesDAO attractionTypesDAO = DAOFactory.getAttractionTypesDAO();
+		attractionTypesDAO.insert(attractionTypes);
 
 		return attractionTypes;
 	}
@@ -31,12 +28,9 @@ public class AttractionTypesService {
 		AttractionTypes attractionTypes = attractionTypesDAO.find(id);
 
 		attractionTypes.setType(type);
-		attractionTypes.setIsActive(isActive);
-
-//		if (attractionTypes.isValid()) {
-//			attractionTypesDAO.update(attractionTypes);
-//			// XXX: si no devuelve "1", es que hubo más errores
-//		}
+		attractionTypes.setIsActive(isActive);		
+		attractionTypesDAO.update(attractionTypes);
+ 
 
 		return attractionTypes;
 	}
@@ -52,5 +46,5 @@ public class AttractionTypesService {
 		AttractionTypesDAO attractionTypesDAO = DAOFactory.getAttractionTypesDAO();
 		return attractionTypesDAO.find(id);
 	}
-	
+
 }

@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE html> 
 <html> 
+<!-- Edit de attraction -->
 <head> 
 <jsp:include page="/partials/head.jsp"></jsp:include> 
 </head> 
@@ -13,12 +14,12 @@
  
   <c:if test="${attraction != null && !attraction.isValid()}"> 
    <div class="alert alert-danger"> 
-    <p>Se encontraron errores al actualizar la atracción.</p> 
+    <p>Se encontraron errores al actualizar la atraccion.</p> 
    </div> 
   </c:if> 
  
   <form action="/TierraMedia3/attractions/edit.do" method="post"> 
-   <input type="hidden" name="id" value="${attraction.id}"> 
+   <input type="hidden" name="id" value="${attractions.id}"> 
    <jsp:include page="/views/attractions/form.jsp"></jsp:include> 
   </form> 
  </main> 

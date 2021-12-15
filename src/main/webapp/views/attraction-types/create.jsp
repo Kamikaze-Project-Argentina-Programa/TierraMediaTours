@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Create de Attraction-Types -->
 <jsp:include page="/partials/head.jsp"></jsp:include>
 </head>
 <body>
@@ -11,14 +12,14 @@
 
 	<main class="container">
 
-		<c:if test="${attraction != null && !attraction.isValid()}">
+		<c:if test="${attractionTypes != null}">
 			<div class="alert alert-danger">
-				<p>Se encontraron errores al crear la atracción.</p>
+				<p>Se encontraron errores al crear un nuevo tipo de atraccion.</p>
 			</div>
 		</c:if>
 
-		<form action="/TierraMedia3/attractions/create.do" method="post">
-			<jsp:include page="/views/attractions/form.jsp"></jsp:include>
+		<form action="/TierraMedia3/attraction-types/create.do" method="post">
+			<jsp:include page="/views/attraction-types/form.jsp"></jsp:include>
 		</form>
 	</main>
 </body>

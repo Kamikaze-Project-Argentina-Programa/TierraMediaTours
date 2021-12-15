@@ -91,21 +91,6 @@ td {
 	border-color: #C4925C;
 }
 
-.btn-success:visited {
-	background-color: #B5B476;
-	border-color: #B5B476;
-}
-
-.btn-success:focus {
-	background-color: #B5B476;
-	border-color: #B5B476;
-}
-
-.btn-success:active {
-	background-color: #C4925C;
-	border-color: #C4925C;
-}
-
 .btn-primary {
 	background-color: #78774E;
 	border-color: #78774E;
@@ -114,21 +99,6 @@ td {
 .btn-primary:hover {
 	background-color: #B5B476;
 	border-color: #B5B476;
-}
-
-.btn-primary:visited {
-	background-color: #C4925C;
-	border-color: #C4925C;
-}
-
-.btn-primary:focus {
-	background-color: #C4925C;
-	border-color: #C4925C;
-}
-
-.btn-primary:active {
-	background-color: #C4925C;
-	border-color: #C4925C;
 }
 
 a {

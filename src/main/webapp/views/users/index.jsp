@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <!-- Index de users -->
+<!-- Cuando queremos editar un usuario nos lleva a /turismo/users/edit.do pero no encontramos donde esta esa redireccion -->
 <head>
 <jsp:include page="/partials/head.jsp"></jsp:include>
 <jsp:include page="/partials/nav.jsp"></jsp:include>
@@ -30,13 +31,13 @@
 			<h2>Usuarios</h2>
 		</div>
 
-		<c:if test="${user.isAdmin()}">
-			<div class="mb-3">
-				<a href="/TierraMedia3/users/create.do" class="btn btn-primary"
-					role="button"> <i class="bi bi-plus-lg"></i> Usuario
-				</a>
-			</div>
-		</c:if>
+<%-- 		<c:if test="${user.isAdmin()}"> --%>
+<!-- 			<div class="mb-3"> -->
+<!-- 				<a href="/TierraMedia3/users/create.do" class="btn btn-primary" -->
+<!-- 					role="button"> <i class="bi bi-plus-lg"></i> Usuario -->
+<!-- 				</a> -->
+<!-- 			</div> -->
+<%-- 		</c:if> --%>
 		
 		<table class="table table-stripped table-hover">
 			<thead>

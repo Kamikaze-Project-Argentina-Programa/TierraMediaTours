@@ -39,7 +39,6 @@
 		<div class="invalid-feedback">
 			<c:out value='${attraction.errors.get("description")}'></c:out>
 		</div>
-		<br>
 		<div class="mb-3">
 			<label for="type"
 				class='col-form-label ${attraction.errors.get("type") != null ? "is-invalid" : "" }'>Tipo:</label>

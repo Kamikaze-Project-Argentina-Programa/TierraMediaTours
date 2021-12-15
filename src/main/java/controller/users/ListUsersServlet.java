@@ -16,8 +16,9 @@ import services.UserService;
 @WebServlet("/users/index.do")
 public class ListUsersServlet extends HttpServlet implements Servlet {
 
- private static final long serialVersionUID = -8346640902238722429L;
- private UserService userService;
+
+	private static final long serialVersionUID = -4607175003969129270L;
+private UserService userService;
 
  @Override
  public void init() throws ServletException {

@@ -12,7 +12,7 @@
 <body>
 	<main class="container">
 		<c:if test="${flash != null}">
-			<div class="alert alert-danger">
+			<div class="alert alert-success">
 				<p>
 					<c:out value="${flash}" />
 					<c:if test="${errors != null}">

@@ -41,14 +41,12 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${itineraries}" var="itinerary">
-					<tr>
-						<td class="name"><strong><c:out
-									value="${itinerary.getAttraction()}"></c:out></strong></td>
-						<td><c:out value="${itinerary.cost}"></c:out></td>
+					<tr><td><c:out value="${itinerary}"></c:out></td>
+					<td><c:out value="${itinerary.cost}"></c:out></td>
 						<td><c:out value="${itinerary.duration}"></c:out></td>
 						<td><c:choose>
-								<c:when test="${itinerary.promotion == true }">Con promocion</c:when>
-								<c:when test="${itinerary.promotion == false }">Sin promocion</c:when>
+								<c:when test="${itinerary.promotion == true }">Con promoción</c:when>
+								<c:when test="${itinerary.promotion == false }">Sin promoción</c:when>
 							</c:choose></td>
 
 					</tr>

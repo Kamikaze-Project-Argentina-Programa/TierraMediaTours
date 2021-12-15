@@ -19,7 +19,7 @@ public class AttractionTypesDAOImpl implements AttractionTypesDAO {
 
 	public List<AttractionTypes> findAll() {
 		try {
-			String sql = "SELECT * FROM attraction_types WHERE is_active = 1";
+			String sql = "SELECT * FROM attraction_types";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -38,7 +38,7 @@ public class AttractionTypesDAOImpl implements AttractionTypesDAO {
 	@Override
 	public AttractionTypes find(Integer id) {
 		try {
-			String sql = "SELECT * FROM attraction__types WHERE id = ? AND is_active = 1";
+			String sql = "SELECT * FROM attraction_types WHERE id = ? AND is_active = 1";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);

@@ -103,6 +103,10 @@ public class User {
 	public Boolean isAdmin() {
 		return admin;
 	}
+	
+	public Boolean notAdmin() {
+		return !admin;
+	}
 
 	public boolean isNull() {
 		return false;

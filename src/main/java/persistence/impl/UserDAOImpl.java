@@ -121,8 +121,7 @@ public class UserDAOImpl implements UserDAO {
 	public List<User> findAll() {
 		try {
 			String sql = "SELECT u.id, u.username, u.password, u.admin, u.money, u.time, u.preferences, at.type, u.is_active FROM users u \r\n"
-					+ "INNER JOIN attraction_types at ON at.id = u.preferences\r\n"
-					+ "ORDER BY admin DESC, username";
+					+ "INNER JOIN attraction_types at ON at.id = u.preferences";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();

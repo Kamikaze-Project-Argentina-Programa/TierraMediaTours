@@ -8,4 +8,7 @@ import persistence.commons.GenericDAO;
 
 public interface UserDAO extends GenericDAO<User, Itinerary, Attraction, AttractionTypes> {
 	public abstract User findByUsername(String username);
+	
+	public abstract User find(Integer id);
+	
 }
