@@ -43,7 +43,7 @@
 				<c:forEach items="${itineraries}" var="itinerary">
 					<tr>
 						<td class="name"><strong><c:out
-									value="${itinerary.stringAttraction}"></c:out></strong></td>
+									value="${itinerary.getAttraction()}"></c:out></strong></td>
 						<td><c:out value="${itinerary.cost}"></c:out></td>
 						<td><c:out value="${itinerary.duration}"></c:out></td>
 						<td><c:choose>

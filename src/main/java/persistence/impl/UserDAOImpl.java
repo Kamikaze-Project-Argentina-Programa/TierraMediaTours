@@ -43,10 +43,10 @@ public class UserDAOImpl implements UserDAO {
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, user.getMoney());
-			statement.setDouble(2, user.getTime());
-			statement.setDouble(3, user.getId());
-			statement.setBoolean(4, user.getAdmin());
-			statement.setBoolean(5, user.getIsActive());
+			statement.setDouble(2, user.getTime());			
+			statement.setBoolean(3, user.getAdmin());
+			statement.setBoolean(4, user.getIsActive());
+			statement.setDouble(5, user.getId());
 			int rows = statement.executeUpdate();
 			return rows;
 		} catch (Exception e) {

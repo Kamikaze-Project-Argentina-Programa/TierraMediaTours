@@ -44,16 +44,12 @@ public class User {
 		this.isActive = isActive;
 	}
 
-	public void addToItinerary(Attraction attraction, Itinerary itinerary) {
+	public void updateWalletAndTime(Attraction attraction) {
 		this.money -= attraction.getCost();
-		this.time -= attraction.getDuration();
-		itinerary.setUsername(id); 
-		itinerary.setAttraction(attraction.getId());
-		itinerary.setCost(attraction.getCost());
-		itinerary.setDuration(attraction.getDuration());		
+		this.time -= attraction.getDuration();		
 		// TODO agregar a su lista
 	}
-	public void addToItinerary(Promotion promotion, Itinerary itinerary) {
+	public void addToItinerary(Promotion promotion) {
 		this.money -= promotion.getCost();
 		this.time -= promotion.getDuration();
 		// TODO agregar a su lista

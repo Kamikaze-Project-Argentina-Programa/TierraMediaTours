@@ -1,14 +1,45 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Itinerary {
 	private Integer id;
-	private Integer username;
-	private String stringUsername;
-	private Integer attraction;
-	private String stringAttraction;
+	private User user;
+	private Integer userId;
+	private List<Attraction> attractions = new ArrayList<Attraction>();
 	private Integer cost;
 	private Double duration;
 	private Boolean promotion;
+
+	public Itinerary(Integer id, User user,Integer cost, Double duration,
+			Boolean promotion) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.cost = cost;
+		this.duration = duration;
+		this.promotion = promotion;
+	}
+	
+	public Itinerary(Integer id, Integer userId,Integer cost, Double duration,
+			Boolean promotion) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.cost = cost;
+		this.duration = duration;
+		this.promotion = promotion;
+	}
+
+	
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 
 	public Integer getId() {
 		return id;
@@ -16,22 +47,6 @@ public class Itinerary {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getUsername() {
-		return username;
-	}
-
-	public void setUsername(Integer username) {
-		this.username = username;
-	}
-
-	public Integer getAttraction() {
-		return attraction;
-	}
-
-	public void setAttraction(Integer attraction) {
-		this.attraction = attraction;
 	}
 
 	public Integer getCost() {
@@ -57,49 +72,28 @@ public class Itinerary {
 	public void setPromotion(Boolean promotion) {
 		this.promotion = promotion;
 	}
-	
-
-	public String getStringUsername() {
-		return stringUsername;
+		
+	public User getUser() {
+		return user;
 	}
 
-	public void setStringUsername(String stringUsername) {
-		this.stringUsername = stringUsername;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public String getStringAttraction() {
-		return stringAttraction;
+	public List<Attraction> getAttractions() {
+		return attractions;
 	}
 
-	public void setStringAttraction(String stringAttraction) {
-		this.stringAttraction = stringAttraction;
+	public void setAttractions(List<Attraction> attractions) {
+		this.attractions = attractions;
 	}
 
 	@Override
 	public String toString() {
-		return "Itinerary [id=" + id + ", username=" + username + ", attraction=" + attraction + ", cost=" + cost
+		return "Itinerary [id=" + id + ", user=" + user + ", attractions=" + attractions + ", cost=" + cost
 				+ ", duration=" + duration + ", promotion=" + promotion + "]";
 	}
 
-	public Itinerary(Integer id, Integer username, Integer attraction, Integer cost, Double duration, Boolean promotion) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.attraction = attraction;
-		this.cost = cost;
-		this.duration = duration;
-		this.promotion = promotion;
-	}
-	public Itinerary(Integer id, Integer username, String stringUsername, Integer attraction, String stringAttraction, Integer cost, Double duration, Boolean promotion) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.stringUsername = stringUsername;
-		this.attraction = attraction;
-		this.stringAttraction = stringAttraction;
-		this.cost = cost;
-		this.duration = duration;
-		this.promotion = promotion;
-	}
 
 }

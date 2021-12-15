@@ -23,4 +23,9 @@ public class UserService {
 
   return user;
  }
+ 
+ public User findById(Integer id) {
+	return DAOFactory.getUserDAO().find(id);
+ }
+ 
 }

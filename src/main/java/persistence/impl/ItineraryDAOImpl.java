@@ -20,8 +20,7 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 	public List<Itinerary> findAll() {
 		try {
 			String sql = "SELECT i.id, i.username, u.username, i.attraction, a.name, i.cost, i.duration, i.promotion FROM itinerary i\r\n"
-					+ "INNER JOIN users u ON u.id = i.username\r\n"
-					+ "INNER JOIN attractions a ON a.id = i.attraction";
+					+ "INNER JOIN users u ON u.id = i.username\r\n" + "INNER JOIN attractions a ON a.id = i.attraction";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -81,57 +80,56 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 	}
 
 	private Itinerary toItinerary(ResultSet itineraryRegister) throws SQLException {
-		return new Itinerary(itineraryRegister.getInt(1), itineraryRegister.getInt(2), itineraryRegister.getString(3),
-				itineraryRegister.getInt(4), itineraryRegister.getString(5), 
-				itineraryRegister.getInt(6), itineraryRegister.getDouble(7),	itineraryRegister.getBoolean(8));
-	}
-	
-	private Itinerary toItineraryInserrt(ResultSet itineraryRegister) throws SQLException {
-		return new Itinerary(itineraryRegister.getInt(1), itineraryRegister.getInt(2),
-				itineraryRegister.getInt(3), itineraryRegister.getInt(4), itineraryRegister.getDouble(5),
-				itineraryRegister.getBoolean(6));
+		return new Itinerary(itineraryRegister.getInt(1), itineraryRegister.getInt(2) , itineraryRegister.getInt(3), 
+				 itineraryRegister.getDouble(4), itineraryRegister.getBoolean(5));
 	}
 
 	@Override
 	public int insert(Itinerary itinerary) {
 		try {
-			String sql = "INSERT INTO attractions (name, cost, duration, capacity, type, description, image, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-			Connection conn = ConnectionProvider.getConnection();
+			List<Attraction> attractions = itinerary.getAttractions();
+			for (Attraction attraction : attractions) {
+				String sql = "INSERT INTO itinerary (username, attraction, cost, duration, promotion) VALUES (?, ?, ?, ?, ?)";
+				Connection conn = ConnectionProvider.getConnection();
 
-			PreparedStatement statement = conn.prepareStatement(sql);
-			int i = 1;
-			statement.setInt(i++, itinerary.getUsername());
-			statement.setInt(i++, itinerary.getAttraction());
-			statement.setInt(i++, itinerary.getCost());
-			statement.setDouble(i++, itinerary.getDuration());
-			statement.setBoolean(i++, itinerary.getPromotion());
-			int rows = statement.executeUpdate();
-
-			return rows;
+				PreparedStatement statement = conn.prepareStatement(sql);
+				int i = 1;
+				statement.setInt(i++, itinerary.getUser().getId());
+				statement.setInt(i++, attraction.getId());
+				statement.setInt(i++, itinerary.getCost());
+				statement.setDouble(i++, itinerary.getDuration());
+				int rows = statement.executeUpdate();
+				return rows;
+			}
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
+		return 0;
 	}
 
 	@Override
 	public int update(Itinerary itinerary) {
 		try {
+			List<Attraction> attractions = itinerary.getAttractions();
+			for (Attraction attraction : attractions) {
 			String sql = "UPDATE attractions SET name = ?, cost = ?, duration = ?, capacity = ?, type = ?, description = ?, image = ?, is_active = ? WHERE id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			int i = 1;
-			statement.setInt(i++, itinerary.getUsername());
-			statement.setInt(i++, itinerary.getAttraction());
+			statement.setInt(i++, itinerary.getUser().getId());
+			statement.setInt(i++, attraction.getId());
 			statement.setInt(i++, itinerary.getCost());
 			statement.setDouble(i++, itinerary.getDuration());
 			statement.setBoolean(i++, itinerary.getPromotion());
 			int rows = statement.executeUpdate();
-
+			
 			return rows;
+			}
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
+		return 0;
 	}
 
 	@Override
@@ -172,8 +170,7 @@ public class ItineraryDAOImpl implements ItineraryDAO {
 		try {
 			String sql = "SELECT i.id, u.username, a.name, i.cost, i.duration, i.promotion FROM itinerary i\r\n"
 					+ "INNER JOIN users u ON u.id = i.username\r\n"
-					+ "INNER JOIN attractions a ON a.id = i.attraction\r\n"
-					+ "WHERE u.id = ?";
+					+ "INNER JOIN attractions a ON a.id = i.attraction\r\n" + "WHERE u.id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
