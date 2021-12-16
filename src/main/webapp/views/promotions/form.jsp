@@ -3,35 +3,54 @@
  <div class="mb-3"> 
   <label for="name" class="col-form-label">Nombre:</label> <input 
    type="text" class="form-control" id="name" name="name" 
-   required value="${attraction.name}"> 
+   required value="${attractionTypes.name}"> 
  </div> 
  <div class="mb-3"> 
   <label for="cost" 
-   class='col-form-label ${attraction.errors.get("cost") != null ? "is-invalid" : "" }'>Costo:</label> 
+   class='col-form-label ${attractionTypes.errors.get("cost") != null ? "is-invalid" : "" }'>Costo:</label> 
   <input class="form-control" type="number" id="cost" name="cost" 
-   required value="${attraction.cost}"></input> 
+   required value="${attractionTypes.cost}"></input> 
   <div class="invalid-feedback"> 
-   <c:out value='${attraction.errors.get("cost")}'></c:out> 
+   <c:out value='${attractionTypes.errors.get("cost")}'></c:out> 
   </div> 
  </div> 
  <div class="mb-3"> 
   <label for="duration" 
-   class='col-form-label ${attraction.errors.get("duration") != null ? "is-invalid" : "" }'>Duración:</label> 
+   class='col-form-label ${attractionTypes.errors.get("duration") != null ? "is-invalid" : "" }'>Duración:</label> 
   <input class="form-control" type="number" id="duration" name="duration" 
-   required value="${attraction.duration}"></input> 
+   required value="${attractionTypes.duration}"></input> 
   <div class="invalid-feedback"> 
-   <c:out value='${attraction.errors.get("duration")}'></c:out> 
+   <c:out value='${attractionTypes.errors.get("duration")}'></c:out> 
   </div> 
  </div> 
  <div class="mb-3"> 
-  <label for="capacity" 
-   class='col-form-label ${attraction.errors.get("capacity") != null ? "is-invalid" : "" }'>Cupo:</label> 
-  <input class="form-control" type="number" id="capacity" name="capacity" 
-   required value="${attraction.capacity}"></input> 
+  <label for="duration" 
+   class='col-form-label ${attractionTypes.errors.get("attraction1") != null ? "is-invalid" : "" }'>Atraccion 1:</label> 
+  <input class="form-control" type="number" id="duration" name="duration" 
+   required value="${attractionTypes.attraction1}"></input> 
   <div class="invalid-feedback"> 
-   <c:out value='${attraction.errors.get("capacity")}'></c:out> 
+   <c:out value='${attractionTypes.errors.get("attraction1")}'></c:out> 
   </div> 
  </div> 
+  <div class="mb-3"> 
+  <label for="duration" 
+   class='col-form-label ${attractionTypes.errors.get("attraction2") != null ? "is-invalid" : "" }'>Atraccion 2:</label> 
+  <input class="form-control" type="number" id="duration" name="duration" 
+   required value="${attractionTypes.attraction2}"></input> 
+  <div class="invalid-feedback"> 
+   <c:out value='${attractionTypes.errors.get("attraction2")}'></c:out> 
+  </div> 
+ </div> 
+  <div class="mb-3"> 
+  <label for="duration" 
+   class='col-form-label ${attractionTypes.errors.get("attraction3") != null ? "is-invalid" : "" }'>Atraccion 3:</label> 
+  <input class="form-control" type="number" id="duration" name="duration" 
+   required value="${attractionTypes.attraction3}"></input> 
+  <div class="invalid-feedback"> 
+   <c:out value='${attractionTypes.errors.get("attraction3")}'></c:out> 
+  </div> 
+ </div> 
+
 </div> 
 <div> 
  <button type="submit" class="btn btn-primary">Guardar</button> 

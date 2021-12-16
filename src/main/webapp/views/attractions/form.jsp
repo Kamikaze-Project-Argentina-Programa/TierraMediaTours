@@ -49,6 +49,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="mb-3">
+		<label for="formFile" class="form-label">Inserte una imagen</label> <input class="form-control" type="file" id="formFile">
+	</div>
+
+
 	<div>
 		<button type="submit" class="btn btn-primary">Guardar</button>
 		<a onclick="window.history.back();" class="btn btn-secondary"

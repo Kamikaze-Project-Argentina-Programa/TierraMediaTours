@@ -10,16 +10,37 @@ public class Promotion {
 	private Integer cost;
 	private String attraction1;
 	private Integer capacity1;
+	private Integer attractionInt1;
 	private String attraction2;
 	private Integer capacity2;
+	private Integer attractionInt2;
 	private String attraction3;
 	private Integer capacity3;
+	private Integer attractionInt3;
 	private String image;
 	private Boolean isActive;
 	private Double duration;
 	private Map<String, String> errors;
 
 	public Promotion(Integer id, String name, Integer cost, String attraction1, Integer capacity1, 
+			String attraction2, Integer capacity2, String attraction3, Integer capacity3,
+			String image, Boolean isActive, Double duration) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cost = cost;
+		this.attraction1 = attraction1;
+		this.capacity1 = capacity1;
+		this.attraction2 = attraction2;
+		this.capacity2 = capacity2;
+		this.attraction3 = attraction3;
+		this.capacity3 = capacity3;
+		this.image = image;
+		this.isActive = isActive;
+		this.duration = duration;
+	}
+	
+	public Promotion(Integer id, Integer name, Integer cost, String attraction1, Integer capacity1, 
 			String attraction2, Integer capacity2, String attraction3, Integer capacity3,
 			String image, Boolean isActive, Double duration) {
 		super();
@@ -64,6 +85,48 @@ public class Promotion {
 		if (capacity3 <= 0) {
 			errors.put("capacity", "Debe ser positivo");
 		}
+	}
+	
+	
+
+	public Integer getAttractionInt1() {
+		return attractionInt1;
+	}
+
+	public void setAttractionInt1(Integer attractionInt1) {
+		this.attractionInt1 = attractionInt1;
+	}
+
+	public Integer getCapacity2() {
+		return capacity2;
+	}
+
+	public void setCapacity2(Integer capacity2) {
+		this.capacity2 = capacity2;
+	}
+
+	public Integer getAttractionInt2() {
+		return attractionInt2;
+	}
+
+	public void setAttractionInt2(Integer attractionInt2) {
+		this.attractionInt2 = attractionInt2;
+	}
+
+	public Integer getCapacity3() {
+		return capacity3;
+	}
+
+	public void setCapacity3(Integer capacity3) {
+		this.capacity3 = capacity3;
+	}
+
+	public Integer getAttractionInt3() {
+		return attractionInt3;
+	}
+
+	public void setAttractionInt3(Integer attractionInt3) {
+		this.attractionInt3 = attractionInt3;
 	}
 
 	public String getAttraction1() {
