@@ -31,7 +31,7 @@
 				</div>
 			</c:if>
 
-			<form action="login" method="post">
+			<form action="/TierraMedia3/login" method="post">
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
 						class="form-control font-login" name="username">
