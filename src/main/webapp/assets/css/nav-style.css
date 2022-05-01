@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+nav {
+	background-color: #754213;
+	font-size: large;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.titulo-nav {
+	color: gold;
+	font-size: xx-large;
+}
+
+.itinerario-nav {
+	font-size: medium;
+	font-weight: bold;
+	color: black;
+}

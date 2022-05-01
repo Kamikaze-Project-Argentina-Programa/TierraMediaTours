@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: ciber-gotica;
+	src: url(/TierraMedia3/assets/fonts/ciber-gotica.otf);
+}
+
+@font-face {
+	font-family: josefin-sans;
+	src: url(/TierraMedia3/assets/fonts/josefin-sans.ttf);
+}
+
+@font-face {
+	font-family: josefinsans-semibold;
+	src: url(/TierraMedia3/assets/fonts/josefinsans-semibold.ttf);
+}
+
+@font-face {
+	font-family: ringbearer;
+	src: url(/TierraMedia3/assets/fonts/ringbearer.TTF);
+}
+
+h1 {
+	font-size: 40px;
+	color: gold;
+	font-family: "ringbearer";
+	-webkit-text-stroke: 1px #000000;
+}
+
+body {
+	background-color: #fff6d3;
+	font-family: "josefin-sans";
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+td {
+	font-size: large;
+	font-family: "josefin-sans";
+	color: #626266;
+}
+
+.name {
+	font-size: large;
+	font-family: "josefinsans-semibold";
+	font-weight: bold;
+	color: #000000;
+}
+
+#centrado-img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.slide {
+	margin: auto;
+	width: 720px;
+	height: 360px;
+}
+
+.slide img {
+	height: 360px;
+}
+
+.centrado-slide {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bg-brown {
+	background-color: #754213;
+}
+
+.alert-info {
+	font-size: large;
+}
+
+.alert-danger {
+	font-size: large;
+}
+
+.btn-success {
+	background-color: #754213;
+	border-color: #754213;
+}
+
+.btn-success:hover {
+	background-color: #C4925C;
+	border-color: #C4925C;
+}
+
+.btn-primary {
+	background-color: #78774E;
+	border-color: #78774E;
+}
+
+.btn-primary:hover {
+	background-color: #B5B476;
+	border-color: #B5B476;
+}
+
+a {
+	text-decoration: none;
+}
+
+h2 {
+	font-weight: bold;
+}
+.bg-color{
+	background-color: #E8D9B5;
+	margin: 50px;
+}
+
+.font-login{
+	font-family: josefinsans-semibold;
+	color: black;
+	font-size: 20px;
+}

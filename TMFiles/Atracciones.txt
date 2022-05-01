@@ -1,9 +1,0 @@
-Moria,10,2,6,Aventura
-Minas Tirith,5,2.5,25,Paisaje
-La Comarca,3,6.5,150,Degustacion
-Mordor,17,3,4,Aventura
-Abismo de Helm,12,3,32,Paisaje
-Lothlorien,15,1.3,25,Degustacion
-Erebor,10,2,15,Paisaje
-Bosque Negro,3,4,12,Aventura
-El Pony Pisador,13,4,40,Degustacion
